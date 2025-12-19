@@ -1,0 +1,758 @@
+<section class="space-y-8 text-slate-100">
+  <!-- Hero -->
+  <div
+    class="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 px-6 py-6 shadow-2xl shadow-cyan-500/10 sm:px-8 lg:px-10"
+  >
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(168,85,247,0.08),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(16,185,129,0.08),transparent_30%)]"></div>
+    <div class="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div class="space-y-3 lg:max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-400">Thí nghiệm mô phỏng</p>
+        <h1 class="text-2xl font-semibold sm:text-3xl">
+          Mô phỏng thí nghiệm hóa học trong không gian 3D
+        </h1>
+        <p class="text-sm text-slate-300 sm:text-base">
+          Điều chỉnh nhiệt độ, nồng độ, thể tích, thời gian. Quan sát mô hình 3D, biểu đồ và nhận xét AI để tối ưu kết quả.
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3 py-1 text-cyan-200"></span>
+          <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-emerald-200"></span>
+          <span class="rounded-full border border-purple-500/40 bg-purple-500/10 px-3 py-1 text-purple-200"></span>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center gap-3 text-sm lg:mt-0">
+        <a 
+          routerLink="/experiment-history"
+          class="flex h-11 items-center gap-2 rounded-2xl border border-blue-500/40 bg-blue-500/10 px-4 text-blue-200 hover:bg-blue-500/20 transition-colors">
+          <span class="text-lg">📊</span>
+          <span class="hidden sm:inline">Xem lịch sử thí nghiệm</span>
+          <span class="sm:hidden">Lịch sử</span>
+        </a>
+        <div class="flex h-11 items-center gap-2 rounded-2xl border border-slate-800/80 bg-slate-900/70 px-4">
+          @if (dbConnectionStatus() === 'connected') {
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-slate-300">Database connected</span>
+          } @else if (dbConnectionStatus() === 'disconnected') {
+            <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
+            <span class="text-slate-300">Offline mode</span>
+          } @else {
+            <span class="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+            <span class="text-slate-300">Connecting...</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="flex flex-wrap items-center gap-3">
+    <span class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">Cấp học</span>
+    <div class="flex flex-wrap gap-2">
+      @for (level of levels; track level) {
+        <button
+          class="rounded-full border border-slate-800 bg-slate-900/70 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-200"
+          [class.border-cyan-400]="selectedLevel() === level"
+          [class.text-cyan-200]="selectedLevel() === level"
+          (click)="selectLevel(level)"
+        >
+          {{ level }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Layout -->
+  <div class="grid gap-6 xl:grid-cols-12">
+    <!-- Left: 3D + charts + experiments -->
+    <div class="space-y-6 xl:col-span-8">
+      <!-- Simulation Canvas -->
+      <div
+        class="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/70 p-4 shadow-xl shadow-cyan-500/10 sm:p-6"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,0.08),transparent_40%),radial-gradient(circle_at_70%_20%,rgba(168,85,247,0.08),transparent_40%)]"></div>
+        <div class="relative flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400">Mô phỏng thí nghiệm</p>
+              <h2 class="text-lg font-semibold">{{ selectedExperiment()?.title || 'Chọn thí nghiệm' }}</h2>
+              <p class="text-sm text-slate-400">{{ selectedExperiment()?.desc || 'Chọn một thí nghiệm để bắt đầu mô phỏng' }}</p>
+            </div>
+            <div class="flex gap-2">
+              <button 
+                (click)="startSimulation()"
+                [disabled]="!selectedExperiment() || simulationState().isRunning"
+                class="rounded-xl border border-slate-700 bg-gradient-to-r from-emerald-500 to-green-600 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-emerald-500/30 hover:from-emerald-600 hover:to-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {{ simulationState().isRunning ? 'Đang chạy...' : 'Bắt đầu' }}
+              </button>
+              <button 
+                (click)="stopSimulation()"
+                class="rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-xs text-slate-200 hover:border-cyan-400 hover:text-cyan-200"
+              >
+                Dừng
+              </button>
+              <button 
+                (click)="resetSimulation()"
+                class="rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-xs text-slate-200 hover:border-cyan-400 hover:text-cyan-200"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+          
+          <!-- Progress Bar -->
+          @if (selectedExperiment()) {
+            <div class="mb-2">
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                <span>Tiến độ thí nghiệm</span>
+                <span>{{ simulationState().currentTime }}/{{ simulationState().parameters.time }}s</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div 
+                  class="bg-gradient-to-r from-emerald-500 to-green-500 h-2 rounded-full transition-all duration-300"
+                  [style.width.%]="(simulationState().currentTime / simulationState().parameters.time) * 100"
+                ></div>
+              </div>
+            </div>
+          }
+
+          <!-- Canvas -->
+          <div class="relative h-[320px] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80">
+            @if (selectedExperiment()) {
+              <canvas 
+                #simulationCanvas
+                class="w-full h-full"
+                width="600" 
+                height="320"
+              ></canvas>
+            } @else {
+              <div class="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.08),transparent_50%)]"></div>
+              <div class="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-cyan-500/40 bg-cyan-500/10 blur-3xl"></div>
+              <div class="relative flex h-full items-center justify-center text-slate-400">
+                Chọn thí nghiệm để bắt đầu mô phỏng
+              </div>
+            }
+          </div>
+
+          <!-- Results Display -->
+          @if (selectedExperiment() && simulationState().results) {
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+              @if (simulationState().results.ph !== undefined) {
+                <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-3 text-center">
+                  <div class="text-xs text-slate-400">pH</div>
+                  <div class="text-lg font-bold text-cyan-300">{{ simulationState().results.ph!.toFixed(1) }}</div>
+                </div>
+              }
+              @if (simulationState().results.gasVolume !== undefined) {
+                <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-3 text-center">
+                  <div class="text-xs text-slate-400">Thể tích khí (L)</div>
+                  <div class="text-lg font-bold text-emerald-300">{{ simulationState().results.gasVolume!.toFixed(2) }}</div>
+                </div>
+              }
+              @if (simulationState().results.mass !== undefined) {
+                <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-3 text-center">
+                  <div class="text-xs text-slate-400">Khối lượng (g)</div>
+                  <div class="text-lg font-bold text-purple-300">{{ simulationState().results.mass!.toFixed(3) }}</div>
+                </div>
+              }
+              @if (simulationState().results.efficiency !== undefined) {
+                <div class="rounded-xl border border-slate-700 bg-slate-800/50 p-3 text-center">
+                  <div class="text-xs text-slate-400">Hiệu suất (%)</div>
+                  <div class="text-lg font-bold text-green-300">{{ simulationState().results.efficiency!.toFixed(1) }}</div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-cyan-500/10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.25em] text-slate-400">Biểu đồ</p>
+              <h3 class="text-sm font-semibold">Nồng độ theo thời gian</h3>
+            </div>
+            <span class="rounded-full bg-cyan-500/15 px-2 py-1 text-[10px] text-cyan-300">Line</span>
+          </div>
+          <div class="mt-3 h-40 rounded-xl border border-slate-800 bg-slate-950/60">
+            <canvas 
+              #concentrationChart
+              class="w-full h-full rounded-xl"
+              width="400" 
+              height="160"
+            ></canvas>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-cyan-500/10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.25em] text-slate-400">Biểu đồ</p>
+              <h3 class="text-sm font-semibold">pH / hiệu suất</h3>
+            </div>
+            <span class="rounded-full bg-emerald-500/15 px-2 py-1 text-[10px] text-emerald-300">Bar</span>
+          </div>
+          <div class="mt-3 h-40 rounded-xl border border-slate-800 bg-slate-950/60">
+            <canvas 
+              #phEfficiencyChart
+              class="w-full h-full rounded-xl"
+              width="400" 
+              height="160"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiments list -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-slate-400">Danh sách thí nghiệm</p>
+            <h3 class="text-sm font-semibold text-slate-100">Chọn thí nghiệm để mô phỏng</h3>
+          </div>
+          <button 
+            (click)="openCreateModal()"
+            class="rounded-xl border border-emerald-600/50 bg-gradient-to-r from-emerald-600/20 to-green-600/20 px-4 py-2 text-sm font-semibold text-emerald-200 hover:from-emerald-600/30 hover:to-green-600/30 hover:border-emerald-500 transition-all duration-200 shadow-lg shadow-emerald-500/10"
+          >
+            ➕ Tạo thí nghiệm mới
+          </button>
+        </div>
+        @if (isLoading()) {
+          <div class="flex items-center justify-center py-8">
+            <div class="flex items-center gap-3 text-slate-400">
+              <div class="h-5 w-5 animate-spin rounded-full border-2 border-slate-600 border-t-cyan-400"></div>
+              <span>Đang tải thí nghiệm từ database...</span>
+            </div>
+          </div>
+        } @else {
+          <div class="grid gap-3 md:grid-cols-2">
+            @for (exp of filteredExperiments(); track exp.id) {
+            <button 
+              (click)="selectExperiment(exp)"
+              [class.border-emerald-500]="selectedExperiment()?.id === exp.id"
+              [class.bg-emerald-500/10]="selectedExperiment()?.id === exp.id"
+              [class.shadow-emerald-500/20]="selectedExperiment()?.id === exp.id"
+              class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-sm shadow-slate-900/50 transition hover:-translate-y-0.5 hover:border-emerald-400/70 hover:shadow-emerald-500/20 text-left w-full"
+            >
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <p class="text-[10px] uppercase tracking-[0.25em] text-emerald-300">{{ exp.level }}</p>
+                  <h4 class="text-base font-semibold text-slate-50 group-hover:text-emerald-100">{{ exp.title }}</h4>
+                </div>
+                <div class="flex items-center gap-2">
+                  @if (exp.id.startsWith('custom-')) {
+                    <button 
+                      (click)="deleteCustomExperiment(exp.id); $event.stopPropagation()"
+                      class="rounded-full bg-red-500/20 p-1 text-red-400 hover:bg-red-500/30 hover:text-red-300 transition-colors"
+                      title="Xóa thí nghiệm tự tạo"
+                    >
+                      <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                    </button>
+                  }
+                  @if (selectedExperiment()?.id === exp.id) {
+                    <div class="flex items-center gap-1 text-emerald-400">
+                      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                      </svg>
+                      <span class="text-[10px] font-medium">Đã chọn</span>
+                    </div>
+                  } @else {
+                    <span class="rounded-full bg-slate-800/80 px-2 py-1 text-[10px] text-slate-300">
+                      {{ exp.id.startsWith('custom-') ? 'Tự tạo' : 'Ready' }}
+                    </span>
+                  }
+                </div>
+              </div>
+              <p class="mt-2 text-sm text-slate-300 group-hover:text-slate-200">{{ exp.desc }}</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                @for (tag of exp.tags; track tag) {
+                  <span class="rounded-full bg-slate-800/80 px-2 py-1 text-[11px] text-slate-300 group-hover:text-slate-200">#{{ tag }}</span>
+                }
+              </div>
+              
+              <!-- Experiment Parameters Preview -->
+              <div class="mt-3 pt-3 border-t border-slate-700/50">
+                <div class="grid grid-cols-2 gap-2 text-xs text-slate-400">
+                  <div>Nhiệt độ: {{ exp.simulation.parameters.temperature.default }}{{ exp.simulation.parameters.temperature.unit }}</div>
+                  <div>Nồng độ: {{ exp.simulation.parameters.concentration.default }}{{ exp.simulation.parameters.concentration.unit }}</div>
+                </div>
+              </div>
+            </button>
+          }
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Right: Controls + AI -->
+    <div class="space-y-4 xl:col-span-4">
+      <!-- Control panel -->
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-cyan-500/10">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-slate-400">Điều khiển</p>
+            <h3 class="text-sm font-semibold text-slate-100">Thông số thí nghiệm</h3>
+          </div>
+          <span class="rounded-full bg-slate-800/70 px-2 py-1 text-[10px] text-slate-300">Realtime</span>
+        </div>
+
+        @if (selectedExperiment()) {
+          <div class="mt-4 space-y-4">
+            <!-- Temperature -->
+            <div class="space-y-1">
+              <div class="flex items-center justify-between text-xs text-slate-300">
+                <span>Nhiệt độ ({{ selectedExperiment()!.simulation.parameters.temperature.unit }})</span>
+                <span>{{ simulationState().parameters.temperature }}</span>
+              </div>
+              <input 
+                type="range" 
+                [min]="selectedExperiment()!.simulation.parameters.temperature.min"
+                [max]="selectedExperiment()!.simulation.parameters.temperature.max"
+                [value]="simulationState().parameters.temperature"
+                (input)="updateParameter('temperature', +$any($event.target).value)"
+                class="w-full accent-cyan-500" 
+              />
+            </div>
+            
+            <!-- Concentration -->
+            <div class="space-y-1">
+              <div class="flex items-center justify-between text-xs text-slate-300">
+                <span>Nồng độ ({{ selectedExperiment()!.simulation.parameters.concentration.unit }})</span>
+                <span>{{ simulationState().parameters.concentration.toFixed(2) }}</span>
+              </div>
+              <input 
+                type="range" 
+                [min]="selectedExperiment()!.simulation.parameters.concentration.min"
+                [max]="selectedExperiment()!.simulation.parameters.concentration.max"
+                step="0.01"
+                [value]="simulationState().parameters.concentration"
+                (input)="updateParameter('concentration', +$any($event.target).value)"
+                class="w-full accent-emerald-500" 
+              />
+            </div>
+            
+            <!-- Volume -->
+            <div class="space-y-1">
+              <div class="flex items-center justify-between text-xs text-slate-300">
+                <span>Thể tích ({{ selectedExperiment()!.simulation.parameters.volume.unit }})</span>
+                <span>{{ simulationState().parameters.volume.toFixed(1) }}</span>
+              </div>
+              <input 
+                type="range" 
+                [min]="selectedExperiment()!.simulation.parameters.volume.min"
+                [max]="selectedExperiment()!.simulation.parameters.volume.max"
+                step="0.1"
+                [value]="simulationState().parameters.volume"
+                (input)="updateParameter('volume', +$any($event.target).value)"
+                class="w-full accent-purple-500" 
+              />
+            </div>
+            
+            <!-- Time -->
+            <div class="space-y-1">
+              <div class="flex items-center justify-between text-xs text-slate-300">
+                <span>Thời gian ({{ selectedExperiment()!.simulation.parameters.time.unit }})</span>
+                <span>{{ simulationState().parameters.time }}</span>
+              </div>
+              <input 
+                type="range" 
+                [min]="selectedExperiment()!.simulation.parameters.time.min"
+                [max]="selectedExperiment()!.simulation.parameters.time.max"
+                [value]="simulationState().parameters.time"
+                (input)="updateParameter('time', +$any($event.target).value)"
+                class="w-full accent-cyan-500" 
+              />
+            </div>
+          </div>
+        } @else {
+          <div class="mt-4 text-center text-slate-400">
+            <p class="text-sm">Chọn thí nghiệm để điều chỉnh tham số</p>
+          </div>
+        }
+
+        <div class="mt-4 flex gap-2">
+          <button 
+            (click)="startSimulation()"
+            [disabled]="!selectedExperiment() || simulationState().isRunning"
+            class="flex-1 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {{ simulationState().isRunning ? 'Đang chạy...' : 'Áp dụng' }}
+          </button>
+          <button 
+            (click)="isPaused() ? resumeSimulation() : pauseSimulation()"
+            [disabled]="!simulationState().isRunning"
+            class="rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 hover:border-cyan-400 hover:text-cyan-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {{ isPaused() ? 'Tiếp tục' : 'Tạm dừng' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- AI panel -->
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-cyan-500/10">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-slate-400">AI phân tích</p>
+            <h3 class="text-sm font-semibold text-slate-100">Nhận xét & gợi ý</h3>
+          </div>
+          <span class="rounded-full bg-purple-500/15 px-2 py-1 text-[10px] text-purple-200">Beta</span>
+        </div>
+        <div class="mt-3 space-y-2 text-sm text-slate-200">
+          @if (selectedExperiment()) {
+            <div class="rounded-xl border border-slate-800/70 bg-slate-950/60 p-3">
+              <p class="font-semibold text-cyan-200">Phương trình phản ứng</p>
+              @for (reaction of selectedExperiment()!.simulation.reactions; track reaction) {
+                <p class="text-slate-300 font-mono text-xs">{{ reaction }}</p>
+              }
+            </div>
+            
+            <div class="rounded-xl border border-slate-800/70 bg-slate-950/60 p-3">
+              <p class="font-semibold text-purple-200">Hiện tượng quan sát</p>
+              <ul class="text-slate-300 text-xs space-y-1">
+                @for (phenomenon of selectedExperiment()!.simulation.phenomena; track phenomenon) {
+                  <li class="flex items-center gap-2">
+                    <div class="h-1 w-1 rounded-full bg-purple-400"></div>
+                    {{ phenomenon }}
+                  </li>
+                }
+              </ul>
+            </div>
+            
+            <div class="rounded-xl border border-slate-800/70 bg-slate-950/60 p-3">
+              <p class="font-semibold text-emerald-200">AI Phân tích</p>
+              <p class="text-slate-300 text-xs">{{ getAIAnalysis() }}</p>
+            </div>
+          } @else {
+            <div class="rounded-xl border border-slate-800/70 bg-slate-950/60 p-3 text-center">
+              <p class="text-slate-400 text-xs">Chọn thí nghiệm để xem phân tích AI</p>
+            </div>
+          }
+        </div>
+        <div class="mt-3 space-y-2">
+          <!-- First row: AI Comments button (full width) -->
+          <button 
+            (click)="showAIComments()"
+            class="w-full rounded-xl border border-purple-600/50 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 px-4 py-2 text-sm font-semibold text-purple-200 hover:from-purple-600/30 hover:to-indigo-600/30 hover:border-purple-500 transition-all duration-200 shadow-lg shadow-purple-500/10"
+          >
+            🤖 AI phân tích chi tiết
+          </button>
+          
+          <!-- Second row: Other buttons -->
+          <div class="flex gap-2">
+            <button 
+              (click)="requestReanalysis()"
+              class="flex-1 rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+            >
+              Yêu cầu phân tích lại
+            </button>
+            <button 
+              (click)="exportReport()"
+              class="rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+            >
+              Xuất báo cáo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Analysis Modal -->
+@if (showAIModal()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="relative mx-4 max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-700 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 shadow-2xl shadow-purple-500/20">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-700/50 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 px-6 py-4">
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/20 text-2xl">
+            🤖
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-purple-200">AI phân tích</h2>
+            <p class="text-sm text-slate-400">Nhận xét chi tiết về thí nghiệm của bạn</p>
+          </div>
+        </div>
+        <button 
+          (click)="closeAIModal()"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/50 text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 transition-colors"
+        >
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Modal Content -->
+      <div class="max-h-[70vh] overflow-y-auto px-6 py-6">
+        <div class="prose prose-invert max-w-none">
+          <div class="whitespace-pre-line text-sm leading-relaxed text-slate-200">
+            {{ aiModalContent() }}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="border-t border-slate-700/50 bg-slate-900/50 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-xs text-slate-400">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Phân tích được tạo bởi AI</span>
+          </div>
+          <button 
+            (click)="closeAIModal()"
+            class="rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-2 text-sm font-semibold text-white hover:from-purple-700 hover:to-indigo-700 transition-colors shadow-lg shadow-purple-500/30"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Create Custom Experiment Modal -->
+@if (showCreateModal()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="relative mx-4 max-h-[95vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-slate-700 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 shadow-2xl shadow-emerald-500/20">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-slate-700/50 bg-gradient-to-r from-emerald-600/20 to-green-600/20 px-6 py-4">
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-2xl">
+            🧪
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-emerald-200">Tạo thí nghiệm mới</h2>
+            <p class="text-sm text-slate-400">Thiết kế thí nghiệm tùy chỉnh của riêng bạn</p>
+          </div>
+        </div>
+        <button 
+          (click)="closeCreateModal()"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/50 text-slate-400 hover:bg-slate-700/50 hover:text-slate-200 transition-colors"
+        >
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Modal Content -->
+      <div class="max-h-[75vh] overflow-y-auto px-6 py-6">
+        <div class="grid gap-6 md:grid-cols-2">
+          <!-- Left Column: Basic Info -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold text-emerald-200 flex items-center gap-2">
+              📝 Thông tin cơ bản
+            </h3>
+            
+            <!-- Title -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Tên thí nghiệm *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="newExperimentTitle"
+                placeholder="VD: Phản ứng tạo bọt khí"
+                class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              />
+            </div>
+            
+            <!-- Level -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Cấp học *</label>
+              <select 
+                [(ngModel)]="newExperimentLevel"
+                class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              >
+                <option value="THCS">THCS</option>
+                <option value="THPT">THPT</option>
+                <option value="Đại học">Đại học</option>
+              </select>
+            </div>
+            
+            <!-- Description -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Mô tả thí nghiệm *</label>
+              <textarea 
+                [(ngModel)]="newExperimentDesc"
+                placeholder="Mô tả chi tiết về thí nghiệm, mục đích và ý nghĩa..."
+                rows="3"
+                class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 resize-none"
+              ></textarea>
+            </div>
+            
+            <!-- Tags -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Tags (phân cách bằng dấu phẩy)</label>
+              <input 
+                type="text" 
+                [(ngModel)]="newExperimentTags"
+                placeholder="VD: khí, nhiệt độ, màu sắc"
+                class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              />
+            </div>
+            
+            <!-- Type -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Loại phản ứng *</label>
+              <select 
+                [(ngModel)]="newExperimentType"
+                class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              >
+                <option value="acid-base">Acid-Base</option>
+                <option value="decomposition">Phân hủy</option>
+                <option value="electrolysis">Điện phân</option>
+                <option value="equilibrium">Cân bằng</option>
+                <option value="combustion">Đốt cháy</option>
+                <option value="precipitation">Kết tủa</option>
+                <option value="catalysis">Xúc tác</option>
+                <option value="redox">Oxi hóa khử</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Right Column: Parameters -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold text-emerald-200 flex items-center gap-2">
+              ⚙️ Thông số thí nghiệm
+            </h3>
+            
+            <!-- Temperature Parameters -->
+            <div class="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
+              <h4 class="text-sm font-semibold text-cyan-300 mb-3">🌡️ Nhiệt độ (°C)</h4>
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Min</label>
+                  <input type="number" [(ngModel)]="tempMin" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-cyan-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Max</label>
+                  <input type="number" [(ngModel)]="tempMax" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-cyan-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Mặc định</label>
+                  <input type="number" [(ngModel)]="tempDefault" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-cyan-500 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+            
+            <!-- Concentration Parameters -->
+            <div class="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
+              <h4 class="text-sm font-semibold text-emerald-300 mb-3">⚗️ Nồng độ (mol/L)</h4>
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Min</label>
+                  <input type="number" step="0.01" [(ngModel)]="concMin" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-emerald-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Max</label>
+                  <input type="number" step="0.01" [(ngModel)]="concMax" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-emerald-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Mặc định</label>
+                  <input type="number" step="0.01" [(ngModel)]="concDefault" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-emerald-500 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+            
+            <!-- Volume Parameters -->
+            <div class="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
+              <h4 class="text-sm font-semibold text-purple-300 mb-3">📏 Thể tích (L)</h4>
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Min</label>
+                  <input type="number" step="0.1" [(ngModel)]="volMin" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-purple-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Max</label>
+                  <input type="number" step="0.1" [(ngModel)]="volMax" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-purple-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Mặc định</label>
+                  <input type="number" step="0.1" [(ngModel)]="volDefault" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-purple-500 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+            
+            <!-- Time Parameters -->
+            <div class="rounded-xl border border-slate-700/50 bg-slate-800/30 p-4">
+              <h4 class="text-sm font-semibold text-yellow-300 mb-3">⏱️ Thời gian (s)</h4>
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Min</label>
+                  <input type="number" [(ngModel)]="timeMin" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-yellow-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Max</label>
+                  <input type="number" [(ngModel)]="timeMax" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-yellow-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs text-slate-400 mb-1">Mặc định</label>
+                  <input type="number" [(ngModel)]="timeDefault" class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-2 py-1 text-xs text-slate-200 focus:border-yellow-500 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Reactions and Phenomena -->
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <!-- Reactions -->
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Phương trình phản ứng * (mỗi dòng một phương trình)</label>
+            <textarea 
+              [(ngModel)]="newExperimentReactions"
+              placeholder="VD:&#10;2H₂O₂ → 2H₂O + O₂&#10;MnO₂ (xúc tác)"
+              rows="4"
+              class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 resize-none font-mono text-sm"
+            ></textarea>
+          </div>
+          
+          <!-- Phenomena -->
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Hiện tượng quan sát * (mỗi dòng một hiện tượng)</label>
+            <textarea 
+              [(ngModel)]="newExperimentPhenomena"
+              placeholder="VD:&#10;Tạo bọt khí mạnh&#10;Nhiệt tỏa&#10;Màu sắc thay đổi"
+              rows="4"
+              class="w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 resize-none"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="border-t border-slate-700/50 bg-slate-900/50 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-xs text-slate-400">
+            <span class="text-red-400">*</span> Các trường bắt buộc
+          </div>
+          <div class="flex gap-3">
+            <button 
+              (click)="closeCreateModal()"
+              class="rounded-xl border border-slate-700 bg-slate-800/50 px-6 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-slate-200 transition-colors"
+            >
+              Hủy
+            </button>
+            <button 
+              (click)="createCustomExperiment()"
+              [disabled]="isSaving()"
+              class="rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 px-6 py-2 text-sm font-semibold text-white hover:from-emerald-700 hover:to-green-700 transition-colors shadow-lg shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              @if (isSaving()) {
+                <div class="flex items-center gap-2">
+                  <div class="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  <span>Đang lưu...</span>
+                </div>
+              } @else {
+                🧪 Tạo thí nghiệm
+              }
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+

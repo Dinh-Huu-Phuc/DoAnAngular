@@ -1,0 +1,28 @@
+@if (isVisible) {
+  <div
+    class="fixed z-50 cursor-move select-none flex flex-col items-center gap-2"
+    [class.hover:scale-110]="!isDragging"
+    [class.active:scale-95]="!isDragging"
+    [class.transition-transform]="!isDragging"
+    [style.left.px]="position.left > 0 ? position.left : undefined"
+    [style.bottom.px]="position.bottom > 0 ? position.bottom : undefined"
+    [style.right]="position.left === 0 && position.bottom === 0 ? '24px' : undefined"
+    [style.bottom]="position.left === 0 && position.bottom === 0 ? '24px' : undefined"
+    (mousedown)="onMouseDown($event)"
+    (click)="!isDragging && openChatbox()"
+  >
+    <div class="relative">
+      <div class="h-16 w-16 sm:h-20 sm:w-20 rounded-full border-2 border-cyan-500/50 shadow-xl shadow-cyan-500/30 transition-all hover:border-cyan-400 hover:shadow-cyan-500/50 hover:scale-110 bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center text-2xl animate-pulse">
+        🤖
+      </div>
+      <div
+        class="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 text-sm font-bold text-white shadow-lg pointer-events-none animate-bounce"
+      >
+        💬
+      </div>
+    </div>
+    <span class="text-xs font-semibold text-cyan-400 whitespace-nowrap pointer-events-none">
+      AI Chat
+    </span>
+  </div>
+}

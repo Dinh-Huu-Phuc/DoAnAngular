@@ -1,0 +1,325 @@
+<div class="fixed inset-0 z-50 flex bg-slate-950">
+  <!-- Conversations Sidebar -->
+  <div class="hidden w-64 border-r border-slate-800 bg-slate-900/80 lg:block">
+    <div class="flex h-full flex-col">
+      <!-- Header -->
+      <div class="border-b border-slate-800 p-4">
+        <button
+          (click)="createNewConversation()"
+          [disabled]="isLoading()"
+          class="w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 transition-all hover:from-cyan-600 hover:to-blue-700 hover:shadow-cyan-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          ➕ Cuộc trò chuyện mới
+        </button>
+      </div>
+
+      <!-- Conversations List -->
+      <div class="flex-1 overflow-y-auto p-2">
+        <h3 class="mb-2 px-2 text-xs font-semibold uppercase text-slate-400">
+          Cuộc trò chuyện ({{ conversations().length }})
+        </h3>
+        <div class="space-y-1">
+          @for (conv of conversations(); track conv.id) {
+            <div
+              (click)="selectConversation(conv.id)"
+              [class.bg-cyan-500/20]="currentConversationId() === conv.id"
+              [class.border-cyan-500/50]="currentConversationId() === conv.id"
+              class="group relative flex cursor-pointer items-start gap-2 rounded-lg border border-slate-700 bg-slate-800/50 p-3 transition-all hover:bg-slate-800 hover:border-slate-600"
+            >
+              <div class="flex-1 min-w-0">
+                <p class="truncate text-sm font-medium text-slate-200">
+                  {{ conv.title || 'Cuộc trò chuyện' }}
+                </p>
+                <p class="mt-1 text-xs text-slate-400">
+                  {{ conv.updatedAt | date: 'dd/MM/yyyy HH:mm' }}
+                </p>
+              </div>
+              <button
+                (click)="deleteConversation(conv.id, $event)"
+                [disabled]="isLoading()"
+                class="flex h-6 w-6 shrink-0 items-center justify-center rounded text-slate-400 opacity-0 transition-all hover:bg-rose-500/20 hover:text-rose-400 group-hover:opacity-100 disabled:opacity-50"
+                aria-label="Xóa cuộc trò chuyện"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="h-4 w-4"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          } @empty {
+            <div class="rounded-lg border border-slate-700 bg-slate-800/30 p-4 text-center">
+              <p class="text-xs text-slate-400">
+                Chưa có cuộc trò chuyện nào
+              </p>
+              <p class="mt-1 text-xs text-slate-500">
+                Tạo cuộc trò chuyện mới để bắt đầu
+              </p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Chat Area -->
+  <div class="flex flex-1 flex-col">
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/50 px-4 py-3 sm:px-6">
+      <div class="flex-1">
+        <h1 class="text-xl font-bold text-cyan-400 sm:text-2xl">Chat với AI Hóa học</h1>
+        <p class="mt-1 text-xs text-slate-400">
+          {{ getCurrentConversationTitle() }}
+        </p>
+      </div>
+      <!-- Mobile: Button tạo conversation mới -->
+      <button
+        (click)="createNewConversation()"
+        [disabled]="isLoading()"
+        class="lg:hidden ml-2 flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 transition-colors hover:bg-cyan-500/30 disabled:opacity-50"
+        aria-label="Tạo cuộc trò chuyện mới"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="h-5 w-5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+      </button>
+      <button
+        (click)="closeChatbox()"
+        class="flex h-10 w-10 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-800 hover:text-rose-400"
+        aria-label="Đóng chatbox"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="h-6 w-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="flex-1 overflow-y-auto px-4 py-4 sm:px-6">
+      <div class="mx-auto max-w-4xl space-y-4">
+        @for (message of messages(); track message.id) {
+          <div
+            [class]="
+              message.role === 'user'
+                ? 'ml-auto flex max-w-[80%] justify-end'
+                : 'mr-auto flex max-w-[80%] justify-start'
+            "
+          >
+            <div
+              [class]="
+                message.role === 'user'
+                  ? 'rounded-2xl rounded-tr-sm bg-gradient-to-br from-cyan-500 to-blue-600 px-4 py-2 text-white shadow-lg'
+                  : 'rounded-2xl rounded-tl-sm bg-slate-800 px-4 py-2 text-slate-100 shadow-lg'
+              "
+            >
+              <div 
+                class="text-sm leading-relaxed sm:text-base prose prose-invert max-w-none"
+                [innerHTML]="message.content | katex"
+              ></div>
+              <p
+                class="mt-1 text-xs opacity-70"
+                [class.text-right]="message.role === 'user'"
+              >
+                {{ message.timestamp | date: 'HH:mm' }}
+              </p>
+            </div>
+          </div>
+        }
+
+        @if (isLoading()) {
+          <div class="mr-auto flex max-w-[80%] justify-start">
+            <div class="rounded-2xl rounded-tl-sm bg-slate-800 px-4 py-2 text-slate-100 shadow-lg">
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 animate-bounce rounded-full bg-cyan-400"></div>
+                <div class="h-2 w-2 animate-bounce rounded-full bg-cyan-400" style="animation-delay: 0.2s"></div>
+                <div class="h-2 w-2 animate-bounce rounded-full bg-cyan-400" style="animation-delay: 0.4s"></div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="border-t border-slate-800 bg-slate-900/50 px-4 py-4 sm:px-6">
+      <div class="mx-auto max-w-4xl">
+        @if (errorMessage()) {
+          <div class="mb-3 rounded-lg border border-rose-500/50 bg-rose-500/10 p-3 text-sm text-rose-300">
+            <div class="flex items-start gap-2">
+              <span class="text-lg">⚠️</span>
+              <div class="flex-1">
+                <p class="font-semibold">Lỗi</p>
+                <p>{{ errorMessage() }}</p>
+                <button
+                  (click)="errorMessage.set('')"
+                  class="mt-2 text-xs text-rose-400 hover:text-rose-300 underline"
+                >
+                  Đóng
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+        <!-- Image Preview -->
+        @if (imagePreview()) {
+          <div class="mb-3 rounded-lg border border-cyan-500/50 bg-cyan-500/10 p-3">
+            <div class="flex items-start gap-3">
+              <img 
+                [src]="imagePreview()" 
+                alt="Preview" 
+                class="h-20 w-20 rounded-lg object-cover border border-slate-600"
+              />
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-cyan-300">Hình ảnh đã chọn</p>
+                <p class="text-xs text-cyan-400/80 mt-1">{{ selectedImage()?.name }}</p>
+                <p class="text-xs text-cyan-400/60 mt-1">{{ (selectedImage()?.size || 0) / 1024 / 1024 | number:'1.1-1' }} MB</p>
+              </div>
+              <button
+                type="button"
+                (click)="removeSelectedImage()"
+                class="flex h-8 w-8 items-center justify-center rounded-lg text-cyan-400 hover:bg-cyan-500/20 hover:text-cyan-300 transition-colors"
+                aria-label="Xóa hình ảnh"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        }
+
+        <form [formGroup]="form" (ngSubmit)="sendMessage()" class="flex gap-3">
+          <!-- Hidden file input -->
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            (change)="onImageSelected($event)"
+            class="hidden"
+          />
+          
+          <!-- Image upload button -->
+          <button
+            type="button"
+            (click)="triggerImageUpload()"
+            [disabled]="isLoading()"
+            class="flex h-12 w-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-400 transition-all hover:border-cyan-500 hover:bg-slate-700 hover:text-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Tải lên hình ảnh"
+            title="Tải lên hình ảnh bài tập để AI giải (Beta - nếu lỗi sẽ chuyển về chat text)"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+              <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+              <circle cx="9" cy="9" r="2"/>
+              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+            </svg>
+          </button>
+
+          <input
+            type="text"
+            formControlName="message"
+            placeholder="Nhập câu hỏi của bạn về hóa học hoặc tải hình ảnh bài tập..."
+            class="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20"
+            [disabled]="isLoading()"
+          />
+          <button
+            type="submit"
+            [disabled]="form.invalid || isLoading()"
+            class="rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-cyan-500/30 transition-all hover:from-cyan-600 hover:to-blue-700 hover:shadow-cyan-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Gửi
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Tools -->
+  <div class="hidden w-64 border-l border-slate-800 bg-slate-900/80 lg:block">
+    <div class="p-4">
+      <h2 class="mb-4 text-lg font-semibold text-slate-200">Công cụ</h2>
+      
+      <div class="space-y-3">
+        <div class="rounded-lg border border-green-500/30 bg-green-500/10 p-3 text-xs text-green-300">
+          <p class="font-semibold">💾 Tự động lưu</p>
+          <p class="mt-1 text-green-400/80">
+            Lịch sử chat được tự động lưu vào database khi bạn gửi tin nhắn.
+          </p>
+        </div>
+
+        <button
+          (click)="syncChatHistory()"
+          [disabled]="isLoading()"
+          class="w-full rounded-lg border border-blue-500/50 bg-blue-500/10 px-4 py-3 text-sm font-medium text-blue-300 transition-all hover:bg-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          🔄 Đồng bộ từ DB
+        </button>
+
+        <button
+          (click)="testApiConnection()"
+          [disabled]="isLoading()"
+          class="w-full rounded-lg border border-green-500/50 bg-green-500/10 px-4 py-3 text-sm font-medium text-green-300 transition-all hover:bg-green-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          🔧 Test Chat API
+        </button>
+
+        <button
+          (click)="testImageApi()"
+          [disabled]="isLoading()"
+          class="w-full rounded-lg border border-purple-500/50 bg-purple-500/10 px-4 py-3 text-sm font-medium text-purple-300 transition-all hover:bg-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          📷 Test Image API
+        </button>
+      </div>
+
+      <div class="mt-6 rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+        <h3 class="mb-2 text-sm font-semibold text-slate-300">Thông tin</h3>
+        <p class="text-xs text-slate-400">
+          Số tin nhắn: <span class="font-semibold text-cyan-400">{{ messages().length }}</span>
+        </p>
+        <p class="mt-1 text-xs text-slate-400">
+          Cuộc trò chuyện: <span class="font-semibold text-cyan-400">{{ conversations().length }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Tools (Bottom Sheet) -->
+  <div class="fixed bottom-0 left-0 right-0 border-t border-slate-800 bg-slate-900/95 lg:hidden">
+    <div class="flex gap-2 p-3">
+      <button
+        (click)="createNewConversation()"
+        [disabled]="isLoading()"
+        class="flex-1 rounded-lg border border-cyan-500/50 bg-cyan-500/10 px-3 py-2 text-xs font-medium text-cyan-300 disabled:opacity-50"
+      >
+        ➕ Mới
+      </button>
+      <button
+        (click)="syncChatHistory()"
+        [disabled]="isLoading()"
+        class="flex-1 rounded-lg border border-blue-500/50 bg-blue-500/10 px-3 py-2 text-xs font-medium text-blue-300 disabled:opacity-50"
+      >
+        🔄 Đồng bộ
+      </button>
+    </div>
+  </div>
+</div>
+

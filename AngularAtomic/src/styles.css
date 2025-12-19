@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+/* KaTeX styling for dark mode */
+.katex {
+  color: inherit;
+}
+
+.katex .base {
+  color: inherit;
+}
+
+/* Đảm bảo công thức toán học có màu phù hợp trong chatbox */
+.bg-slate-800 .katex,
+.bg-gradient-to-br .katex {
+  color: inherit;
+}
+
+/* Công thức block math */
+.katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Công thức inline */
+.katex {
+  font-size: 1.1em;
+}
+
+/* Simple fade-in animation for periodic table tiles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-fade-in {
+  animation: fadeInUp 0.45s ease both;
+}

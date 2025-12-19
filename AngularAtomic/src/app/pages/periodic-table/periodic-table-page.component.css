@@ -1,0 +1,382 @@
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+/* Periodic Table Grid - Clean Style */
+.periodic-table-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 2px;
+  padding: 10px;
+  background-color: #1e293b; /* slate-800 */
+  border-radius: 12px;
+  border: 1px solid #334155; /* slate-700 */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Element Cell - Clean rectangular style like the white periodic table */
+.element-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #475569; /* slate-600 */
+  border-radius: 4px;
+  background-color: #334155; /* slate-700 */
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 35px;
+  min-width: 35px;
+  /* Giảm kích thước để vừa container */
+}
+
+.element-cell:hover {
+  border-color: #06b6d4; /* cyan-500 */
+  background-color: #0f172a; /* slate-900 */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.element-cell.selected {
+  border-color: #06b6d4; /* cyan-500 */
+  border-width: 2px;
+  background-color: #0f172a; /* slate-900 */
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.5);
+}
+
+/* Element text styling - exactly like the white periodic table */
+.atomic-number {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-size: 8px;
+  font-weight: 600;
+  color: #f8fafc; /* slate-50 - màu trắng */
+  line-height: 1;
+}
+
+.element-symbol {
+  font-size: 12px;
+  font-weight: 900;
+  color: #f8fafc; /* slate-50 */
+  line-height: 1;
+  margin: 2px 0;
+  flex-shrink: 0;
+}
+
+.element-name {
+  font-size: 7px;
+  font-weight: 500;
+  color: #cbd5e1; /* slate-300 */
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 1px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.atomic-mass {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+  font-size: 6px;
+  font-weight: 400;
+  color: #f8fafc; /* slate-50 - màu trắng */
+  line-height: 1;
+}
+
+/* Category-based colors - Dark mode versions of the white periodic table colors */
+.element-alkali {
+  background-color: #7c2d12; /* red-900 */
+  border-color: #dc2626; /* red-600 */
+}
+
+.element-alkaline {
+  background-color: #365314; /* green-900 */
+  border-color: #16a34a; /* green-600 */
+}
+
+.element-transition {
+  background-color: #164e63; /* cyan-900 */
+  border-color: #0891b2; /* cyan-600 */
+}
+
+.element-noble {
+  background-color: #581c87; /* purple-900 */
+  border-color: #9333ea; /* purple-600 */
+}
+
+.element-halogen {
+  background-color: #831843; /* pink-900 */
+  border-color: #db2777; /* pink-600 */
+}
+
+.element-nonmetal {
+  background-color: #134e4a; /* teal-900 */
+  border-color: #0d9488; /* teal-600 */
+}
+
+.element-metalloid {
+  background-color: #422006; /* amber-900 */
+  border-color: #d97706; /* amber-600 */
+}
+
+.element-lanthanide {
+  background-color: #4c1d95; /* violet-900 */
+  border-color: #7c3aed; /* violet-600 */
+}
+
+.element-actinide {
+  background-color: #7f1d1d; /* red-900 */
+  border-color: #dc2626; /* red-600 */
+}
+
+/* Hover effects for categories */
+.element-alkali:hover {
+  background-color: #991b1b; /* red-800 */
+  border-color: #ef4444; /* red-500 */
+}
+
+.element-alkaline:hover {
+  background-color: #166534; /* green-800 */
+  border-color: #22c55e; /* green-500 */
+}
+
+.element-transition:hover {
+  background-color: #155e75; /* cyan-800 */
+  border-color: #06b6d4; /* cyan-500 */
+}
+
+.element-noble:hover {
+  background-color: #6b21a8; /* purple-800 */
+  border-color: #a855f7; /* purple-500 */
+}
+
+.element-halogen:hover {
+  background-color: #9d174d; /* pink-800 */
+  border-color: #ec4899; /* pink-500 */
+}
+
+.element-nonmetal:hover {
+  background-color: #115e59; /* teal-800 */
+  border-color: #14b8a6; /* teal-500 */
+}
+
+.element-metalloid:hover {
+  background-color: #451a03; /* amber-800 */
+  border-color: #f59e0b; /* amber-500 */
+}
+
+.element-lanthanide:hover {
+  background-color: #5b21b6; /* violet-800 */
+  border-color: #8b5cf6; /* violet-500 */
+}
+
+.element-actinide:hover {
+  background-color: #991b1b; /* red-800 */
+  border-color: #ef4444; /* red-500 */
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .periodic-table-grid {
+    gap: 1px;
+    padding: 8px;
+  }
+  
+  .element-cell {
+    padding: 2px;
+    min-height: 28px;
+    min-width: 28px;
+  }
+  
+  .element-symbol {
+    font-size: 10px;
+    margin: 1px 0;
+  }
+  
+  .element-name {
+    font-size: 6px;
+  }
+  
+  .atomic-number {
+    font-size: 7px;
+  }
+  
+  .atomic-mass {
+    font-size: 5px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .periodic-table-grid {
+    gap: 2px;
+    padding: 10px;
+  }
+  
+  .element-cell {
+    padding: 3px;
+    min-height: 32px;
+    min-width: 32px;
+  }
+  
+  .element-symbol {
+    font-size: 11px;
+    margin: 2px 0;
+  }
+  
+  .element-name {
+    font-size: 7px;
+  }
+  
+  .atomic-number {
+    font-size: 8px;
+  }
+  
+  .atomic-mass {
+    font-size: 6px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .periodic-table-grid {
+    gap: 2px;
+    padding: 12px;
+  }
+  
+  .element-cell {
+    padding: 3px;
+    min-height: 35px;
+    min-width: 35px;
+  }
+  
+  .element-symbol {
+    font-size: 12px;
+    margin: 2px 0;
+  }
+  
+  .element-name {
+    font-size: 7px;
+  }
+  
+  .atomic-number {
+    font-size: 8px;
+  }
+  
+  .atomic-mass {
+    font-size: 6px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .periodic-table-grid {
+    gap: 3px;
+    padding: 14px;
+  }
+  
+  .element-cell {
+    padding: 4px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  
+  .element-symbol {
+    font-size: 14px;
+    margin: 3px 0;
+  }
+  
+  .element-name {
+    font-size: 8px;
+  }
+  
+  .atomic-number {
+    font-size: 9px;
+  }
+  
+  .atomic-mass {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .periodic-table-grid {
+    gap: 4px;
+    padding: 16px;
+  }
+  
+  .element-cell {
+    padding: 5px;
+    min-height: 45px;
+    min-width: 45px;
+  }
+  
+  .element-symbol {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+  
+  .element-name {
+    font-size: 9px;
+  }
+  
+  .atomic-number {
+    font-size: 10px;
+  }
+  
+  .atomic-mass {
+    font-size: 8px;
+  }
+}

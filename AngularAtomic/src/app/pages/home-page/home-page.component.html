@@ -1,0 +1,265 @@
+<section class="relative min-h-screen space-y-16">
+  <!-- Background Effects -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-400/20 via-sky-400/10 to-transparent blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-tr from-violet-400/20 via-purple-400/10 to-transparent blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-400/10 via-cyan-400/10 to-sky-400/10 blur-3xl"></div>
+  </div>
+
+  <!-- Hero -->
+  <div class="relative z-10 grid gap-12 lg:grid-cols-[minmax(0,_1.2fr)_minmax(0,_1fr)] lg:items-center lg:gap-16">
+    <div class="space-y-8">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-gradient-to-r from-cyan-500/10 via-sky-500/10 to-indigo-500/10 px-4 py-2 text-sm font-medium text-cyan-300 backdrop-blur-sm">
+        <div class="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-400 animate-pulse"></div>
+        Nền tảng học Hóa học 3D
+      </div>
+
+      <!-- Main Heading -->
+      <div class="space-y-6">
+        <h1 class="text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl xl:text-7xl">
+          Khám phá
+          <span class="block bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
+            Hóa học 3D
+          </span>
+          <span class="block text-3xl font-medium text-slate-300 sm:text-4xl lg:text-5xl">
+            tương tác
+          </span>
+        </h1>
+        <p class="max-w-2xl text-lg text-slate-300 leading-relaxed">
+          Trải nghiệm học Hóa học hoàn toàn mới với mô hình 3D tương tác, thí nghiệm mô phỏng an toàn và bảng tuần hoàn trực quan. 
+          <span class="text-cyan-300 font-medium">Phù hợp cho mọi cấp độ từ THCS đến Đại học.</span>
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
+        <a
+          routerLink="/login"
+          class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-sky-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-cyan-500/30 transition-all hover:from-cyan-400 hover:to-sky-500 hover:shadow-cyan-500/40 hover:-translate-y-0.5"
+        >
+          <span>🚀</span>
+          Bắt đầu học ngay
+          <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+        <a
+          routerLink="/molecules-3d"
+          class="group inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-slate-700 bg-slate-900/50 px-8 py-4 text-base font-medium text-slate-100 backdrop-blur-sm transition-all hover:border-cyan-400 hover:bg-slate-800/50 hover:text-cyan-300 hover:-translate-y-0.5"
+        >
+          <span>⚛️</span>
+          Xem demo 3D
+        </a>
+      </div>
+
+      <!-- Features -->
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="flex items-center gap-3 rounded-xl border border-slate-800/50 bg-slate-900/30 p-4 backdrop-blur-sm">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20">
+            <span class="text-lg">🧬</span>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-200">Mô hình 3D</p>
+            <p class="text-xs text-slate-400">Tương tác trực quan</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl border border-slate-800/50 bg-slate-900/30 p-4 backdrop-blur-sm">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-500/20">
+            <span class="text-lg">🧪</span>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-200">Thí nghiệm ảo</p>
+            <p class="text-xs text-slate-400">An toàn & hiệu quả</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl border border-slate-800/50 bg-slate-900/30 p-4 backdrop-blur-sm">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/20">
+            <span class="text-lg">📊</span>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-200">Bảng tuần hoàn</p>
+            <p class="text-xs text-slate-400">Tra cứu nhanh chóng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Viewer -->
+    <div class="relative">
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/10 via-sky-500/5 to-indigo-500/10 blur-2xl"></div>
+      <div class="relative rounded-3xl border border-slate-800/50 bg-slate-900/30 p-2 backdrop-blur-sm">
+        <app-molecule-viewer></app-molecule-viewer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="relative z-10 space-y-12">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl font-bold text-slate-50 sm:text-4xl">
+        Tính năng nổi bật
+      </h2>
+      <p class="max-w-2xl mx-auto text-lg text-slate-300">
+        Khám phá các công cụ học tập hiện đại được thiết kế đặc biệt cho môn Hóa học
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/40 p-6 backdrop-blur-sm transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+        <div class="relative space-y-4">
+          <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-sky-500/20 text-2xl">
+            🧪
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-50 group-hover:text-cyan-300 transition-colors">
+              Bảng tuần hoàn tương tác
+            </h3>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              Tra cứu nhanh tính chất, cấu hình electron, mức oxi hóa và nhiều thông tin khác với giao diện trực quan.
+            </p>
+          </div>
+          <a routerLink="/periodic-table" class="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+            Khám phá ngay
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/40 p-6 backdrop-blur-sm transition-all hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+        <div class="relative space-y-4">
+          <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500/20 to-indigo-500/20 text-2xl">
+            ⚛️
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-50 group-hover:text-sky-300 transition-colors">
+              Mô hình nguyên tử & phân tử
+            </h3>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              Quan sát electron quay quanh hạt nhân, góc liên kết, dạng hình học phân tử trong không gian 3D.
+            </p>
+          </div>
+          <a routerLink="/molecules-3d" class="inline-flex items-center gap-2 text-sm font-medium text-sky-400 hover:text-sky-300 transition-colors">
+            Xem mô hình 3D
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/40 p-6 backdrop-blur-sm transition-all hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/20 hover:-translate-y-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+        <div class="relative space-y-4">
+          <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 text-2xl">
+            🔥
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-50 group-hover:text-violet-300 transition-colors">
+              Thí nghiệm mô phỏng
+            </h3>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              Mô phỏng phản ứng, thay đổi nồng độ, nhiệt độ và quan sát kết quả một cách an toàn và hiệu quả.
+            </p>
+          </div>
+          <a routerLink="/simulations" class="inline-flex items-center gap-2 text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors">
+            Thử nghiệm ngay
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-slate-800/50 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/40 p-6 backdrop-blur-sm transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+        <div class="relative space-y-4">
+          <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-2xl">
+            📊
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-50 group-hover:text-emerald-300 transition-colors">
+              Cân bằng phương trình
+            </h3>
+            <p class="mt-2 text-slate-400 leading-relaxed">
+              Công cụ AI thông minh giúp cân bằng phương trình hóa học tự động với giải thích chi tiết từng bước.
+            </p>
+          </div>
+          <a routerLink="/balance-equation" class="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+            Thử ngay
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="relative z-10 rounded-3xl border border-slate-800/50 bg-gradient-to-br from-slate-900/60 via-slate-900/40 to-slate-900/20 p-8 backdrop-blur-sm lg:p-12">
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-slate-50 sm:text-4xl">
+            Tại sao chọn
+            <span class="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
+              Hóa học 3D?
+            </span>
+          </h2>
+          <p class="text-lg text-slate-300 leading-relaxed">
+            Nền tảng học tập hiện đại với công nghệ 3D tiên tiến, giúp học sinh hiểu sâu và nhớ lâu kiến thức Hóa học.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="space-y-2">
+            <p class="text-3xl font-bold text-cyan-400">100+</p>
+            <p class="text-sm text-slate-400">Mô hình phân tử 3D</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-3xl font-bold text-sky-400">50+</p>
+            <p class="text-sm text-slate-400">Thí nghiệm mô phỏng</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-3xl font-bold text-violet-400">118</p>
+            <p class="text-sm text-slate-400">Nguyên tố hóa học</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-3xl font-bold text-emerald-400">24/7</p>
+            <p class="text-sm text-slate-400">Hỗ trợ AI thông minh</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-sky-500/10 to-indigo-500/20 blur-2xl"></div>
+        <div class="relative rounded-2xl border border-slate-800/50 bg-slate-900/50 p-6 backdrop-blur-sm">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></div>
+              <p class="text-sm text-slate-300">Giao diện trực quan, dễ sử dụng</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-3 w-3 rounded-full bg-cyan-400 animate-pulse"></div>
+              <p class="text-sm text-slate-300">Tương tác 3D mượt mà, chân thực</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-3 w-3 rounded-full bg-sky-400 animate-pulse"></div>
+              <p class="text-sm text-slate-300">Phù hợp mọi thiết bị, mọi lúc mọi nơi</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-3 w-3 rounded-full bg-violet-400 animate-pulse"></div>
+              <p class="text-sm text-slate-300">Cập nhật nội dung liên tục</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+

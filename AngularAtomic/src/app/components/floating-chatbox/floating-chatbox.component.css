@@ -1,0 +1,10 @@
+/* Floating chatbox có thể di chuyển được */
+:host {
+  display: block;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  cursor: move;
+}
+
