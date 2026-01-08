@@ -1,23 +1,29 @@
-import { Component, inject, signal, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, OnInit, OnDestroy, AfterViewInit, ElementRef, ViewChild, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MarkdownKatexPipe } from '../../pipes/markdown-katex.pipe';
 import { ChatService, ChatMessage, ChatHistory, Conversation } from '../../services/chat.service';
 import { AuthService } from '../../services/auth.service';
-import { KatexPipe } from '../../pipes/katex.pipe';
 import { Subject, takeUntil } from 'rxjs';
+
+declare var anime: any;
 
 @Component({
   selector: 'app-chatbox-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, KatexPipe],
-  templateUrl: './chatbox-page.component.html'
+  imports: [CommonModule, ReactiveFormsModule, MarkdownKatexPipe],
+  templateUrl: './chatbox-page.component.html',
+  styleUrls: ['./chatbox-animations.css']
 })
-export class ChatboxPageComponent implements OnInit, OnDestroy {
+export class ChatboxPageComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly router = inject(Router);
   private readonly fb = inject(FormBuilder);
   private readonly chatService = inject(ChatService);
   private readonly auth = inject(AuthService);
+  private readonly platformId = inject(PLATFORM_ID);
+  
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   private readonly destroy$ = new Subject<void>();
 
   messages = signal<ChatMessage[]>([]);
@@ -27,6 +33,10 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
   errorMessage = signal<string>('');
   selectedImage = signal<File | null>(null);
   imagePreview = signal<string | null>(null);
+  
+  // New properties for widget behavior
+  isChatExpanded = signal(false);
+  hasNewMessage = signal(false);
 
   form = this.fb.nonNullable.group({
     message: ['', [Validators.required, Validators.minLength(1)]]
@@ -43,13 +53,120 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Load danh sách conversations
-    this.loadConversations();
+    // Khởi tạo với welcome message
+    this.messages.set([{
+      id: '1',
+      role: 'assistant',
+      content: 'Xin chào! Tôi là trợ lý AI về hóa học. Bạn có thể hỏi tôi bất kỳ câu hỏi nào về hóa học!',
+      timestamp: new Date()
+    }]);
+
+    // Không auto-load conversations, chỉ load khi user mở chat
   }
 
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initializeAnimations();
+    }
+  }
+
+  private initializeAnimations() {
+    if (typeof anime !== 'undefined') {
+      // Animate chatbox entrance
+      anime({
+        targets: '.animate-scale-in',
+        scale: [0.8, 1],
+        opacity: [0, 1],
+        duration: 800,
+        easing: 'easeOutElastic(1, .8)'
+      });
+
+      // Animate sidebar
+      anime({
+        targets: '.animate-slide-in-left',
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        duration: 600,
+        delay: 200,
+        easing: 'easeOutQuart'
+      });
+
+      // Animate right sidebar
+      anime({
+        targets: '.animate-slide-in-right',
+        translateX: [50, 0],
+        opacity: [0, 1],
+        duration: 600,
+        delay: 400,
+        easing: 'easeOutQuart'
+      });
+
+      // Animate conversation items
+      anime({
+        targets: '.animate-fade-in-up',
+        translateY: [20, 0],
+        opacity: [0, 1],
+        duration: 400,
+        delay: anime.stagger(100, {start: 600}),
+        easing: 'easeOutQuart'
+      });
+    }
+  }
+
+  private animateNewMessage(isUser: boolean = false) {
+    if (isPlatformBrowser(this.platformId) && typeof anime !== 'undefined') {
+      setTimeout(() => {
+        const selector = isUser ? '.animate-slide-in-right:last-child' : '.animate-slide-in-left:last-child';
+        anime({
+          targets: selector,
+          translateY: [30, 0],
+          translateX: isUser ? [30, 0] : [-30, 0],
+          opacity: [0, 1],
+          scale: [0.9, 1],
+          duration: 500,
+          easing: 'easeOutBack(1.7)'
+        });
+      }, 50);
+    }
+  }
+
+  private animateButtonClick(target: string) {
+    if (isPlatformBrowser(this.platformId) && typeof anime !== 'undefined') {
+      anime({
+        targets: target,
+        scale: [1, 0.95, 1],
+        duration: 200,
+        easing: 'easeInOutQuad'
+      });
+    }
+  }
+
+  private animateError() {
+    if (isPlatformBrowser(this.platformId) && typeof anime !== 'undefined') {
+      anime({
+        targets: '.animate-shake',
+        translateX: [0, -10, 10, -10, 10, 0],
+        duration: 500,
+        easing: 'easeInOutQuad'
+      });
+    }
+  }
+
+  private animateTyping() {
+    if (isPlatformBrowser(this.platformId) && typeof anime !== 'undefined') {
+      anime({
+        targets: '.animate-fade-in:last-child',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 300,
+        easing: 'easeOutQuart'
+      });
+    }
   }
 
   loadConversations() {
@@ -178,6 +295,7 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
   }
 
   createNewConversation() {
+    this.animateButtonClick('button'); // Animate button click
     const user = this.auth.currentUser();
     if (!user || !user.id) return;
 
@@ -406,8 +524,10 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
     };
 
     this.messages.update(msgs => [...msgs, userMsg]);
+    this.animateNewMessage(true); // Animate user message
     this.form.reset();
     this.isLoading.set(true);
+    this.animateTyping(); // Animate typing indicator
     this.errorMessage.set('');
 
     // Gọi API với userId, conversationId và hình ảnh (tự động lưu vào DB)
@@ -427,6 +547,7 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
               timestamp: new Date()
             };
             this.messages.update(msgs => [...msgs, assistantMsg]);
+            this.animateNewMessage(false); // Animate AI message
             this.isLoading.set(false);
             this.errorMessage.set('');
             
@@ -469,6 +590,7 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
           } else {
             const errorMsg = err.error?.message || err.message || 'Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại.';
             this.errorMessage.set(errorMsg);
+            this.animateError(); // Animate error message
           }
           
           // Xóa tin nhắn user nếu lỗi (để user có thể thử lại)
@@ -562,21 +684,6 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
     console.warn('Available keys:', Object.keys(response));
     console.warn('Response values:', Object.values(response));
     return null;
-  }
-
-  closeChatbox() {
-    this.router.navigate(['/']);
-  }
-
-  clearChat() {
-    if (confirm('Bạn có chắc muốn xóa toàn bộ lịch sử trò chuyện?')) {
-      this.messages.set([{
-        id: '1',
-        role: 'assistant',
-        content: 'Lịch sử đã được xóa. Bạn có thể bắt đầu cuộc trò chuyện mới!',
-        timestamp: new Date()
-      }]);
-    }
   }
 
   // Xử lý chọn file hình ảnh
@@ -707,6 +814,60 @@ export class ChatboxPageComponent implements OnInit, OnDestroy {
           });
       }
     }, 'image/png');
+  }
+
+  // Widget behavior methods
+  toggleChat() {
+    this.isChatExpanded.update(expanded => !expanded);
+    this.animateButtonClick('.chat-widget-button');
+    
+    if (this.isChatExpanded()) {
+      // Auto-load conversations when opening
+      this.loadConversations();
+      // Reset new message indicator
+      this.hasNewMessage.set(false);
+    }
+  }
+
+  // Auto-expand when receiving new message (if minimized)
+  private notifyNewMessage() {
+    if (!this.isChatExpanded()) {
+      this.hasNewMessage.set(true);
+      // Optional: Auto-expand after delay
+      setTimeout(() => {
+        if (!this.isChatExpanded()) {
+          this.toggleChat();
+        }
+      }, 2000);
+    }
+  }
+
+  // Method to send sample messages from quick start buttons
+  sendSampleMessage(message: string) {
+    this.form.patchValue({ message });
+    this.sendMessage();
+  }
+
+  // Method to clear all chat messages
+  clearChat() {
+    if (confirm('Bạn có chắc muốn xóa toàn bộ cuộc trò chuyện?')) {
+      this.messages.set([]);
+      this.currentConversationId.set(null);
+      
+      // Clear from localStorage if available
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.removeItem('chat_messages');
+        localStorage.removeItem('current_conversation_id');
+      }
+      
+      // Animate clear action
+      this.animateButtonClick('button');
+    }
+  }
+
+  // Override closeChatbox to navigate back to home
+  closeChatbox() {
+    this.router.navigate(['/']);
   }
 }
 

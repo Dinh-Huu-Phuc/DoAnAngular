@@ -11,6 +11,10 @@ import { AboutPageComponent } from './pages/about/about-page.component';
 import { AccountPageComponent } from './pages/account/account-page.component';
 import { ChatboxPageComponent } from './pages/chatbox/chatbox-page.component';
 import { ExperimentHistoryPageComponent } from './pages/experiment-history/experiment-history-page.component';
+import { BackendTestComponent } from './components/backend-test/backend-test.component';
+import { RegisterTestComponent } from './components/register-test/register-test.component';
+import { RoutingTestComponent } from './components/routing-test/routing-test.component';
+import { LatexTestComponent } from './components/latex-test/latex-test.component';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -64,6 +68,22 @@ export const routes: Routes = [
     path: 'experiment-history',
     component: ExperimentHistoryPageComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'backend-test',
+    component: BackendTestComponent
+  },
+  {
+    path: 'register-test',
+    component: RegisterTestComponent
+  },
+  {
+    path: 'routing-test',
+    component: RoutingTestComponent
+  },
+  {
+    path: 'latex-test',
+    component: LatexTestComponent
   },
   {
     path: '**',

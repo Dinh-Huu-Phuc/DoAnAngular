@@ -43,6 +43,82 @@
   <div *ngIf="selectedAtomElement" class="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
     <app-atom-viewer [element]="selectedAtomElement"></app-atom-viewer>
   </div>
+  <div class="mt-4">
+    <label class="block text-xs font-medium text-slate-200 mb-2">Mô phỏng 3D (xoay bằng chuột hoặc dùng camera để điều khiển)</label>
+    <div class="flex items-center gap-3 mb-2">
+      <button (click)="toggleCamera()" class="inline-flex items-center rounded-xl bg-cyan-600 hover:bg-cyan-500 px-3 py-1 text-xs text-white">
+        {{ cameraStarted ? 'Tắt camera' : 'Bật camera' }}
+      </button>
+      <button (click)="resetScale()" class="inline-flex items-center rounded-xl bg-slate-700 hover:bg-slate-600 px-3 py-1 text-xs text-white">
+        Reset kích thước
+      </button>
+      <div class="flex items-center gap-2">
+        <label class="text-xs text-slate-300">Độ nhạy</label>
+        <input type="range" min="0.5" max="2.0" step="0.01" [(ngModel)]="sensitivity" class="w-36" />
+        <span class="text-xs text-cyan-300 ml-2">{{ sensitivity | number:'1.2-2' }}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button (click)="setSensitivityPreset('light')" class="inline-flex items-center rounded-md bg-slate-700 hover:bg-slate-600 px-2 py-1 text-xs text-white">Nhẹ</button>
+        <button (click)="setSensitivityPreset('medium')" class="inline-flex items-center rounded-md bg-slate-700 hover:bg-slate-600 px-2 py-1 text-xs text-white">Trung bình</button>
+        <button (click)="setSensitivityPreset('strong')" class="inline-flex items-center rounded-md bg-slate-700 hover:bg-slate-600 px-2 py-1 text-xs text-white">Mạnh</button>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 mb-2">
+      <label class="inline-flex items-center text-xs text-slate-400">
+        <input type="checkbox" (change)="togglePreview()" [checked]="showPreview" class="mr-2" /> Hiển thị camera
+      </label>
+      <label class="inline-flex items-center text-xs text-slate-400">
+        <input type="checkbox" (change)="alwaysShowPreview = !alwaysShowPreview" [checked]="alwaysShowPreview" class="mr-2" /> Luôn hiển thị preview
+      </label>
+      <label class="inline-flex items-center text-xs text-slate-400">
+        <input type="checkbox" (change)="showLandmarks = !showLandmarks" [checked]="showLandmarks" class="mr-2" /> Hiển thị landmarks (debug)
+      </label>
+      <label class="inline-flex items-center text-xs text-slate-400">
+        <input type="checkbox" (change)="showSkeleton = !showSkeleton" [checked]="showSkeleton" class="mr-2" /> Hiển thị khung xương
+      </label>
+      <div class="text-xs text-slate-400">
+        <span *ngIf="!cameraStarted">Camera: tắt — nhấn vào bật camera để dùng cử chỉ</span>
+        <span *ngIf="cameraStarted">Camera: đang bật — dùng bàn tay mở/khép để phóng to/thu nhỏ</span>
+      </div>
+    </div>
+
+    <div *ngIf="isBrowser; else ssrFallback" class="relative w-full h-96 rounded-b-xl overflow-hidden border-t border-slate-800">
+      <div #threeContainer class="absolute inset-0"></div>
+      <canvas #overlayCanvas class="absolute inset-0 pointer-events-none" *ngIf="showLandmarks || showSkeleton"></canvas>
+      <video #videoEl playsinline muted [hidden]="!showPreview" class="absolute bottom-2 right-2 w-40 h-28 rounded-md border border-slate-700"></video>
+    </div>
+
+    <ng-template #ssrFallback>
+      <div class="w-full h-96 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950">
+        <!-- simple static SVG placeholder representing nucleus and rings -->
+        <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="g" cx="50%" cy="40%">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+              <stop offset="60%" stop-color="#0369a1" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#071422" stop-opacity="0.2"/>
+            </radialGradient>
+          </defs>
+          <rect width="220" height="220" fill="none" />
+          <g transform="translate(110,110)">
+            <circle cx="0" cy="0" r="18" fill="url(#g)" />
+            <ellipse rx="60" ry="18" fill="none" stroke="#38bdf8" stroke-opacity="0.12" stroke-width="4" transform="rotate(18)"/>
+            <ellipse rx="78" ry="14" fill="none" stroke="#06b6d4" stroke-opacity="0.10" stroke-width="3" transform="rotate(-28)"/>
+            <ellipse rx="95" ry="10" fill="none" stroke="#0891b2" stroke-opacity="0.08" stroke-width="2" transform="rotate(42)"/>
+          </g>
+        </svg>
+      </div>
+    </ng-template>
+
+    <div class="mt-2 flex items-center justify-between">
+      <div class="text-xs text-slate-400">
+        <span *ngIf="cameraError" class="text-red-400">{{ cameraError }}</span>
+      </div>
+      <div class="text-xs text-slate-300">
+        Kích thước: <span class="font-medium text-cyan-300">{{ currentScale | number:'1.2-2' }}</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 

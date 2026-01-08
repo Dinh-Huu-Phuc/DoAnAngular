@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface ChatMessage {
   id: string;
@@ -55,7 +56,7 @@ export interface CreateConversationRequest {
 })
 export class ChatService {
   private readonly http = inject(HttpClient);
-  private readonly apiBase = 'https://localhost:7081';
+  private readonly apiBase = environment.apiUrl;
 
   /**
    * Chat với AI và tự động lưu vào DB

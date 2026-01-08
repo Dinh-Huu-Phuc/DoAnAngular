@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 // Interfaces for database operations
 export interface ExperimentData {
@@ -60,7 +61,7 @@ export interface SaveResultRequest {
 })
 export class ExperimentService {
   private readonly http = inject(HttpClient);
-  private readonly apiBase = 'https://localhost:7081';
+  private readonly apiBase = environment.apiUrl;
 
   /**
    * Save a custom experiment to database

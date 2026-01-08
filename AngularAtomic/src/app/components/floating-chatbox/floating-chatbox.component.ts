@@ -22,6 +22,7 @@ export class FloatingChatboxComponent implements OnInit, OnDestroy {
   position = { left: 0, bottom: 0 }; // 0 means use default (right: 24, bottom: 24)
   isDragging = false;
   dragOffset = { x: 0, y: 0 };
+  hasSeenWelcome = false; // New property for welcome message
 
   // Arrow functions để bind đúng context
   private onMouseMoveBound = (event: MouseEvent) => {
@@ -82,6 +83,9 @@ export class FloatingChatboxComponent implements OnInit, OnDestroy {
           this.position = { left: 0, bottom: 0 };
         }
       }
+      
+      // Check if user has seen welcome message
+      this.hasSeenWelcome = localStorage.getItem('chatbox_welcome_seen') === 'true';
     }
   }
 
@@ -98,9 +102,12 @@ export class FloatingChatboxComponent implements OnInit, OnDestroy {
 
   private updateVisibility() {
     const isOnChatboxPage = this.router.url === '/chatbox';
+    const isOnLoginPage = this.router.url === '/login';
+    const isOnRegisterPage = this.router.url === '/register';
+    const isLoggedIn = !!this.auth.currentUser();
     
-    // Hiển thị trên tất cả các trang trừ trang chatbox
-    this.isVisible = !isOnChatboxPage;
+    // Hiển thị khi: đã đăng nhập VÀ không ở trang chatbox/login/register
+    this.isVisible = isLoggedIn && !isOnChatboxPage && !isOnLoginPage && !isOnRegisterPage;
   }
 
   openChatbox() {
@@ -129,6 +136,17 @@ export class FloatingChatboxComponent implements OnInit, OnDestroy {
     // Thêm event listeners toàn cục
     document.addEventListener('mousemove', this.onMouseMoveBound);
     document.addEventListener('mouseup', this.onMouseUpBound);
+  }
+
+  dismissWelcome() {
+    this.hasSeenWelcome = true;
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('chatbox_welcome_seen', 'true');
+    }
+  }
+
+  closeChatbox() {
+    this.isVisible = false;
   }
 
 

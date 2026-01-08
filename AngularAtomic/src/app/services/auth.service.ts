@@ -2,6 +2,7 @@ import { inject, Injectable, signal, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common'; // 1. Import hàm kiểm tra môi trường
+import { environment } from '../../environments/environment';
 
 export interface LoginRequest {
   username: string;
@@ -40,7 +41,7 @@ export class AuthService {
   // 2. Inject PLATFORM_ID để biết đang chạy ở đâu (Server hay Browser)
   private readonly platformId = inject(PLATFORM_ID);
   
-  private readonly apiBase = 'https://localhost:7081';
+  private readonly apiBase = environment.apiUrl;
 
   readonly currentUser = signal<UserInfo | null>(null);
   readonly token = signal<string | null>(null);
