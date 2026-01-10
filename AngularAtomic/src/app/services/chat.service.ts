@@ -56,7 +56,7 @@ export interface CreateConversationRequest {
 })
 export class ChatService {
   private readonly http = inject(HttpClient);
-  private readonly apiBase = environment.apiUrl;
+  private readonly apiBase = environment.apiUrl; // Sử dụng environment config
 
   /**
    * Chat với AI và tự động lưu vào DB

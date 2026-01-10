@@ -1,8 +1,11 @@
-import { Component, computed, signal, OnInit, OnDestroy, ElementRef, ViewChild, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, signal, OnInit, OnDestroy, ElementRef, ViewChild, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 import { ExperimentService, CreateExperimentRequest, SaveResultRequest } from '../../services/experiment.service';
+import { AuthService } from '../../services/auth.service';
+import { HistoryService, SimulationCompletionEvent } from '../../services/history.service';
 
 interface Experiment {
   id: string;
@@ -56,9 +59,17 @@ export class SimulationsPageComponent implements OnInit, OnDestroy {
   
   // Inject services
   private experimentService = inject(ExperimentService);
+  private authService = inject(AuthService);
+  private historyService = inject(HistoryService);
+  private router = inject(Router);
+  private platformId = inject(PLATFORM_ID);
   
-  // User and database state
-  currentUserId = signal<number>(1); // TODO: Get from auth service
+  // User and database state - now using Auth Service
+  currentUserId = computed(() => {
+    const user = this.authService.currentUser();
+    return user ? parseInt(user.id) : null;
+  });
+  isAuthenticated = computed(() => this.authService.isAuthenticated());
   isLoading = signal<boolean>(false);
   isSaving = signal<boolean>(false);
   dbConnectionStatus = signal<'connected' | 'disconnected' | 'testing'>('testing');
@@ -301,6 +312,8 @@ export class SimulationsPageComponent implements OnInit, OnDestroy {
   
   private testDatabaseConnection() {
     this.dbConnectionStatus.set('testing');
+    
+    // Kiểm tra xem backend có đang chạy không
     this.experimentService.testConnection().subscribe({
       next: () => {
         this.dbConnectionStatus.set('connected');
@@ -309,13 +322,21 @@ export class SimulationsPageComponent implements OnInit, OnDestroy {
       error: (error) => {
         this.dbConnectionStatus.set('disconnected');
         console.warn('⚠️ Database connection failed, using offline mode:', error);
+        
+        // Hiển thị thông báo cho user
+        this.showOfflineNotification();
       }
     });
   }
   
   private loadUserExperiments() {
     const userId = this.currentUserId();
-    if (!userId) return;
+    const isAuthenticated = this.isAuthenticated();
+    
+    if (!isAuthenticated || !userId) {
+      console.log('⚠️ Cannot load user experiments: user not authenticated');
+      return;
+    }
     
     this.isLoading.set(true);
     this.experimentService.getUserExperiments(userId).subscribe({
@@ -1130,8 +1151,12 @@ ${this.getImprovementSuggestions()}
     
     // Save to database if user is logged in
     const userId = this.currentUserId();
-    if (userId && this.dbConnectionStatus() === 'connected') {
+    const isAuthenticated = this.isAuthenticated();
+    
+    if (isAuthenticated && userId && this.dbConnectionStatus() === 'connected') {
       this.saveExperimentToDatabase(newExperiment, userId);
+    } else if (!isAuthenticated) {
+      console.log('⚠️ User not authenticated - experiment saved locally only');
     }
     
     // Close modal and select new experiment
@@ -1139,7 +1164,10 @@ ${this.getImprovementSuggestions()}
     this.selectExperiment(newExperiment);
     
     // Show success message
-    alert(`🎉 Thí nghiệm "${newExperiment.title}" đã được tạo thành công!${userId ? ' Đã lưu vào database.' : ' (Chỉ lưu cục bộ)'}`);
+    const saveMessage = isAuthenticated && userId ? 
+      ' Đã lưu vào database.' : 
+      ' (Chỉ lưu cục bộ - cần đăng nhập để lưu vào database)';
+    alert(`🎉 Thí nghiệm "${newExperiment.title}" đã được tạo thành công!${saveMessage}`);
   }
 
   private saveExperimentToDatabase(experiment: Experiment, userId: number) {
@@ -1172,50 +1200,246 @@ ${this.getImprovementSuggestions()}
     });
   }
   
-  private saveSimulationResults() {
+  private async saveSimulationResults() {
     const experiment = this.selectedExperiment();
     const state = this.simulationState();
     const userId = this.currentUserId();
+    const isAuthenticated = this.isAuthenticated();
     
-    if (!experiment || !state.results || !userId || this.dbConnectionStatus() !== 'connected') {
+    // Debug logging
+    console.log('=== AUTO-SAVE SIMULATION RESULTS ===');
+    console.log('Experiment:', experiment);
+    console.log('State:', state);
+    console.log('User ID:', userId);
+    console.log('Is Authenticated:', isAuthenticated);
+    console.log('Has results:', !!state.results);
+    
+    if (!experiment || !state.results) {
+      console.log('⚠️ Cannot save simulation results: missing experiment or results data');
+      return;
+    }
+
+    if (!isAuthenticated || !userId) {
+      console.log('⚠️ Cannot save simulation results: user not authenticated');
+      this.showAuthenticationRequiredMessage();
       return;
     }
     
-    const request: SaveResultRequest = {
-      userId: userId,
+    // Create simulation completion event for HistoryService
+    const completionEvent: SimulationCompletionEvent = {
       experimentId: experiment.id,
+      userId: userId,
       parameters: state.parameters,
       results: state.results,
       duration: state.currentTime,
+      timestamp: new Date(),
       efficiency: state.results.efficiency
     };
     
-    this.experimentService.saveSimulationResult(request).subscribe({
-      next: (savedResult) => {
-        console.log('✅ Simulation results saved to database:', savedResult);
-        // Show a subtle notification
-        this.showSaveNotification();
-      },
-      error: (error) => {
-        console.error('❌ Error saving simulation results:', error);
-        // Don't show error to user as it's not critical
-      }
-    });
+    // Use HistoryService for auto-save with retry mechanism
+    try {
+      await this.historyService.autoSaveResult(completionEvent);
+      console.log('✅ Auto-save completed successfully');
+    } catch (error) {
+      console.error('❌ Auto-save failed:', error);
+      // HistoryService handles retry automatically, so we don't need to do anything here
+    }
   }
 
-  private showSaveNotification() {
-    // Create a temporary notification element
+  private async ensureExperimentInUserDatabase(experiment: Experiment, userId: number): Promise<void> {
+    try {
+      // Check if user already has this experiment
+      const userExperiments = await firstValueFrom(this.experimentService.getUserExperiments(userId));
+      const existingExperiment = userExperiments.find(exp => exp.experimentId === experiment.id);
+      
+      if (!existingExperiment) {
+        console.log('🔄 Creating user copy of experiment:', experiment.title);
+        
+        // Create a copy of the experiment for this user
+        const request: CreateExperimentRequest = {
+          userId: userId,
+          experimentId: experiment.id,
+          title: experiment.title,
+          level: experiment.level,
+          description: experiment.desc,
+          tags: experiment.tags,
+          experimentType: experiment.simulation.type,
+          parameters: experiment.simulation,
+          reactions: experiment.simulation.reactions,
+          phenomena: experiment.simulation.phenomena,
+          isPublic: false // User's private copy
+        };
+        
+        await firstValueFrom(this.experimentService.saveExperiment(request));
+        console.log('✅ User copy of experiment created');
+      } else {
+        console.log('✅ User already has this experiment');
+      }
+    } catch (error) {
+      console.error('⚠️ Error ensuring experiment in user database:', error);
+      // Continue anyway - we can still save results
+    }
+  }
+
+  private showSyncNotification() {
+    // Chỉ chạy trên browser, không chạy trên server
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
+    // Create a more interactive notification element
     const notification = document.createElement('div');
-    notification.innerHTML = '💾 Kết quả đã được lưu vào database';
-    notification.className = 'fixed top-20 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm';
+    notification.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-green-800">Kết quả đã được lưu!</p>
+            <p class="text-sm text-green-600">Thí nghiệm đã được đồng bộ vào lịch sử</p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button id="viewHistoryBtn" 
+                  class="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700 transition-colors">
+            Xem lịch sử
+          </button>
+          <button id="closeNotificationBtn" 
+                  class="px-2 py-1 text-green-600 hover:text-green-800 text-sm">
+            ✕
+          </button>
+        </div>
+      </div>
+    `;
+    notification.className = 'fixed top-20 right-4 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg shadow-lg z-50 max-w-md';
     document.body.appendChild(notification);
     
-    // Remove after 3 seconds
+    // Add event listeners for buttons
+    const viewHistoryBtn = notification.querySelector('#viewHistoryBtn');
+    const closeBtn = notification.querySelector('#closeNotificationBtn');
+    
+    if (viewHistoryBtn) {
+      viewHistoryBtn.addEventListener('click', () => {
+        this.router.navigate(['/experiment-history']);
+        this.removeNotification(notification);
+      });
+    }
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        this.removeNotification(notification);
+      });
+    }
+    
+    // Auto remove after 8 seconds
     setTimeout(() => {
-      if (notification.parentNode) {
-        notification.parentNode.removeChild(notification);
-      }
-    }, 3000);
+      this.removeNotification(notification);
+    }, 8000);
+  }
+
+  private removeNotification(notification: HTMLElement) {
+    if (notification && notification.parentNode) {
+      notification.parentNode.removeChild(notification);
+    }
+  }
+
+  private showOfflineNotification() {
+    // Chỉ chạy trên browser, không chạy trên server
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
+    const notification = document.createElement('div');
+    notification.innerHTML = `
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-yellow-800">Backend chưa sẵn sàng</p>
+          <p class="text-sm text-yellow-600">API endpoints chưa được triển khai. Ứng dụng hoạt động ở chế độ offline.</p>
+        </div>
+        <button onclick="this.parentElement.parentElement.remove()" 
+                class="ml-auto px-2 py-1 text-yellow-600 hover:text-yellow-800 text-sm">
+          ✕
+        </button>
+      </div>
+    `;
+    notification.className = 'fixed top-20 right-4 bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg shadow-lg z-50 max-w-md';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      this.removeNotification(notification);
+    }, 8000);
+  }
+
+  private showAuthenticationRequiredMessage() {
+    // Chỉ chạy trên browser, không chạy trên server
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
+    const notification = document.createElement('div');
+    notification.innerHTML = `
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-blue-800">Cần đăng nhập</p>
+          <p class="text-sm text-blue-600">Bạn cần đăng nhập để lưu kết quả thí nghiệm.</p>
+        </div>
+        <button onclick="this.parentElement.parentElement.remove()" 
+                class="ml-auto px-2 py-1 text-blue-600 hover:text-blue-800 text-sm">
+          ✕
+        </button>
+      </div>
+    `;
+    notification.className = 'fixed top-20 right-4 bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded-lg shadow-lg z-50 max-w-md';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      this.removeNotification(notification);
+    }, 6000);
+  }
+
+  private showSyncErrorNotification() {
+    // Chỉ chạy trên browser, không chạy trên server
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
+    const notification = document.createElement('div');
+    notification.innerHTML = `
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-red-800">Lỗi đồng bộ</p>
+          <p class="text-sm text-red-600">Không thể lưu kết quả vào lịch sử</p>
+        </div>
+        <button onclick="this.parentElement.parentElement.remove()" 
+                class="ml-auto px-2 py-1 text-red-600 hover:text-red-800 text-sm">
+          ✕
+        </button>
+      </div>
+    `;
+    notification.className = 'fixed top-20 right-4 bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg shadow-lg z-50 max-w-md';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      this.removeNotification(notification);
+    }, 6000);
   }
 
   deleteCustomExperiment(experimentId: string) {
@@ -1250,6 +1474,11 @@ ${this.getImprovementSuggestions()}
     
     if (!experiment || !state.results) {
       alert('Chưa có dữ liệu để xuất báo cáo. Vui lòng chạy thí nghiệm trước.');
+      return;
+    }
+
+    // Chỉ chạy trên browser, không chạy trên server
+    if (!isPlatformBrowser(this.platformId)) {
       return;
     }
 

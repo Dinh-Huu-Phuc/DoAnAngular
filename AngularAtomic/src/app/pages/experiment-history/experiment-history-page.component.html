@@ -5,353 +5,361 @@
       <div class="flex items-center justify-between">
         <div>
           <h1 class="text-3xl font-bold text-white mb-2">📊 Lịch Sử Thí Nghiệm</h1>
-          <p class="text-gray-300">Xem và quản lý các thí nghiệm đã lưu trong database</p>
+          <p class="text-gray-300">Xem và quản lý kết quả thí nghiệm đã lưu</p>
         </div>
-        <button 
-          (click)="refreshData()"
-          [disabled]="isLoading()"
-          class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:opacity-50">
-          <span *ngIf="!isLoading()">🔄 Làm mới</span>
-          <span *ngIf="isLoading()">⏳ Đang tải...</span>
-        </button>
+        <div class="flex items-center gap-4">
+          <!-- Save Status Indicator -->
+          <div class="flex items-center gap-2">
+            <div [ngClass]="{
+              'w-3 h-3 rounded-full': true,
+              'bg-green-500 animate-pulse': saveStatus() === 'saving',
+              'bg-green-500': saveStatus() === 'success',
+              'bg-red-500': saveStatus() === 'error',
+              'bg-gray-500': saveStatus() === 'idle'
+            }"></div>
+            <span class="text-sm text-gray-300">
+              {{ saveStatus() === 'saving' ? 'Đang lưu...' : 
+                 saveStatus() === 'success' ? 'Đã lưu' :
+                 saveStatus() === 'error' ? 'Lỗi lưu' : 'Sẵn sàng' }}
+            </span>
+          </div>
+          
+          <button 
+            (click)="loadHistory()"
+            [disabled]="isLoading()"
+            class="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white rounded-lg transition-colors disabled:opacity-50 flex items-center gap-2">
+            <span *ngIf="!isLoading()" class="text-lg">🔄</span>
+            <span *ngIf="isLoading()" class="animate-spin text-lg">⏳</span>
+            <span *ngIf="!isLoading()">Làm mới</span>
+            <span *ngIf="isLoading()">Đang đồng bộ...</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container mx-auto px-4 py-8">
-    <!-- Statistics Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-        <div class="flex items-center">
-          <div class="p-3 bg-blue-500/20 rounded-lg">
-            <span class="text-2xl">🧪</span>
-          </div>
-          <div class="ml-4">
-            <p class="text-gray-300 text-sm">Tổng thí nghiệm</p>
-            <p class="text-2xl font-bold text-white">{{ totalExperiments() }}</p>
+    <!-- Authentication Check -->
+    <div *ngIf="!isAuthenticated()" class="text-center py-12">
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 max-w-md mx-auto">
+        <div class="text-6xl mb-4">🔐</div>
+        <h2 class="text-2xl font-bold text-white mb-4">Cần đăng nhập</h2>
+        <p class="text-gray-300 mb-6">Bạn cần đăng nhập để xem lịch sử thí nghiệm của mình.</p>
+        <button 
+          (click)="router.navigate(['/login'])"
+          class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+          Đăng nhập ngay
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div *ngIf="isAuthenticated()">
+      <!-- Statistics Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="flex items-center">
+            <div class="p-3 bg-blue-500/20 rounded-lg">
+              <span class="text-2xl">🧪</span>
+            </div>
+            <div class="ml-4">
+              <p class="text-gray-300 text-sm">Tổng kết quả</p>
+              <p class="text-2xl font-bold text-white">{{ totalEntries() }}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-        <div class="flex items-center">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
           <div class="p-3 bg-green-500/20 rounded-lg">
-            <span class="text-2xl">▶️</span>
-          </div>
-          <div class="ml-4">
-            <p class="text-gray-300 text-sm">Tổng lần chạy</p>
-            <p class="text-2xl font-bold text-white">{{ totalSimulations() }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-        <div class="flex items-center">
-          <div class="p-3 bg-purple-500/20 rounded-lg">
             <span class="text-2xl">📈</span>
           </div>
           <div class="ml-4">
-            <p class="text-gray-300 text-sm">Hiệu suất TB</p>
+            <p class="text-gray-300 text-sm">Hiệu suất trung bình</p>
             <p class="text-2xl font-bold text-white">{{ averageEfficiency().toFixed(1) }}%</p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Filters and Search -->
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 mb-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        <!-- Search -->
-        <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2">Tìm kiếm</label>
-          <input
-            type="text"
-            [(ngModel)]="searchQuery"
-            (ngModelChange)="searchQuery.set($event)"
-            placeholder="Tên thí nghiệm..."
-            class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-
-        <!-- Level Filter -->
-        <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2">Cấp học</label>
-          <select
-            [(ngModel)]="levelFilter"
-            (ngModelChange)="levelFilter.set($event)"
-            class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option *ngFor="let level of levels" [value]="level">{{ level }}</option>
-          </select>
-        </div>
-
-        <!-- Type Filter -->
-        <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2">Loại thí nghiệm</label>
-          <select
-            [(ngModel)]="typeFilter"
-            (ngModelChange)="typeFilter.set($event)"
-            class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="Tất cả">Tất cả</option>
-            <option *ngFor="let type of types.slice(1)" [value]="type">{{ getExperimentTypeLabel(type) }}</option>
-          </select>
-        </div>
-
-        <!-- Sort By -->
-        <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2">Sắp xếp theo</label>
-          <select
-            [(ngModel)]="sortBy"
-            (ngModelChange)="sortBy.set($event)"
-            class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="date">Ngày tạo</option>
-            <option value="efficiency">Hiệu suất</option>
-            <option value="runs">Số lần chạy</option>
-          </select>
-        </div>
-
-        <!-- Sort Order -->
-        <div>
-          <label class="block text-sm font-medium text-gray-300 mb-2">Thứ tự</label>
-          <select
-            [(ngModel)]="sortOrder"
-            (ngModelChange)="sortOrder.set($event)"
-            class="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="desc">Giảm dần</option>
-            <option value="asc">Tăng dần</option>
-          </select>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="flex items-center">
+            <div class="p-3 bg-purple-500/20 rounded-lg">
+              <span class="text-2xl">🏆</span>
+            </div>
+            <div class="ml-4">
+              <p class="text-gray-300 text-sm">Hiệu suất tốt nhất</p>
+              <p class="text-2xl font-bold text-white">{{ bestEfficiency().toFixed(1) }}%</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Loading State -->
-    <div *ngIf="isLoading()" class="text-center py-12">
-      <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-      <p class="text-gray-300 mt-4">Đang tải dữ liệu thí nghiệm...</p>
-    </div>
+      <!-- Filters -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-white">🔍 Bộ lọc</h3>
+          <button 
+            (click)="toggleFilters()"
+            class="text-blue-400 hover:text-blue-300 transition-colors">
+            {{ showFilters() ? 'Ẩn bộ lọc' : 'Hiện bộ lọc' }}
+          </button>
+        </div>
 
-    <!-- No Data State -->
-    <div *ngIf="!isLoading() && filteredExperiments().length === 0" class="text-center py-12">
-      <div class="text-6xl mb-4">🔬</div>
-      <h3 class="text-xl font-semibold text-white mb-2">Chưa có thí nghiệm nào</h3>
-      <p class="text-gray-300 mb-6">Hãy tạo và chạy thí nghiệm trong trang Mô phỏng để xem dữ liệu ở đây.</p>
-      <a href="/simulations" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-        Đi đến Mô phỏng
-      </a>
-    </div>
+        <div *ngIf="showFilters()" class="space-y-4">
+          <!-- Search -->
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Tìm kiếm</label>
+            <input 
+              type="text"
+              [(ngModel)]="searchText"
+              (input)="applyFilters()"
+              placeholder="Tìm theo tên thí nghiệm, loại, hoặc tag..."
+              class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
 
-    <!-- Experiments List -->
-    <div *ngIf="!isLoading() && filteredExperiments().length > 0" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Experiments Grid -->
-      <div class="space-y-4">
-        <h2 class="text-xl font-semibold text-white mb-4">
-          Danh sách thí nghiệm ({{ filteredExperiments().length }})
-        </h2>
-        
-        <div *ngFor="let expWithResults of filteredExperiments()" 
-             class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-colors cursor-pointer"
-             (click)="selectExperiment(expWithResults)"
-             [class.ring-2]="selectedExperiment() && selectedExperiment()!.experiment.id === expWithResults.experiment.id"
-             [class.ring-blue-500]="selectedExperiment() && selectedExperiment()!.experiment.id === expWithResults.experiment.id">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Experiment Type Filter -->
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Loại thí nghiệm</label>
+              <select 
+                [(ngModel)]="experimentTypeFilter"
+                (change)="applyFilters()"
+                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option *ngFor="let type of experimentTypes" [value]="type.value">{{ type.label }}</option>
+              </select>
+            </div>
+
+            <!-- Date Range -->
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Từ ngày</label>
+              <input 
+                type="date"
+                [(ngModel)]="dateRangeStart"
+                (change)="applyFilters()"
+                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Đến ngày</label>
+              <input 
+                type="date"
+                [(ngModel)]="dateRangeEnd"
+                (change)="applyFilters()"
+                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Efficiency Range -->
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Hiệu suất tối thiểu (%)</label>
+              <input 
+                type="number"
+                [(ngModel)]="minEfficiency"
+                (input)="applyFilters()"
+                min="0" max="100"
+                placeholder="0"
+                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <button 
+              (click)="clearFilters()"
+              class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors">
+              Xóa bộ lọc
+            </button>
+            <button 
+              (click)="exportMultiple(filteredEntries())"
+              [disabled]="filteredEntries().length === 0"
+              class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors disabled:opacity-50">
+              Xuất tất cả ({{ filteredEntries().length }})
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div *ngIf="isLoading()" class="text-center py-12">
+        <div class="animate-spin w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+        <p class="text-gray-300">Đang tải lịch sử thí nghiệm...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div *ngIf="!isLoading() && filteredEntries().length === 0" class="text-center py-12">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 max-w-md mx-auto">
+          <div class="text-6xl mb-4">📝</div>
+          <h2 class="text-2xl font-bold text-white mb-4">Chưa có kết quả nào</h2>
+          <p class="text-gray-300 mb-6">
+            {{ totalEntries() === 0 ? 
+               'Bạn chưa có kết quả thí nghiệm nào. Hãy chạy một thí nghiệm để xem kết quả ở đây!' :
+               'Không tìm thấy kết quả nào phù hợp với bộ lọc hiện tại.' }}
+          </p>
+          <button 
+            (click)="router.navigate(['/simulations'])"
+            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+            Chạy thí nghiệm
+          </button>
+        </div>
+      </div>
+
+      <!-- History Entries -->
+      <div *ngIf="!isLoading() && filteredEntries().length > 0" class="space-y-4">
+        <div 
+          *ngFor="let entry of filteredEntries(); trackBy: trackByEntryId"
+          [attr.data-entry-id]="entry.id"
+          class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all cursor-pointer"
+          (click)="selectEntry(entry)">
           
-          <div class="flex items-start justify-between mb-4">
+          <div class="flex items-start justify-between">
             <div class="flex-1">
-              <h3 class="text-lg font-semibold text-white mb-2">{{ expWithResults.experiment.title }}</h3>
-              <p class="text-gray-300 text-sm mb-3">{{ expWithResults.experiment.description }}</p>
-              
-              <div class="flex flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3 mb-2">
+                <h3 class="text-lg font-semibold text-white">{{ entry.experimentTitle }}</h3>
                 <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">
-                  {{ expWithResults.experiment.level }}
+                  {{ getExperimentTypeLabel(entry.experimentType) }}
                 </span>
-                <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
-                  {{ getExperimentTypeLabel(expWithResults.experiment.experimentType) }}
-                </span>
-                <span class="px-2 py-1 text-xs rounded-full"
-                      [class]="getEfficiencyBadge(expWithResults.averageEfficiency)">
-                  {{ expWithResults.averageEfficiency.toFixed(1) }}% TB
+                <span 
+                  *ngIf="entry.efficiency"
+                  [ngClass]="'px-2 py-1 text-xs rounded-full ' + getEfficiencyBadge(entry.efficiency)">
+                  {{ entry.efficiency.toFixed(1) }}%
                 </span>
               </div>
+              
+              <div class="flex items-center gap-4 text-sm text-gray-300 mb-3">
+                <span>📅 {{ formatDate(entry.timestamp) }}</span>
+                <span>⏱️ {{ formatDuration(entry.duration) }}</span>
+                <span *ngIf="entry.tags.length > 0">
+                  🏷️ {{ entry.tags.join(', ') }}
+                </span>
+              </div>
+
+              <!-- Key Results Preview -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div *ngIf="entry.results.ph" class="text-gray-300">
+                  <span class="text-gray-400">pH:</span> {{ entry.results.ph.toFixed(2) }}
+                </div>
+                <div *ngIf="entry.results.gasVolume" class="text-gray-300">
+                  <span class="text-gray-400">Khí:</span> {{ entry.results.gasVolume.toFixed(2) }}L
+                </div>
+                <div *ngIf="entry.results.mass" class="text-gray-300">
+                  <span class="text-gray-400">Khối lượng:</span> {{ entry.results.mass.toFixed(3) }}g
+                </div>
+                <div *ngIf="entry.results.color" class="text-gray-300">
+                  <span class="text-gray-400">Màu:</span> 
+                  <span class="inline-block w-4 h-4 rounded-full ml-1" [style.background-color]="entry.results.color"></span>
+                </div>
+              </div>
             </div>
-            
-            <div class="text-right">
-              <button
-                (click)="exportExperimentData(expWithResults); $event.stopPropagation()"
-                class="p-2 text-gray-400 hover:text-white transition-colors"
+
+            <div class="flex items-center gap-2 ml-4">
+              <button 
+                (click)="rerunExperiment(entry); $event.stopPropagation()"
+                class="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                title="Chạy lại thí nghiệm">
+                🔄
+              </button>
+              <button 
+                (click)="exportEntry(entry); $event.stopPropagation()"
+                class="p-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
                 title="Xuất dữ liệu">
                 📥
               </button>
-              <button
-                (click)="deleteExperiment(expWithResults); $event.stopPropagation()"
-                class="p-2 text-gray-400 hover:text-red-400 transition-colors ml-2"
-                title="Xóa thí nghiệm">
-                🗑️
-              </button>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <p class="text-2xl font-bold text-white">{{ expWithResults.totalRuns }}</p>
-              <p class="text-xs text-gray-400">Lần chạy</p>
-            </div>
-            <div>
-              <p class="text-2xl font-bold" [class]="getEfficiencyColor(expWithResults.bestEfficiency)">
-                {{ expWithResults.bestEfficiency.toFixed(1) }}%
-              </p>
-              <p class="text-xs text-gray-400">Tốt nhất</p>
-            </div>
-            <div>
-              <p class="text-sm text-gray-300">{{ formatDate(expWithResults.lastRun) }}</p>
-              <p class="text-xs text-gray-400">Lần cuối</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Experiment Details -->
-      <div class="space-y-4">
-        <div *ngIf="selectedExperiment()" class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl font-semibold text-white">Chi tiết thí nghiệm</h2>
-            <button (click)="closeDetails()" class="text-gray-400 hover:text-white">✕</button>
-          </div>
-          
-          <div class="space-y-4">
+    <!-- Entry Details Modal -->
+    <div 
+      *ngIf="selectedEntry()"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      (click)="closeDetails()">
+      
+      <div 
+        class="bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        (click)="$event.stopPropagation()">
+        
+        <div class="p-6 border-b border-gray-700">
+          <div class="flex items-center justify-between">
             <div>
-              <h3 class="text-lg font-semibold text-white mb-2">{{ selectedExperiment()!.experiment.title }}</h3>
-              <p class="text-gray-300 mb-4">{{ selectedExperiment()!.experiment.description }}</p>
-              
-              <div class="grid grid-cols-2 gap-4 mb-4">
-                <div>
-                  <p class="text-sm text-gray-400">Cấp học</p>
-                  <p class="text-white">{{ selectedExperiment()!.experiment.level }}</p>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-400">Loại thí nghiệm</p>
-                  <p class="text-white">{{ getExperimentTypeLabel(selectedExperiment()!.experiment.experimentType) }}</p>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-400">Ngày tạo</p>
-                  <p class="text-white">{{ formatDate(selectedExperiment()!.experiment.createdAt) }}</p>
-                </div>
-                <div>
-                  <p class="text-sm text-gray-400">Cập nhật cuối</p>
-                  <p class="text-white">{{ formatDate(selectedExperiment()!.experiment.updatedAt) }}</p>
-                </div>
-              </div>
-
-              <!-- Tags -->
-              <div *ngIf="parseJsonSafely(selectedExperiment()!.experiment.tags).length > 0" class="mb-4">
-                <p class="text-sm text-gray-400 mb-2">Tags</p>
-                <div class="flex flex-wrap gap-2">
-                  <span *ngFor="let tag of parseJsonSafely(selectedExperiment()!.experiment.tags)"
-                        class="px-2 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
-                    {{ tag }}
-                  </span>
-                </div>
-              </div>
-
-              <!-- Reactions -->
-              <div *ngIf="parseJsonSafely(selectedExperiment()!.experiment.reactions).length > 0" class="mb-4">
-                <p class="text-sm text-gray-400 mb-2">Phương trình phản ứng</p>
-                <div class="space-y-1">
-                  <p *ngFor="let reaction of parseJsonSafely(selectedExperiment()!.experiment.reactions)"
-                     class="text-white font-mono text-sm bg-black/20 px-3 py-2 rounded">
-                    {{ reaction }}
-                  </p>
-                </div>
-              </div>
-
-              <!-- Phenomena -->
-              <div *ngIf="parseJsonSafely(selectedExperiment()!.experiment.phenomena).length > 0">
-                <p class="text-sm text-gray-400 mb-2">Hiện tượng quan sát</p>
-                <ul class="space-y-1">
-                  <li *ngFor="let phenomenon of parseJsonSafely(selectedExperiment()!.experiment.phenomena)"
-                      class="text-white text-sm">
-                    • {{ phenomenon }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Simulation Results -->
-        <div *ngIf="selectedExperiment() && selectedExperiment()!.results.length > 0" 
-             class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <h3 class="text-lg font-semibold text-white mb-4">
-            Kết quả mô phỏng ({{ selectedExperiment()!.results.length }})
-          </h3>
-          
-          <div class="space-y-3 max-h-96 overflow-y-auto">
-            <div *ngFor="let result of selectedExperiment()!.results; let i = index"
-                 class="bg-black/20 rounded-lg p-4 cursor-pointer hover:bg-black/30 transition-colors"
-                 (click)="selectResult(result)"
-                 [class.ring-2]="selectedResult() && selectedResult()!.id === result.id"
-                 [class.ring-blue-500]="selectedResult() && selectedResult()!.id === result.id">
-              
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-white font-medium">Lần chạy #{{ i + 1 }}</span>
-                <span *ngIf="result.efficiency" 
-                      class="px-2 py-1 text-xs rounded-full"
-                      [class]="getEfficiencyBadge(result.efficiency)">
-                  {{ result.efficiency.toFixed(1) }}%
+              <h2 class="text-2xl font-bold text-white mb-2">{{ selectedEntry()!.experimentTitle }}</h2>
+              <div class="flex items-center gap-4 text-sm text-gray-300">
+                <span>📅 {{ formatDate(selectedEntry()!.timestamp) }}</span>
+                <span>⏱️ {{ formatDuration(selectedEntry()!.duration) }}</span>
+                <span 
+                  *ngIf="selectedEntry()!.efficiency"
+                  [ngClass]="'px-2 py-1 text-xs rounded-full ' + getEfficiencyBadge(selectedEntry()!.efficiency)">
+                  Hiệu suất: {{ selectedEntry()!.efficiency!.toFixed(1) }}%
                 </span>
               </div>
-              
-              <div class="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <p class="text-gray-400">Thời gian</p>
-                  <p class="text-white">{{ formatDuration(result.duration) }}</p>
-                </div>
-                <div>
-                  <p class="text-gray-400">Ngày chạy</p>
-                  <p class="text-white">{{ formatDate(result.createdAt) }}</p>
-                </div>
-              </div>
             </div>
+            <button 
+              (click)="closeDetails()"
+              class="p-2 hover:bg-gray-700 rounded-lg transition-colors">
+              <span class="text-2xl text-gray-400">✕</span>
+            </button>
           </div>
         </div>
 
-        <!-- Selected Result Details -->
-        <div *ngIf="selectedResult()" class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-white">Chi tiết kết quả</h3>
-            <button (click)="selectedResult.set(null)" class="text-gray-400 hover:text-white">✕</button>
+        <div class="p-6 space-y-6">
+          <!-- Parameters -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">⚙️ Thông số thí nghiệm</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Nhiệt độ</p>
+                <p class="text-white font-semibold">{{ selectedEntry()!.parameters.temperature }}°C</p>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Nồng độ</p>
+                <p class="text-white font-semibold">{{ selectedEntry()!.parameters.concentration }} mol/L</p>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Thể tích</p>
+                <p class="text-white font-semibold">{{ selectedEntry()!.parameters.volume }} L</p>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Thời gian</p>
+                <p class="text-white font-semibold">{{ selectedEntry()!.parameters.time }}s</p>
+              </div>
+            </div>
           </div>
-          
-          <div class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <p class="text-sm text-gray-400">Thời gian chạy</p>
-                <p class="text-white">{{ formatDuration(selectedResult()!.duration) }}</p>
-              </div>
-              <div *ngIf="selectedResult()!.efficiency">
-                <p class="text-sm text-gray-400">Hiệu suất</p>
-                <p class="text-white" [class]="getEfficiencyColor(selectedResult()!.efficiency!)">
-                  {{ selectedResult()!.efficiency!.toFixed(1) }}%
-                </p>
-              </div>
-            </div>
 
-            <!-- Parameters -->
-            <div>
-              <p class="text-sm text-gray-400 mb-2">Thông số đầu vào</p>
-              <div class="bg-black/20 rounded-lg p-3">
-                <pre class="text-white text-sm overflow-x-auto">{{ parseJsonSafely(selectedResult()!.parameters) | json }}</pre>
+          <!-- Results -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">📊 Kết quả</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div *ngIf="selectedEntry()!.results.ph" class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">pH</p>
+                <p class="text-white font-semibold text-xl">{{ selectedEntry()!.results.ph!.toFixed(2) }}</p>
+              </div>
+              <div *ngIf="selectedEntry()!.results.gasVolume" class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Thể tích khí</p>
+                <p class="text-white font-semibold text-xl">{{ selectedEntry()!.results.gasVolume!.toFixed(2) }} L</p>
+              </div>
+              <div *ngIf="selectedEntry()!.results.mass" class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Khối lượng</p>
+                <p class="text-white font-semibold text-xl">{{ selectedEntry()!.results.mass!.toFixed(3) }} g</p>
+              </div>
+              <div *ngIf="selectedEntry()!.results.color" class="bg-white/10 rounded-lg p-4">
+                <p class="text-gray-400 text-sm">Màu sắc</p>
+                <div class="flex items-center gap-2">
+                  <span class="inline-block w-6 h-6 rounded-full border border-white/20" [style.background-color]="selectedEntry()!.results.color"></span>
+                  <span class="text-white font-semibold">{{ selectedEntry()!.results.color }}</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Results -->
-            <div>
-              <p class="text-sm text-gray-400 mb-2">Kết quả đầu ra</p>
-              <div class="bg-black/20 rounded-lg p-3">
-                <pre class="text-white text-sm overflow-x-auto">{{ parseJsonSafely(selectedResult()!.results) | json }}</pre>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-sm text-gray-400">Thời gian thực hiện</p>
-              <p class="text-white">{{ formatDate(selectedResult()!.createdAt) }}</p>
-            </div>
+          <!-- Actions -->
+          <div class="flex gap-4 pt-4 border-t border-gray-700">
+            <button 
+              (click)="rerunExperiment(selectedEntry()!)"
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              🔄 Chạy lại thí nghiệm
+            </button>
+            <button 
+              (click)="exportEntry(selectedEntry()!)"
+              class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+              📥 Xuất dữ liệu
+            </button>
           </div>
         </div>
       </div>

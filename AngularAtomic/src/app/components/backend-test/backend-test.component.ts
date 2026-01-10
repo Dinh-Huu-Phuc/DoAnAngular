@@ -171,7 +171,7 @@ import { environment } from '../../../environments/environment';
   `]
 })
 export class BackendTestComponent implements OnInit {
-  apiUrl = environment.apiUrl;
+  apiUrl = ''; // Sử dụng proxy, không cần base URL
   status = 'Not tested';
   statusClass = 'status-disconnected';
   loading = false;

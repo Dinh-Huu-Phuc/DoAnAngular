@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly baseUrl = environment.apiUrl;
+  private readonly baseUrl = environment.apiUrl; // Sử dụng environment config
 
   private httpOptions = {
     headers: new HttpHeaders({

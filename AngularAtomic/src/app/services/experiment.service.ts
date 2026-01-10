@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 // Interfaces for database operations
@@ -61,7 +61,7 @@ export interface SaveResultRequest {
 })
 export class ExperimentService {
   private readonly http = inject(HttpClient);
-  private readonly apiBase = environment.apiUrl;
+  private readonly apiBase = environment.apiUrl; // Sử dụng environment config
 
   /**
    * Save a custom experiment to database
@@ -127,10 +127,14 @@ export class ExperimentService {
   getPublicExperiments(): Observable<ExperimentData[]> {
     console.log('Fetching public experiments');
     
+    // Sử dụng endpoint chung và filter public experiments
     return this.http.get<ExperimentData[]>(
-      `${this.apiBase}/api/experiments/public`
+      `${this.apiBase}/api/experiments`
     ).pipe(
-      tap(response => console.log('Public experiments fetched:', response)),
+      tap(response => console.log('All experiments fetched:', response)),
+      // Filter chỉ lấy public experiments
+      map(experiments => experiments.filter(exp => exp.isPublic)),
+      tap(publicExperiments => console.log('Public experiments filtered:', publicExperiments)),
       catchError(error => {
         console.error('Error fetching public experiments:', error);
         return of([]);
@@ -195,14 +199,17 @@ export class ExperimentService {
   saveSimulationResult(result: SaveResultRequest): Observable<SimulationResult> {
     console.log('Saving simulation result:', result);
     
-    const payload: Omit<SimulationResult, 'id' | 'createdAt'> = {
+    // Thử gửi raw objects thay vì JSON strings
+    const payload = {
       experimentId: result.experimentId,
       userId: result.userId,
-      parameters: JSON.stringify(result.parameters),
-      results: JSON.stringify(result.results),
+      parameters: result.parameters, // Raw object
+      results: result.results, // Raw object
       duration: result.duration,
       efficiency: result.efficiency
     };
+
+    console.log('Payload being sent:', payload);
 
     return this.http.post<SimulationResult>(
       `${this.apiBase}/api/experiments/results`,
@@ -211,12 +218,33 @@ export class ExperimentService {
       tap(response => console.log('Simulation result saved successfully:', response)),
       catchError(error => {
         console.error('Error saving simulation result:', error);
-        // Return a fallback response for offline mode
-        return of({
-          ...payload,
-          id: Date.now(),
-          createdAt: new Date().toISOString()
-        });
+        
+        // If raw objects fail, try with JSON strings as fallback
+        console.log('Trying with JSON strings as fallback...');
+        const fallbackPayload = {
+          experimentId: result.experimentId,
+          userId: result.userId,
+          parameters: JSON.stringify(result.parameters),
+          results: JSON.stringify(result.results),
+          duration: result.duration,
+          efficiency: result.efficiency
+        };
+        
+        return this.http.post<SimulationResult>(
+          `${this.apiBase}/api/experiments/results`,
+          fallbackPayload
+        ).pipe(
+          tap(response => console.log('Fallback save successful:', response)),
+          catchError(fallbackError => {
+            console.error('Both attempts failed:', fallbackError);
+            // Return a fallback response for offline mode
+            return of({
+              ...fallbackPayload,
+              id: Date.now(),
+              createdAt: new Date().toISOString()
+            });
+          })
+        );
       })
     );
   }
@@ -293,11 +321,13 @@ export class ExperimentService {
   testConnection(): Observable<any> {
     console.log('Testing database connection');
     
-    return this.http.get(`${this.apiBase}/api/experiments/health`).pipe(
+    // Test với endpoint đơn giản nhất
+    return this.http.get(`${this.apiBase}/api/experiments`).pipe(
       tap(response => console.log('Database connection test successful:', response)),
       catchError(error => {
         console.error('Database connection test failed:', error);
-        throw error;
+        // Trả về lỗi để component biết là offline mode
+        return throwError(() => new Error('Backend endpoints not available - running in offline mode'));
       })
     );
   }

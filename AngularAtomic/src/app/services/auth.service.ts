@@ -41,7 +41,7 @@ export class AuthService {
   // 2. Inject PLATFORM_ID để biết đang chạy ở đâu (Server hay Browser)
   private readonly platformId = inject(PLATFORM_ID);
   
-  private readonly apiBase = environment.apiUrl;
+  private readonly apiBase = environment.apiUrl; // Sử dụng environment config
 
   readonly currentUser = signal<UserInfo | null>(null);
   readonly token = signal<string | null>(null);

@@ -118,7 +118,7 @@ import { environment } from '../../../environments/environment';
   `]
 })
 export class RegisterTestComponent {
-  apiUrl = environment.apiUrl;
+  apiUrl = ''; // Sử dụng proxy, không cần base URL
   loading = false;
   result: any = null;
   error: any = null;
