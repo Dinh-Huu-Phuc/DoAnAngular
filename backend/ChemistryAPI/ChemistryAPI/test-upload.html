@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test File Upload</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .form-group { margin: 20px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="file"] { margin-bottom: 10px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #f9f9f9; }
+        .error { border-color: #dc3545; background: #f8d7da; }
+        .success { border-color: #28a745; background: #d4edda; }
+    </style>
+</head>
+<body>
+    <h1>Test File Upload APIs</h1>
+    
+    <h2>1. Test Elements Upload JSON</h2>
+    <form id="elementsForm">
+        <div class="form-group">
+            <label>Select JSON file for Elements:</label>
+            <input type="file" id="elementsFile" accept=".json" required>
+        </div>
+        <button type="submit">Upload Elements JSON</button>
+    </form>
+    <div id="elementsResult" class="result" style="display:none;"></div>
+
+    <h2>2. Test Equations Upload JSON</h2>
+    <form id="equationsForm">
+        <div class="form-group">
+            <label>Select JSON file for Equations:</label>
+            <input type="file" id="equationsFile" accept=".json" required>
+        </div>
+        <button type="submit">Upload Equations JSON</button>
+    </form>
+    <div id="equationsResult" class="result" style="display:none;"></div>
+
+    <h2>3. Test Image Upload</h2>
+    <form id="imageForm">
+        <div class="form-group">
+            <label>Select Image file:</label>
+            <input type="file" id="imageFile" accept="image/*" required>
+        </div>
+        <button type="submit">Upload Image</button>
+    </form>
+    <div id="imageResult" class="result" style="display:none;"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:5150'; // Adjust port if needed
+
+        // Elements Upload
+        document.getElementById('elementsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('elementsFile');
+            const resultDiv = document.getElementById('elementsResult');
+            
+            if (!fileInput.files[0]) {
+                showResult(resultDiv, 'Please select a file', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`${API_BASE}/api/elements/upload-json`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+                showResult(resultDiv, `Status: ${response.status}\n${result}`, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult(resultDiv, `Error: ${error.message}`, 'error');
+            }
+        });
+
+        // Equations Upload
+        document.getElementById('equationsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('equationsFile');
+            const resultDiv = document.getElementById('equationsResult');
+            
+            if (!fileInput.files[0]) {
+                showResult(resultDiv, 'Please select a file', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`${API_BASE}/api/equations/upload-json`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+                showResult(resultDiv, `Status: ${response.status}\n${result}`, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult(resultDiv, `Error: ${error.message}`, 'error');
+            }
+        });
+
+        // Image Upload
+        document.getElementById('imageForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('imageFile');
+            const resultDiv = document.getElementById('imageResult');
+            
+            if (!fileInput.files[0]) {
+                showResult(resultDiv, 'Please select a file', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('Image', fileInput.files[0]); // Note: 'Image' not 'file'
+
+            try {
+                const response = await fetch(`${API_BASE}/api/image/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+                showResult(resultDiv, `Status: ${response.status}\n${result}`, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult(resultDiv, `Error: ${error.message}`, 'error');
+            }
+        });
+
+        function showResult(div, message, type) {
+            div.style.display = 'block';
+            div.className = `result ${type}`;
+            div.innerHTML = `<pre>${message}</pre>`;
+        }
+    </script>
+</body>
+</html>

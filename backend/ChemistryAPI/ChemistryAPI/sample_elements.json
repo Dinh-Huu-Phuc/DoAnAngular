@@ -1,0 +1,42 @@
+{
+  "elements": [
+    {
+      "name": "Hydrogen",
+      "symbol": "H",
+      "number": 1,
+      "atomic_mass": 1.008,
+      "category": "nonmetal",
+      "phase": "Gas",
+      "period": 1,
+      "group": 1,
+      "block": "s",
+      "electron_configuration": "1s1",
+      "electron_configuration_semantic": "1s1",
+      "summary": "Hydrogen is a chemical element with chemical symbol H and atomic number 1.",
+      "appearance": "colorless gas",
+      "boil": 20.28,
+      "melt": 13.99,
+      "density": 0.08988,
+      "discovered_by": "Henry Cavendish",
+      "named_by": "Antoine Lavoisier",
+      "source": "https://en.wikipedia.org/wiki/Hydrogen",
+      "spectral_img": "https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg",
+      "bohr_model_image": "https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen_srp_th.png",
+      "bohr_model_3d": "https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen.glb",
+      "cpk-hex": "ffffff",
+      "xpos": 1,
+      "ypos": 1,
+      "wxpos": 1,
+      "wypos": 1,
+      "shells": [1],
+      "electron_affinity": 72.8,
+      "electronegativity_pauling": 2.2,
+      "ionization_energies": [1312.0],
+      "image": {
+        "title": "Hydrogen",
+        "url": "https://images-of-elements.com/hydrogen.jpg",
+        "attribution": "Chemical Elements"
+      }
+    }
+  ]
+}

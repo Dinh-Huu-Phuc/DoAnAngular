@@ -1,0 +1,20 @@
+[
+  {
+    "reactants": "H2 + Cl2",
+    "products": "HCl",
+    "equation": "H2 + Cl2 → 2HCl",
+    "condition": "ánh sáng",
+    "phenomenon": "tạo khí hydro chloride",
+    "level": "basic",
+    "tags": ["synthesis", "acid"]
+  },
+  {
+    "reactants": "Na + H2O",
+    "products": "NaOH + H2",
+    "equation": "2Na + 2H2O → 2NaOH + H2↑",
+    "condition": "nhiệt độ thường",
+    "phenomenon": "sủi bọt khí, tỏa nhiệt",
+    "level": "intermediate",
+    "tags": ["metal", "water", "base"]
+  }
+]

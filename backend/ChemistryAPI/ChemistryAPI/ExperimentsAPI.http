@@ -1,0 +1,116 @@
+### Lấy tất cả thí nghiệm
+GET https://localhost:7000/api/experiments
+Accept: application/json
+
+### Lấy thí nghiệm theo level
+GET https://localhost:7000/api/experiments?level=THCS
+Accept: application/json
+
+### Lấy thí nghiệm theo type
+GET https://localhost:7000/api/experiments?type=acid-base
+Accept: application/json
+
+### Tìm kiếm thí nghiệm
+GET https://localhost:7000/api/experiments?search=acid
+Accept: application/json
+
+### Lấy thí nghiệm theo ID
+GET https://localhost:7000/api/experiments/1
+Accept: application/json
+
+### Tạo thí nghiệm mới (cần authentication)
+POST https://localhost:7000/api/experiments
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+{
+  "title": "Thí nghiệm tự tạo",
+  "description": "Mô tả thí nghiệm của tôi",
+  "level": "THPT",
+  "type": "acid-base",
+  "isPublic": true,
+  "tags": ["pH", "test"],
+  "parameters": {
+    "temperature": {
+      "min": 20,
+      "max": 30,
+      "default": 25,
+      "unit": "°C"
+    },
+    "concentration": {
+      "min": 0.1,
+      "max": 1.0,
+      "default": 0.5,
+      "unit": "M"
+    },
+    "volume": {
+      "min": 10,
+      "max": 100,
+      "default": 50,
+      "unit": "mL"
+    },
+    "time": {
+      "min": 30,
+      "max": 300,
+      "default": 120,
+      "unit": "s"
+    }
+  },
+  "reactions": ["A + B → C"],
+  "phenomena": ["Đổi màu", "Tỏa nhiệt"]
+}
+
+### Lấy thí nghiệm của tôi (cần authentication)
+GET https://localhost:7000/api/experiments/my
+Accept: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+### Yêu thích thí nghiệm (cần authentication)
+POST https://localhost:7000/api/experiments/1/favorite
+Authorization: Bearer YOUR_JWT_TOKEN
+
+### Cập nhật thí nghiệm (cần authentication)
+PUT https://localhost:7000/api/experiments/1
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+{
+  "title": "Thí nghiệm đã cập nhật",
+  "description": "Mô tả mới",
+  "level": "THPT",
+  "type": "acid-base",
+  "isPublic": false,
+  "tags": ["updated"],
+  "parameters": {
+    "temperature": {
+      "min": 25,
+      "max": 35,
+      "default": 30,
+      "unit": "°C"
+    },
+    "concentration": {
+      "min": 0.2,
+      "max": 1.5,
+      "default": 0.8,
+      "unit": "M"
+    },
+    "volume": {
+      "min": 20,
+      "max": 150,
+      "default": 75,
+      "unit": "mL"
+    },
+    "time": {
+      "min": 60,
+      "max": 600,
+      "default": 180,
+      "unit": "s"
+    }
+  },
+  "reactions": ["X + Y → Z"],
+  "phenomena": ["Hiện tượng mới"]
+}
+
+### Xóa thí nghiệm (cần authentication)
+DELETE https://localhost:7000/api/experiments/1
+Authorization: Bearer YOUR_JWT_TOKEN
