@@ -1,0 +1,78 @@
+### Seed Course Data
+POST http://localhost:5150/api/courses
+Content-Type: application/json
+
+{
+  "id": "chemistry-basics-level-0",
+  "title": "Hóa học cơ bản - Level 0",
+  "description": "Khóa học làm quen với hóa học cơ bản dành cho người mới bắt đầu. Tìm hiểu về nguyên tử, phân tử, bảng tuần hoàn và các khái niệm nền tảng của hóa học.",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Giới thiệu về Hóa học",
+      "type": "content",
+      "content": "# Giới thiệu về Hóa học\n\n## Hóa học là gì?\n\nHóa học là khoa học nghiên cứu về **cấu trúc, tính chất và sự biến đổi của vật chất**. Hóa học giúp chúng ta hiểu được thế giới xung quanh, từ không khí chúng ta hít thở, nước chúng ta uống, đến thức ăn chúng ta ăn.\n\n## Tại sao học Hóa học?\n\nHóa học có mặt ở khắp mọi nơi trong cuộc sống hàng ngày:\n\n- **Nấu ăn**: Các phản ứng hóa học xảy ra khi bạn nấu thức ăn\n- **Y học**: Thuốc men được tạo ra nhờ hiểu biết về hóa học\n- **Môi trường**: Hóa học giúp chúng ta bảo vệ môi trường\n- **Công nghệ**: Pin, máy tính, điện thoại đều dựa trên các nguyên lý hóa học\n\n## Ba trạng thái của vật chất\n\nVật chất tồn tại ở ba trạng thái chính:\n\n1. **Rắn**: Có hình dạng và thể tích xác định (ví dụ: đá, gỗ)\n2. **Lỏng**: Có thể tích xác định nhưng hình dạng thay đổi (ví dụ: nước, dầu)\n3. **Khí**: Không có hình dạng và thể tích xác định (ví dụ: không khí, hơi nước)\n\n## Kết luận\n\nHóa học là một môn khoa học thú vị và hữu ích. Trong các bài học tiếp theo, chúng ta sẽ tìm hiểu sâu hơn về nguyên tử, phân tử và bảng tuần hoàn các nguyên tố hóa học."
+    },
+    {
+      "id": 2,
+      "title": "Nguyên tử và Phân tử",
+      "type": "content",
+      "content": "# Nguyên tử và Phân tử\n\n## Nguyên tử là gì?\n\n**Nguyên tử** là đơn vị cơ bản nhỏ nhất của vật chất. Mọi thứ xung quanh chúng ta đều được tạo thành từ nguyên tử.\n\n### Cấu trúc của nguyên tử\n\nNguyên tử gồm ba loại hạt cơ bản:\n\n1. **Proton** (+): Mang điện tích dương, nằm trong hạt nhân\n2. **Neutron** (0): Không mang điện, nằm trong hạt nhân\n3. **Electron** (-): Mang điện tích âm, chuyển động xung quanh hạt nhân\n\n### Số hiệu nguyên tử\n\n**Số hiệu nguyên tử** là số proton trong hạt nhân của một nguyên tử. Mỗi nguyên tố hóa học có một số hiệu nguyên tử riêng biệt.\n\nVí dụ:\n- Hydro (H): Số hiệu nguyên tử = 1 (1 proton)\n- Carbon (C): Số hiệu nguyên tử = 6 (6 proton)\n- Oxygen (O): Số hiệu nguyên tử = 8 (8 proton)\n\n## Phân tử là gì?\n\n**Phân tử** là nhóm hai hoặc nhiều nguyên tử liên kết với nhau. Phân tử là đơn vị nhỏ nhất của một hợp chất hóa học.\n\n### Ví dụ về phân tử\n\n- **H₂O** (Nước): 2 nguyên tử Hydro + 1 nguyên tử Oxygen\n- **CO₂** (Carbon dioxide): 1 nguyên tử Carbon + 2 nguyên tử Oxygen\n- **O₂** (Oxygen): 2 nguyên tử Oxygen\n\n## Nguyên tố và Hợp chất\n\n- **Nguyên tố**: Chất được tạo thành từ một loại nguyên tử (ví dụ: O₂, H₂)\n- **Hợp chất**: Chất được tạo thành từ hai hoặc nhiều loại nguyên tử khác nhau (ví dụ: H₂O, CO₂)\n\n## Kết luận\n\nNguyên tử và phân tử là những khái niệm nền tảng trong hóa học. Hiểu được cấu trúc của chúng giúp chúng ta hiểu được cách các chất tương tác và biến đổi."
+    },
+    {
+      "id": 3,
+      "title": "Bảng tuần hoàn",
+      "type": "content",
+      "content": "# Bảng tuần hoàn các nguyên tố hóa học\n\n## Bảng tuần hoàn là gì?\n\n**Bảng tuần hoàn** là cách sắp xếp tất cả các nguyên tố hóa học theo **số hiệu nguyên tử tăng dần**. Bảng tuần hoàn được phát minh bởi nhà hóa học người Nga Dmitri Mendeleev vào năm 1869.\n\n## Cấu trúc của Bảng tuần hoàn\n\n### Chu kỳ (Hàng ngang)\n\nMỗi **chu kỳ** là một hàng ngang trong bảng tuần hoàn. Các nguyên tố trong cùng một chu kỳ có cùng số lớp electron.\n\n- Chu kỳ 1: H, He (2 nguyên tố)\n- Chu kỳ 2: Li, Be, B, C, N, O, F, Ne (8 nguyên tố)\n- Chu kỳ 3: Na, Mg, Al, Si, P, S, Cl, Ar (8 nguyên tố)\n\n### Nhóm (Cột dọc)\n\nMỗi **nhóm** là một cột dọc trong bảng tuần hoàn. Các nguyên tố trong cùng một nhóm có tính chất hóa học tương tự nhau.\n\nVí dụ:\n- **Nhóm 1** (Kim loại kiềm): Li, Na, K, Rb, Cs, Fr\n- **Nhóm 17** (Halogen): F, Cl, Br, I, At\n- **Nhóm 18** (Khí hiếm): He, Ne, Ar, Kr, Xe, Rn\n\n## Các loại nguyên tố\n\nBảng tuần hoàn chia nguyên tố thành ba loại chính:\n\n1. **Kim loại**: Dẫn điện, dẫn nhiệt tốt, có ánh kim (ví dụ: Fe, Cu, Au)\n2. **Phi kim**: Không dẫn điện, không có ánh kim (ví dụ: C, N, O)\n3. **Á kim**: Có tính chất trung gian giữa kim loại và phi kim (ví dụ: Si, Ge)\n\n## Thông tin trên Bảng tuần hoàn\n\nMỗi ô trong bảng tuần hoàn thường hiển thị:\n\n- **Ký hiệu hóa học**: Ví dụ H, C, O\n- **Số hiệu nguyên tử**: Số proton trong hạt nhân\n- **Tên nguyên tố**: Ví dụ Hydro, Carbon, Oxygen\n- **Khối lượng nguyên tử**: Khối lượng trung bình của nguyên tử\n\n## Tại sao Bảng tuần hoàn quan trọng?\n\nBảng tuần hoàn giúp:\n\n- Dự đoán tính chất của các nguyên tố\n- Hiểu được mối quan hệ giữa các nguyên tố\n- Tìm kiếm và nghiên cứu các nguyên tố mới\n- Ứng dụng trong nghiên cứu và công nghiệp\n\n## Kết luận\n\nBảng tuần hoàn là một trong những công cụ quan trọng nhất trong hóa học. Nó tổ chức tất cả các nguyên tố một cách có hệ thống và giúp chúng ta hiểu được thế giới vi mô của vật chất."
+    },
+    {
+      "id": 4,
+      "title": "Kiểm tra kiến thức",
+      "type": "quiz",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Hóa học là khoa học nghiên cứu về điều gì?",
+          "options": [
+            "Nghiên cứu về sinh vật sống",
+            "Nghiên cứu về cấu trúc, tính chất và sự biến đổi của vật chất",
+            "Nghiên cứu về vũ trụ và các hành tinh",
+            "Nghiên cứu về con người và xã hội"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Hóa học là khoa học nghiên cứu về cấu trúc, tính chất và sự biến đổi của vật chất. Đây là định nghĩa cơ bản và quan trọng nhất của hóa học."
+        },
+        {
+          "id": 2,
+          "question": "Đơn vị cơ bản nhỏ nhất của vật chất là gì?",
+          "options": [
+            "Phân tử",
+            "Nguyên tử",
+            "Electron",
+            "Proton"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Nguyên tử là đơn vị cơ bản nhỏ nhất của vật chất. Mọi thứ xung quanh chúng ta đều được tạo thành từ nguyên tử. Phân tử là nhóm các nguyên tử liên kết với nhau."
+        },
+        {
+          "id": 3,
+          "question": "Bảng tuần hoàn sắp xếp các nguyên tố theo tiêu chí nào?",
+          "options": [
+            "Theo khối lượng nguyên tử giảm dần",
+            "Theo tên nguyên tố theo thứ tự bảng chữ cái",
+            "Theo số hiệu nguyên tử tăng dần",
+            "Theo màu sắc của nguyên tố"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Bảng tuần hoàn sắp xếp các nguyên tố theo số hiệu nguyên tử tăng dần. Số hiệu nguyên tử là số proton trong hạt nhân của nguyên tử, và đây là đặc trưng duy nhất của mỗi nguyên tố."
+        }
+      ]
+    }
+  ]
+}
+
+### Get all courses
+GET http://localhost:5150/api/courses
+
+### Get specific course
+GET http://localhost:5150/api/courses/chemistry-basics-level-0
