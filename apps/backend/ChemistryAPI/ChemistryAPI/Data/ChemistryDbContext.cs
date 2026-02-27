@@ -28,6 +28,10 @@ public class ChemistryDbContext : DbContext
     public DbSet<CourseLesson> CourseLessons => Set<CourseLesson>();
     public DbSet<LessonQuizQuestion> LessonQuizQuestions => Set<LessonQuizQuestion>();
 
+    // Lesson content system (from lesson.json)
+    public DbSet<LessonContent> LessonContents => Set<LessonContent>();
+    public DbSet<LessonExercise> LessonExercises => Set<LessonExercise>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -120,6 +124,21 @@ public class ChemistryDbContext : DbContext
             .WithMany(cl => cl.QuizQuestions)
             .HasForeignKey(lqq => lqq.CourseLessonId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        // LessonContent configurations
+        modelBuilder.Entity<LessonContent>()
+            .HasIndex(lc => lc.LessonId)
+            .IsUnique();
+
+        modelBuilder.Entity<LessonExercise>()
+            .HasOne(le => le.LessonContent)
+            .WithMany(lc => lc.Exercises)
+            .HasForeignKey(le => le.LessonContentId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<LessonExercise>()
+            .HasIndex(le => le.ExerciseId)
+            .IsUnique();
     }
 }
 

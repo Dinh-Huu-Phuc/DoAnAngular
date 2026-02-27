@@ -8,7 +8,11 @@ Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
 
 // Environment Configuration Service
 builder.Services.AddSingleton<ChemistryAPI.Services.IEnvironmentConfigService, ChemistryAPI.Services.EnvironmentConfigService>();

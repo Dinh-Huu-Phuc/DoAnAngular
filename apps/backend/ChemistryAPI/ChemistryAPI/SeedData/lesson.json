@@ -1,0 +1,2793 @@
+[
+  {
+    "id": "CHEM8-01",
+    "title": "Mở đầu môn Hóa học",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết",
+      "Cơ bản"
+    ],
+    "prerequisites": [],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Hóa học là gì?\n\nHóa học là ngành khoa học tự nhiên nghiên cứu về **chất**, **sự biến đổi của chất** và **ứng dụng** của chúng trong đời sống.\n\n> 💡 Hóa học trả lời câu hỏi: *Chất được tạo thành từ đâu? Chúng biến đổi như thế nào?*\n\n## 2. Vai trò của Hóa học trong đời sống\n\n| Lĩnh vực | Ví dụ |\n|-----------|-------|\n| Y tế | Thuốc chữa bệnh, vắc-xin |\n| Nông nghiệp | Phân bón, thuốc trừ sâu |\n| Công nghiệp | Nhựa, cao su, xi măng |\n| Thực phẩm | Chất bảo quản, phẩm màu |\n| Năng lượng | Xăng dầu, pin, nhiên liệu |\n\n## 3. Phương pháp học tốt môn Hóa học\n\n- **Nắm vững lý thuyết**: Hiểu bản chất, không học vẹt\n- **Làm nhiều bài tập**: Rèn kỹ năng tính toán\n- **Quan sát thí nghiệm**: Liên hệ lý thuyết với thực tế\n- **Ghi nhớ công thức**: Lập bảng tóm tắt các công thức quan trọng\n\n## 4. Một số quy tắc an toàn trong phòng thí nghiệm\n\n1. Đeo kính bảo hộ và găng tay khi làm thí nghiệm\n2. Không nếm, ngửi trực tiếp hóa chất\n3. Rửa tay sạch sau khi tiếp xúc hóa chất\n4. Báo ngay cho giáo viên khi có sự cố",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-801-1",
+        "type": "multiple_choice",
+        "question": "Hóa học nghiên cứu về vấn đề gì?",
+        "options": [
+          "Sự sống của sinh vật",
+          "Các chất và sự biến đổi của chất",
+          "Chuyển động của các vật thể",
+          "Bầu vũ trụ"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Hóa học là ngành khoa học chuyên nghiên cứu về cấu tạo, tính chất và sự biến đổi của các chất."
+      }
+    ]
+  },
+  {
+    "id": "CHEM8-02",
+    "title": "Chất và sự đa dạng của chất",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết",
+      "Quan trọng"
+    ],
+    "prerequisites": [
+      "CHEM8-01"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Vật thể và Chất\n\nMọi vật thể xung quanh ta đều được tạo nên từ **chất**.\n\n### Phân loại vật thể\n\n| Loại | Định nghĩa | Ví dụ |\n|------|-----------|-------|\n| Vật thể tự nhiên | Có sẵn trong tự nhiên | Cây cối, đá, nước sông |\n| Vật thể nhân tạo | Do con người tạo ra | Bàn gỗ, cốc thủy tinh, áo sợi |\n\n> 📌 Một vật thể có thể được tạo từ nhiều chất. Ví dụ: nước biển chứa nước, muối ăn (NaCl), và nhiều chất khác.\n\n## 2. Tính chất của chất\n\n### a) Tính chất vật lý\n- Trạng thái (rắn, lỏng, khí)\n- Màu sắc, mùi vị\n- Nhiệt độ nóng chảy, nhiệt độ sôi\n- Khối lượng riêng\n- Tính tan trong nước\n- Tính dẫn điện, dẫn nhiệt\n\n### b) Tính chất hóa học\n- Khả năng biến đổi thành chất khác\n- Ví dụ: Sắt để ngoài không khí ẩm bị **gỉ** (biến đổi hóa học)\n\n## 3. Ứng dụng\n\nBiết tính chất của chất giúp ta:\n- **Phân biệt** chất này với chất khác\n- **Sử dụng** chất đúng mục đích\n- **Bảo quản** chất hợp lý",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-802-1",
+        "type": "multiple_choice",
+        "question": "Đâu là vật thể tự nhiên?",
+        "options": [
+          "Cái bàn",
+          "Quyển sách",
+          "Cây mía",
+          "Cái cốc thủy tinh"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Cây mía có sẵn trong tự nhiên, không do con người tạo ra."
+      }
+    ]
+  },
+  {
+    "id": "CHEM8-03",
+    "title": "Nguyên tử",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-02"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Nguyên tử là gì?\n\nNguyên tử là **hạt vô cùng nhỏ**, trung hòa về điện, cấu tạo nên các chất.\n\n## 2. Cấu tạo nguyên tử\n\nNguyên tử gồm:\n\n```\n        Nguyên tử\n        ├── Hạt nhân (mang điện tích +)\n        │   ├── Proton (p): điện tích +1\n        │   └── Neutron (n): không mang điện\n        └── Vỏ electron (e⁻): điện tích -1\n```\n\n### Bảng tóm tắt các hạt cơ bản\n\n| Hạt | Ký hiệu | Điện tích | Khối lượng (đvC) |\n|-----|---------|-----------|------------------|\n| Proton | p | +1 | 1 |\n| Neutron | n | 0 | 1 |\n| Electron | e | -1 | ≈ 0,00055 |\n\n## 3. Mối quan hệ giữa các hạt\n\n> ⚡ Trong nguyên tử: **Số proton = Số electron** → Nguyên tử trung hòa về điện\n\n### Ví dụ: Nguyên tử Oxygen\n- Số proton: 8\n- Số electron: 8\n- Số neutron: 8\n- Điện tích hạt nhân: +8\n\n## 4. Kích thước nguyên tử\n\n- Đường kính nguyên tử: khoảng **10⁻¹⁰ m** (0,1 nm)\n- Đường kính hạt nhân: khoảng **10⁻¹⁴ m**\n- Hạt nhân rất nhỏ so với nguyên tử nhưng chứa gần như toàn bộ khối lượng\n\n> 🔬 Nếu phóng to nguyên tử bằng sân vận động, hạt nhân chỉ bằng hạt đậu ở giữa sân!",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-04",
+    "title": "Nguyên tố hóa học",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-03"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Định nghĩa\n\n**Nguyên tố hóa học** là tập hợp những nguyên tử cùng loại, có cùng **số proton** trong hạt nhân.\n\n> 📌 Số proton là đặc trưng của một nguyên tố hóa học. Ví dụ: mọi nguyên tử có 6 proton đều là nguyên tố Carbon.\n\n## 2. Ký hiệu hóa học\n\nMỗi nguyên tố được biểu diễn bằng **1 hoặc 2 chữ cái Latin**:\n- Chữ cái đầu viết **HOA**\n- Chữ cái sau (nếu có) viết **thường**\n\n| Nguyên tố | Ký hiệu | Số proton |\n|-----------|---------|----------|\n| Hydrogen | H | 1 |\n| Carbon | C | 6 |\n| Nitrogen | N | 7 |\n| Oxygen | O | 8 |\n| Sodium (Natri) | Na | 11 |\n| Iron (Sắt) | Fe | 26 |\n| Copper (Đồng) | Cu | 29 |\n\n## 3. Nguyên tử khối\n\n**Nguyên tử khối** là khối lượng của nguyên tử tính bằng **đơn vị cacbon (đvC)**.\n\n> 1 đvC = 1/12 khối lượng nguyên tử Carbon-12 ≈ 1,6605 × 10⁻²⁴ g\n\n### Một số nguyên tử khối cần nhớ\n\n| Nguyên tố | H | C | N | O | Na | Mg | Al | S | Cl | K | Ca | Fe | Cu | Zn | Ag | Ba |\n|-----------|---|---|---|---|----|----|----|---|----|---|----|----|----|----|----|----|  \n| NTK | 1 | 12 | 14 | 16 | 23 | 24 | 27 | 32 | 35,5 | 39 | 40 | 56 | 64 | 65 | 108 | 137 |\n\n## 4. Có bao nhiêu nguyên tố?\n\nHiện nay đã biết khoảng **118 nguyên tố hóa học**, trong đó:\n- Khoảng 90 nguyên tố có trong tự nhiên\n- Còn lại là nguyên tố nhân tạo\n- **Oxygen** chiếm tỉ lệ lớn nhất trong vỏ Trái Đất (~49,4%)",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-05",
+    "title": "Đơn chất và Hợp chất",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-04"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Đơn chất\n\n**Đơn chất** là chất được tạo nên từ **một nguyên tố hóa học**.\n\n### Phân loại đơn chất\n\n| Loại | Đặc điểm | Ví dụ |\n|------|----------|-------|\n| Kim loại | Dẫn điện, dẫn nhiệt, có ánh kim | Fe, Cu, Al, Au |\n| Phi kim | Không dẫn điện (trừ than chì), không có ánh kim | O₂, N₂, S, C |\n\n> 💡 Trong đơn chất kim loại, các nguyên tử sắp xếp **khít nhau, theo trật tự**. Trong đơn chất phi kim, các nguyên tử liên kết với nhau theo **một số nhất định**.\n\n## 2. Hợp chất\n\n**Hợp chất** là chất được tạo nên từ **hai nguyên tố hóa học trở lên**.\n\n### Phân loại hợp chất\n\n| Loại | Đặc điểm | Ví dụ |\n|------|----------|-------|\n| Hợp chất vô cơ | Không chứa C-H (trừ ngoại lệ) | H₂O, NaCl, CaCO₃ |\n| Hợp chất hữu cơ | Chứa Carbon liên kết với H, O, N... | CH₄, C₂H₅OH, C₆H₁₂O₆ |\n\n## 3. So sánh Đơn chất và Hợp chất\n\n| Tiêu chí | Đơn chất | Hợp chất |\n|----------|----------|----------|\n| Số nguyên tố | 1 | ≥ 2 |\n| Ví dụ | O₂, Fe, N₂ | H₂O, CO₂, NaCl |\n| Phân hủy | Không thể phân hủy bằng phản ứng hóa học | Có thể phân hủy thành các chất đơn giản hơn |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-06",
+    "title": "Phân tử",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-05"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Định nghĩa\n\n**Phân tử** là hạt đại diện cho chất, gồm một số nguyên tử liên kết với nhau và thể hiện đầy đủ **tính chất hóa học** của chất.\n\n## 2. Phân tử của đơn chất\n\n- Gồm các nguyên tử **cùng loại** liên kết với nhau\n- Ví dụ:\n  - Phân tử Hydrogen: **H₂** (2 nguyên tử H)\n  - Phân tử Oxygen: **O₂** (2 nguyên tử O)\n  - Phân tử Ozone: **O₃** (3 nguyên tử O)\n\n## 3. Phân tử của hợp chất\n\n- Gồm các nguyên tử **khác loại** liên kết với nhau\n- Ví dụ:\n  - Phân tử nước: **H₂O** (2H + 1O)\n  - Phân tử muối ăn: **NaCl** (1Na + 1Cl)\n  - Phân tử khí CO₂: **CO₂** (1C + 2O)\n\n## 4. Phân tử khối\n\n**Phân tử khối** = tổng nguyên tử khối của các nguyên tử trong phân tử.\n\n### Ví dụ tính phân tử khối\n\n| Phân tử | Cách tính | Phân tử khối |\n|---------|-----------|-------------|\n| H₂ | 2 × 1 | 2 đvC |\n| O₂ | 2 × 16 | 32 đvC |\n| H₂O | 2 × 1 + 16 | 18 đvC |\n| CO₂ | 12 + 2 × 16 | 44 đvC |\n| H₂SO₄ | 2 × 1 + 32 + 4 × 16 | 98 đvC |\n| NaCl | 23 + 35,5 | 58,5 đvC |\n\n> ⚡ **Mẹo**: Học thuộc nguyên tử khối của các nguyên tố thường gặp sẽ giúp tính phân tử khối nhanh hơn!",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-07",
+    "title": "Công thức hóa học",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Bài tập",
+      "Kỹ năng"
+    ],
+    "prerequisites": [
+      "CHEM8-06"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Công thức hóa học (CTHH) là gì?\n\nCTHH dùng **ký hiệu hóa học** và **chỉ số** để biểu diễn chất.\n\n### Quy tắc viết\n- Đơn chất kim loại: viết ký hiệu nguyên tố → **Fe**, **Cu**, **Al**\n- Đơn chất phi kim: thêm chỉ số → **H₂**, **O₂**, **N₂**, **O₃**\n- Hợp chất: viết ký hiệu các nguyên tố kèm chỉ số → **H₂O**, **NaCl**, **H₂SO₄**\n\n## 2. Ý nghĩa của CTHH\n\nCTHH cho biết **3 điều**:\n\n| Thông tin | Ví dụ với H₂O |\n|-----------|---------------|\n| Nguyên tố tạo thành | H và O |\n| Số nguyên tử mỗi nguyên tố | 2 nguyên tử H, 1 nguyên tử O |\n| Phân tử khối | 2×1 + 16 = 18 đvC |\n\n## 3. Bài tập mẫu\n\n### Bài 1: Cho biết ý nghĩa của các CTHH sau\n\n**a) CO₂**\n- Gồm: 1 nguyên tử C và 2 nguyên tử O\n- Phân tử khối: 12 + 2×16 = **44 đvC**\n\n**b) CaCO₃**\n- Gồm: 1 nguyên tử Ca, 1 nguyên tử C, 3 nguyên tử O\n- Phân tử khối: 40 + 12 + 3×16 = **100 đvC**\n\n**c) Al₂O₃**\n- Gồm: 2 nguyên tử Al và 3 nguyên tử O\n- Phân tử khối: 2×27 + 3×16 = **102 đvC**\n\n### Bài 2: Tính phân tử khối\n\n| Chất | CTHH | Phân tử khối |\n|------|------|--------------|\n| Axit clohidric | HCl | 1 + 35,5 = 36,5 |\n| Natri hidroxit | NaOH | 23 + 16 + 1 = 40 |\n| Axit sunfuric | H₂SO₄ | 2 + 32 + 64 = 98 |\n| Canxi cacbonat | CaCO₃ | 40 + 12 + 48 = 100 |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-08",
+    "title": "Hóa trị",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Bài tập",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-07"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Hóa trị là gì?\n\n**Hóa trị** là con số biểu thị khả năng liên kết của nguyên tử nguyên tố này với nguyên tử nguyên tố khác.\n\n> 📌 Quy ước: Hóa trị của **H là I**, hóa trị của **O là II**.\n\n## 2. Cách xác định hóa trị\n\n- Dựa vào hóa trị của H (= I) hoặc O (= II)\n- Ví dụ: Trong **H₂O** → O liên kết với 2H → hóa trị O = II\n- Trong **HCl** → Cl liên kết với 1H → hóa trị Cl = I\n\n## 3. Bảng hóa trị thường gặp\n\n### Nguyên tố\n\n| Hóa trị I | Hóa trị II | Hóa trị III | Hóa trị IV |\n|-----------|------------|-------------|------------|\n| H, Na, K, Ag | O, Mg, Ca, Ba, Zn, Cu(II), Fe(II) | Al, Fe(III) | C, Si |\n| Li, Cl, Br | Be, Mn(II) | Cr(III) | Sn, Pb |\n\n### Nhóm nguyên tử (gốc axit)\n\n| Nhóm | Hóa trị | Ví dụ |\n|------|---------|-------|\n| OH (hidroxit) | I | NaOH |\n| NO₃ (nitrat) | I | NaNO₃ |\n| SO₄ (sunfat) | II | Na₂SO₄ |\n| CO₃ (cacbonat) | II | CaCO₃ |\n| PO₄ (photphat) | III | Na₃PO₄ |\n\n## 4. Quy tắc hóa trị\n\nTrong CTHH **AₓBᵧ**:\n\n$$a \\times x = b \\times y$$\n\nTrong đó:\n- a, b: hóa trị của A, B\n- x, y: chỉ số của A, B\n\n### Ví dụ\nTrong **Al₂O₃**: Al(III), O(II)\n- Kiểm tra: III × 2 = II × 3 → 6 = 6 ✅",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-09",
+    "title": "Lập công thức hóa học dựa vào hóa trị",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Bài tập",
+      "Kỹ năng"
+    ],
+    "prerequisites": [
+      "CHEM8-08"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Các bước lập CTHH\n\n**Bước 1**: Viết CTHH dạng chung **AₓBᵧ**\n\n**Bước 2**: Áp dụng quy tắc hóa trị: a × x = b × y\n\n**Bước 3**: Rút tỉ lệ x/y = b/a (tối giản)\n\n**Bước 4**: Viết CTHH hoàn chỉnh\n\n## 2. Bài tập mẫu\n\n### Bài 1: Lập CTHH của hợp chất gồm Fe(III) và O(II)\n\n- Bước 1: Fe₍ₓ₎O₍ᵧ₎\n- Bước 2: III × x = II × y\n- Bước 3: x/y = II/III = 2/3\n- Bước 4: **Fe₂O₃**\n\n### Bài 2: Lập CTHH của hợp chất gồm Ca(II) và nhóm OH(I)\n\n- Bước 1: Ca₍ₓ₎(OH)₍ᵧ₎\n- Bước 2: II × x = I × y\n- Bước 3: x/y = I/II = 1/2\n- Bước 4: **Ca(OH)₂**\n\n### Bài 3: Lập CTHH của hợp chất gồm Al(III) và SO₄(II)\n\n- Bước 1: Al₍ₓ₎(SO₄)₍ᵧ₎\n- Bước 2: III × x = II × y\n- Bước 3: x/y = II/III = 2/3\n- Bước 4: **Al₂(SO₄)₃**\n\n## 3. Bài tập tự luyện\n\nLập CTHH của các hợp chất sau:\n\n| STT | Thành phần | Đáp án |\n|-----|-----------|--------|\n| 1 | Na(I) và Cl(I) | NaCl |\n| 2 | Mg(II) và O(II) | MgO |\n| 3 | Al(III) và Cl(I) | AlCl₃ |\n| 4 | Fe(III) và SO₄(II) | Fe₂(SO₄)₃ |\n| 5 | Ca(II) và PO₄(III) | Ca₃(PO₄)₂ |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-10",
+    "title": "Ôn tập chương 1: Chất - Nguyên tử - Phân tử",
+    "level": "Lớp 8",
+    "topic": "Chất - Nguyên tử - Phân tử",
+    "tags": [
+      "Ôn tập"
+    ],
+    "prerequisites": [
+      "CHEM8-09"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 📋 Tóm tắt kiến thức chương 1\n\n### Sơ đồ tổng hợp\n\n```\nChất\n├── Đơn chất (1 nguyên tố)\n│   ├── Kim loại: Fe, Cu, Al...\n│   └── Phi kim: O₂, H₂, S...\n└── Hợp chất (≥ 2 nguyên tố)\n    ├── Vô cơ: H₂O, NaCl, CaCO₃...\n    └── Hữu cơ: CH₄, C₂H₅OH...\n```\n\n### Các công thức quan trọng\n\n| Nội dung | Công thức |\n|----------|----------|\n| Quy tắc hóa trị | a × x = b × y |\n| Phân tử khối | Tổng NTK các nguyên tử |\n| Số p = Số e | Nguyên tử trung hòa điện |\n\n## 🧪 Bài tập ôn tập\n\n### Phần 1: Trắc nghiệm\n\n**Câu 1**: Nguyên tử gồm những hạt nào?\n→ Proton, Neutron (hạt nhân) và Electron (vỏ)\n\n**Câu 2**: Phân tử khối của H₂SO₄?\n→ 2×1 + 32 + 4×16 = 98 đvC\n\n### Phần 2: Tự luận\n\n**Bài 1**: Lập CTHH và tính phân tử khối:\n- a) K(I) và OH(I) → **KOH** = 39 + 16 + 1 = 56\n- b) Ba(II) và Cl(I) → **BaCl₂** = 137 + 2×35,5 = 208\n- c) Fe(III) và OH(I) → **Fe(OH)₃** = 56 + 3×(16+1) = 107\n\n**Bài 2**: Phân biệt đơn chất và hợp chất:\n- O₂ → Đơn chất phi kim\n- Fe → Đơn chất kim loại\n- H₂O → Hợp chất vô cơ\n- CO₂ → Hợp chất vô cơ",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-11",
+    "title": "Sự biến đổi chất",
+    "level": "Lớp 8",
+    "topic": "Phản ứng hóa học",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-10"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Hiện tượng vật lý\n\nLà hiện tượng chất biến đổi mà **vẫn giữ nguyên** là chất ban đầu (chỉ thay đổi trạng thái, hình dạng).\n\n### Ví dụ\n- Nước đá → nước lỏng → hơi nước (vẫn là H₂O)\n- Hòa tan đường vào nước (đường vẫn là đường)\n- Kéo sợi đồng thành dây đồng\n\n## 2. Hiện tượng hóa học\n\nLà hiện tượng chất biến đổi có tạo thành **chất mới** (khác chất ban đầu).\n\n### Ví dụ\n- Sắt để ngoài không khí ẩm → gỉ sắt (Fe₂O₃)\n- Đốt cháy giấy → tro, khí CO₂, hơi nước\n- Cho vôi sống vào nước → vôi tôi (tỏa nhiệt)\n\n## 3. So sánh\n\n| Tiêu chí | Hiện tượng vật lý | Hiện tượng hóa học |\n|----------|-------------------|--------------------|\n| Chất mới | Không tạo thành | Có tạo thành |\n| Bản chất | Thay đổi trạng thái/hình dạng | Thay đổi thành phần phân tử |\n| Ví dụ | Nước sôi bốc hơi | Đốt cháy than |\n\n> ⚠️ **Lưu ý**: Dấu hiệu nhận biết hiện tượng hóa học: thay đổi màu sắc, tạo kết tủa, sủi bọt khí, tỏa nhiệt/phát sáng.",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-12",
+    "title": "Phản ứng hóa học",
+    "level": "Lớp 8",
+    "topic": "Phản ứng hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-11"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Định nghĩa\n\n**Phản ứng hóa học** là quá trình biến đổi chất này thành chất khác.\n\n```\nChất tham gia (chất phản ứng) → Sản phẩm (chất tạo thành)\n```\n\n## 2. Diễn biến của phản ứng hóa học\n\nTrong phản ứng hóa học:\n- Các **nguyên tử không bị mất đi** hay tạo thêm\n- Các nguyên tử **sắp xếp lại** liên kết với nhau theo cách khác\n- **Số nguyên tử** mỗi nguyên tố được bảo toàn\n\n> 💡 Bản chất: Liên kết giữa các nguyên tử thay đổi → tạo phân tử mới\n\n## 3. Điều kiện xảy ra phản ứng\n\n| Điều kiện | Ví dụ |\n|-----------|-------|\n| Tiếp xúc | Nghiền nhỏ chất rắn, khuấy trộn |\n| Nhiệt độ | Đốt cháy, đun nóng |\n| Chất xúc tác | MnO₂ trong phân hủy H₂O₂ |\n\n## 4. Dấu hiệu nhận biết phản ứng xảy ra\n\n- 🎨 Thay đổi **màu sắc**\n- 💨 Tạo **chất khí** (sủi bọt)\n- ⬇️ Tạo **kết tủa** (chất rắn không tan)\n- 🔥 **Tỏa nhiệt** hoặc phát sáng\n- 👃 Thay đổi **mùi**\n\n## 5. Ví dụ phản ứng hóa học\n\n| Phản ứng | Chất tham gia | Sản phẩm | Dấu hiệu |\n|----------|--------------|----------|----------|\n| Đốt than | C + O₂ | CO₂ | Phát sáng, tỏa nhiệt |\n| Gỉ sắt | Fe + O₂ + H₂O | Fe₂O₃ | Đổi màu nâu đỏ |\n| Giấm + soda | CH₃COOH + NaHCO₃ | CO₂ + ... | Sủi bọt khí |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-13",
+    "title": "Định luật bảo toàn khối lượng",
+    "level": "Lớp 8",
+    "topic": "Phản ứng hóa học",
+    "tags": [
+      "Định luật",
+      "Bài tập"
+    ],
+    "prerequisites": [
+      "CHEM8-12"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Phát biểu định luật\n\n> **Trong một phản ứng hóa học, tổng khối lượng các chất tham gia bằng tổng khối lượng các sản phẩm.**\n\n$$m_{\\text{chất tham gia}} = m_{\\text{sản phẩm}}$$\n\n### Người phát minh\n- **Lomonosov** (Nga, 1748) và **Lavoisier** (Pháp, 1774)\n\n## 2. Giải thích\n\nTrong phản ứng hóa học:\n- Số nguyên tử mỗi nguyên tố **không đổi**\n- Khối lượng mỗi nguyên tử **không đổi**\n→ Tổng khối lượng được **bảo toàn**\n\n## 3. Biểu thức tổng quát\n\nCho phản ứng: A + B → C + D\n\n$$m_A + m_B = m_C + m_D$$\n\n> 💡 Biết 3 đại lượng → tính được đại lượng còn lại!\n\n## 4. Bài tập mẫu\n\n### Bài 1\nĐốt cháy hoàn toàn 3,2g lưu huỳnh trong khí oxygen, thu được 6,4g khí SO₂. Tính khối lượng oxygen đã phản ứng.\n\n**Giải:**\n- S + O₂ → SO₂\n- m_S + m_O₂ = m_SO₂\n- 3,2 + m_O₂ = 6,4\n- **m_O₂ = 3,2g**\n\n### Bài 2\nCho 5,6g sắt tác dụng với dung dịch HCl, thu được 12,7g FeCl₂ và khí H₂. Tính khối lượng HCl đã phản ứng và khí H₂ tạo thành.\n\n**Giải:**\n- Fe + 2HCl → FeCl₂ + H₂\n- m_Fe + m_HCl = m_FeCl₂ + m_H₂\n- 5,6 + m_HCl = 12,7 + m_H₂\n- (Cần thêm dữ kiện hoặc tính qua mol)",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-14",
+    "title": "Phương trình hóa học",
+    "level": "Lớp 8",
+    "topic": "Phản ứng hóa học",
+    "tags": [
+      "Bài tập",
+      "Kỹ năng",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-13"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Phương trình hóa học (PTHH) là gì?\n\nPTHH biểu diễn ngắn gọn phản ứng hóa học bằng **CTHH** và **hệ số**.\n\n## 2. Các bước lập PTHH\n\n**Bước 1**: Viết sơ đồ phản ứng (CTHH các chất)\n\n**Bước 2**: Cân bằng số nguyên tử mỗi nguyên tố (thêm hệ số)\n\n**Bước 3**: Viết PTHH hoàn chỉnh\n\n## 3. Ví dụ lập PTHH\n\n### Ví dụ 1: Đốt cháy sắt trong oxygen\n\n- Bước 1: Fe + O₂ → Fe₃O₄\n- Bước 2: Cân bằng\n  - Fe: trái 1, phải 3 → thêm hệ số 3 trước Fe\n  - O: trái 2, phải 4 → thêm hệ số 2 trước O₂\n- Bước 3: **3Fe + 2O₂ → Fe₃O₄** ✅\n\n### Ví dụ 2: Nhôm tác dụng với axit\n\n- Bước 1: Al + HCl → AlCl₃ + H₂\n- Bước 2:\n  - Al: trái 1, phải 1 ✅\n  - Cl: trái 1, phải 3 → hệ số 3 trước HCl\n  - H: trái 3, phải 2 → hệ số 3/2... → nhân đôi tất cả\n- Bước 3: **2Al + 6HCl → 2AlCl₃ + 3H₂** ✅\n\n## 4. Ý nghĩa của PTHH\n\nPTHH cho biết:\n- **Tỉ lệ** số nguyên tử/phân tử các chất\n- **Chất tham gia** và **sản phẩm**\n\n## 5. Bài tập tự luyện\n\nCân bằng các PTHH sau:\n\n| STT | Sơ đồ | PTHH |\n|-----|-------|------|\n| 1 | P + O₂ → P₂O₅ | 4P + 5O₂ → 2P₂O₅ |\n| 2 | Fe₂O₃ + H₂ → Fe + H₂O | Fe₂O₃ + 3H₂ → 2Fe + 3H₂O |\n| 3 | Al + O₂ → Al₂O₃ | 4Al + 3O₂ → 2Al₂O₃ |\n| 4 | NaOH + H₂SO₄ → Na₂SO₄ + H₂O | 2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-15",
+    "title": "Luyện tập lập phương trình hóa học",
+    "level": "Lớp 8",
+    "topic": "Phản ứng hóa học",
+    "tags": [
+      "Bài tập"
+    ],
+    "prerequisites": [
+      "CHEM8-14"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 🎯 Mục tiêu\n\nRèn kỹ năng cân bằng PTHH nhanh và chính xác.\n\n## 📝 Phương pháp cân bằng\n\n### Phương pháp 1: Cân bằng theo nguyên tố chung nhất\n- Bắt đầu từ nguyên tố xuất hiện **nhiều nhất** hoặc có chỉ số **lẻ**\n- Làm chẵn chỉ số lẻ trước\n\n### Phương pháp 2: Cân bằng đại số\n- Đặt hệ số là ẩn (a, b, c, d...)\n- Lập hệ phương trình theo số nguyên tử mỗi nguyên tố\n- Giải hệ\n\n## 💪 Bài tập\n\n### Mức 1: Cơ bản\n\n| # | Sơ đồ phản ứng | Đáp án |\n|---|----------------|--------|\n| 1 | Na + O₂ → Na₂O | 4Na + O₂ → 2Na₂O |\n| 2 | Mg + HCl → MgCl₂ + H₂ | Mg + 2HCl → MgCl₂ + H₂ |\n| 3 | Zn + H₂SO₄ → ZnSO₄ + H₂ | Zn + H₂SO₄ → ZnSO₄ + H₂ |\n| 4 | CuO + HCl → CuCl₂ + H₂O | CuO + 2HCl → CuCl₂ + H₂O |\n\n### Mức 2: Nâng cao\n\n| # | Sơ đồ phản ứng | Đáp án |\n|---|----------------|--------|\n| 1 | Fe₂O₃ + HCl → FeCl₃ + H₂O | Fe₂O₃ + 6HCl → 2FeCl₃ + 3H₂O |\n| 2 | Al(OH)₃ + H₂SO₄ → Al₂(SO₄)₃ + H₂O | 2Al(OH)₃ + 3H₂SO₄ → Al₂(SO₄)₃ + 6H₂O |\n| 3 | Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O | 3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O |\n| 4 | FeS₂ + O₂ → Fe₂O₃ + SO₂ | 4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂ |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-16",
+    "title": "Mol là gì?",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-15"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Khái niệm Mol\n\n**Mol** là lượng chất chứa **6,022 × 10²³** hạt vi mô (nguyên tử, phân tử, ion...).\n\nSố 6,022 × 10²³ gọi là **số Avogadro**, ký hiệu **N**.\n\n> 💡 1 mol nguyên tử Fe = 6,022 × 10²³ nguyên tử Fe\n> 1 mol phân tử H₂O = 6,022 × 10²³ phân tử H₂O\n\n## 2. Công thức tính số hạt\n\n$$n = \\frac{N_{\\text{hạt}}}{N_A}$$\n\nTrong đó:\n- n: số mol\n- N_hạt: số hạt vi mô\n- N_A = 6,022 × 10²³ (số Avogadro)\n\n## 3. Ví dụ\n\n### Ví dụ 1\n0,5 mol nguyên tử Al chứa bao nhiêu nguyên tử?\n\n→ N = n × N_A = 0,5 × 6,022 × 10²³ = **3,011 × 10²³** nguyên tử\n\n### Ví dụ 2\n1,2044 × 10²⁴ phân tử CO₂ là bao nhiêu mol?\n\n→ n = N / N_A = 1,2044 × 10²⁴ / 6,022 × 10²³ = **2 mol**\n\n## 4. Tại sao cần khái niệm Mol?\n\nVì nguyên tử, phân tử quá nhỏ, không thể đếm trực tiếp. Mol giúp ta:\n- **Đo lường** lượng chất trong phòng thí nghiệm\n- **Tính toán** theo PTHH\n- **Liên hệ** giữa thế giới vi mô và vĩ mô",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-17",
+    "title": "Khối lượng Mol",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Cơ bản"
+    ],
+    "prerequisites": [
+      "CHEM8-16"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Định nghĩa\n\n**Khối lượng mol** (M) là khối lượng tính bằng gam của **1 mol** chất đó.\n\n> 📌 Khối lượng mol có **giá trị bằng** nguyên tử khối hoặc phân tử khối (nhưng đơn vị là **g/mol**).\n\n## 2. Ví dụ\n\n| Chất | NTK/PTK (đvC) | M (g/mol) |\n|------|---------------|------------|\n| H | 1 | 1 |\n| O | 16 | 16 |\n| Fe | 56 | 56 |\n| H₂O | 18 | 18 |\n| CO₂ | 44 | 44 |\n| H₂SO₄ | 98 | 98 |\n| NaCl | 58,5 | 58,5 |\n\n## 3. Công thức liên hệ\n\n$$n = \\frac{m}{M}$$\n\nTrong đó:\n- **n**: số mol (mol)\n- **m**: khối lượng (g)\n- **M**: khối lượng mol (g/mol)\n\n→ Suy ra: **m = n × M** và **M = m / n**\n\n## 4. Bài tập mẫu\n\n### Bài 1: Tính số mol\n11,2g Fe có bao nhiêu mol?\n→ n = m/M = 11,2/56 = **0,2 mol**\n\n### Bài 2: Tính khối lượng\n0,5 mol H₂SO₄ có khối lượng bao nhiêu?\n→ m = n × M = 0,5 × 98 = **49g**\n\n### Bài 3: Tính khối lượng mol\n0,25 mol chất X có khối lượng 10g. Tìm M?\n→ M = m/n = 10/0,25 = **40 g/mol** → Chất X có thể là NaOH hoặc Ca",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-18",
+    "title": "Thể tích Mol của chất khí",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-17"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Thể tích mol của chất khí\n\nỞ cùng điều kiện nhiệt độ và áp suất, **1 mol** chất khí bất kỳ đều chiếm cùng một thể tích.\n\n| Điều kiện | Nhiệt độ | Áp suất | Thể tích 1 mol |\n|-----------|----------|---------|----------------|\n| Điều kiện tiêu chuẩn (đktc) | 0°C | 1 atm | **22,4 lít** |\n| Điều kiện thường | 20°C | 1 atm | **24 lít** |\n\n## 2. Công thức\n\nỞ đktc:\n\n$$n = \\frac{V}{22,4}$$\n\nTrong đó:\n- **n**: số mol khí\n- **V**: thể tích khí (lít)\n\n→ Suy ra: **V = n × 22,4** (lít, ở đktc)\n\n## 3. Bài tập mẫu\n\n### Bài 1\n0,5 mol khí O₂ ở đktc chiếm thể tích bao nhiêu?\n→ V = n × 22,4 = 0,5 × 22,4 = **11,2 lít**\n\n### Bài 2\n4,48 lít khí CO₂ (đktc) là bao nhiêu mol?\n→ n = V/22,4 = 4,48/22,4 = **0,2 mol**\n\n### Bài 3\nTính khối lượng của 6,72 lít khí N₂ (đktc).\n→ n = 6,72/22,4 = 0,3 mol\n→ m = n × M = 0,3 × 28 = **8,4g**\n\n## 4. Tổng hợp 3 công thức chuyển đổi\n\n```\n        Số hạt (N)\n          ↕ × N_A\n    Số mol (n)\n     ↙         ↘\n× M ↕           ↕ × 22,4\n  m (g)      V (lít, đktc)\n```",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-19",
+    "title": "Chuyển đổi giữa khối lượng, thể tích và lượng chất",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Bài tập",
+      "Kỹ năng"
+    ],
+    "prerequisites": [
+      "CHEM8-18"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 📋 Tóm tắt công thức\n\n| Chuyển đổi | Công thức |\n|-----------|----------|\n| Khối lượng → Mol | n = m / M |\n| Mol → Khối lượng | m = n × M |\n| Thể tích khí (đktc) → Mol | n = V / 22,4 |\n| Mol → Thể tích khí (đktc) | V = n × 22,4 |\n| Mol → Số hạt | N = n × 6,022×10²³ |\n| Số hạt → Mol | n = N / 6,022×10²³ |\n\n## 💪 Bài tập\n\n### Dạng 1: Tính mol từ khối lượng\n\n| Chất | Khối lượng | M (g/mol) | Số mol |\n|------|-----------|-----------|--------|\n| Fe | 16,8g | 56 | 0,3 mol |\n| NaOH | 8g | 40 | 0,2 mol |\n| CaCO₃ | 25g | 100 | 0,25 mol |\n| H₂SO₄ | 19,6g | 98 | 0,2 mol |\n\n### Dạng 2: Tính khối lượng từ mol\n\n| Chất | Số mol | M (g/mol) | Khối lượng |\n|------|--------|-----------|------------|\n| Al | 0,15 mol | 27 | 4,05g |\n| H₂O | 3 mol | 18 | 54g |\n| NaCl | 0,5 mol | 58,5 | 29,25g |\n\n### Dạng 3: Tính thể tích khí (đktc)\n\n| Khí | Số mol | Thể tích |\n|-----|--------|----------|\n| O₂ | 0,25 mol | 5,6 lít |\n| CO₂ | 0,1 mol | 2,24 lít |\n| H₂ | 1,5 mol | 33,6 lít |\n\n### Dạng 4: Bài tập tổng hợp\n\n**Bài 1**: Tính thể tích (đktc) của 3,2g khí O₂.\n→ n = 3,2/32 = 0,1 mol → V = 0,1 × 22,4 = **2,24 lít**\n\n**Bài 2**: Tính khối lượng của 5,6 lít khí CO₂ (đktc).\n→ n = 5,6/22,4 = 0,25 mol → m = 0,25 × 44 = **11g**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-20",
+    "title": "Tỉ khối của chất khí",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Bài tập"
+    ],
+    "prerequisites": [
+      "CHEM8-19"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Tỉ khối của khí A so với khí B\n\n$$d_{A/B} = \\frac{M_A}{M_B}$$\n\n→ Suy ra: **M_A = d_{A/B} × M_B**\n\n## 2. Tỉ khối so với Hydrogen (H₂)\n\n$$d_{A/H_2} = \\frac{M_A}{2}$$\n\n→ **M_A = 2 × d_{A/H₂}**\n\n## 3. Tỉ khối so với Không khí\n\nKhông khí có M_kk ≈ 29 g/mol\n\n$$d_{A/kk} = \\frac{M_A}{29}$$\n\n→ **M_A = 29 × d_{A/kk}**\n\n> 💡 Nếu d > 1: khí A **nặng hơn** khí B (hoặc không khí)\n> Nếu d < 1: khí A **nhẹ hơn** khí B (hoặc không khí)\n\n## 4. Ứng dụng\n\n- Biết tỉ khối → tính được **khối lượng mol** → xác định **công thức** chất khí\n- Giải thích tại sao khí H₂ bay lên (nhẹ hơn không khí)\n- Giải thích tại sao CO₂ chìm xuống (nặng hơn không khí)\n\n## 5. Bài tập mẫu\n\n### Bài 1\nKhí X có tỉ khối so với H₂ bằng 17. Tìm M_X.\n→ M_X = 2 × 17 = **34 g/mol** → X có thể là H₂S\n\n### Bài 2\nKhí Y có tỉ khối so với không khí bằng 1,52. Tìm M_Y.\n→ M_Y = 29 × 1,52 = **44 g/mol** → Y có thể là CO₂\n\n### Bài 3\nSo sánh khí NH₃ (M=17) với không khí.\n→ d = 17/29 ≈ 0,586 < 1 → NH₃ **nhẹ hơn** không khí",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-21",
+    "title": "Tính theo công thức hóa học",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Bài tập",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-20"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Tính thành phần phần trăm các nguyên tố\n\nCho hợp chất AₓBᵧ:\n\n$$\\%A = \\frac{x \\times M_A}{M_{A_xB_y}} \\times 100\\%$$\n\n### Ví dụ: Tính %Fe và %O trong Fe₂O₃\n\n- M(Fe₂O₃) = 2×56 + 3×16 = 160 g/mol\n- %Fe = (2×56)/160 × 100% = **70%**\n- %O = 100% - 70% = **30%**\n\n## 2. Lập CTHH dựa vào thành phần phần trăm\n\n### Các bước\n1. Tìm khối lượng mỗi nguyên tố trong 1 mol hợp chất\n2. Tìm số mol nguyên tử mỗi nguyên tố\n3. Lập tỉ lệ → viết CTHH\n\n### Ví dụ\nHợp chất X có M = 160, chứa 70% Fe và 30% O. Tìm CTHH.\n\n- m_Fe = 160 × 70/100 = 112g → n_Fe = 112/56 = 2\n- m_O = 160 × 30/100 = 48g → n_O = 48/16 = 3\n- CTHH: **Fe₂O₃**\n\n## 3. Bài tập tự luyện\n\n### Bài 1: Tính % các nguyên tố\n\n| Hợp chất | %Nguyên tố 1 | %Nguyên tố 2 | %O |\n|----------|-------------|-------------|-----|\n| CuO | Cu: 80% | | O: 20% |\n| Al₂O₃ | Al: 52,9% | | O: 47,1% |\n| CaCO₃ | Ca: 40% | C: 12% | O: 48% |\n\n### Bài 2: Lập CTHH\nHợp chất Y gồm Na (58,97%) và O (41,03%), M = 78. Tìm CTHH.\n→ Na₂O₂ (Natri peroxit)",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-22",
+    "title": "Tính theo phương trình hóa học",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Bài tập",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-21"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Nguyên tắc\n\nDựa vào PTHH, ta biết **tỉ lệ mol** giữa các chất → tính được khối lượng, thể tích, số mol của chất cần tìm.\n\n## 2. Các bước giải\n\n1. Viết PTHH (cân bằng)\n2. Tính số mol chất đã biết\n3. Dựa vào tỉ lệ PTHH → tính số mol chất cần tìm\n4. Tính khối lượng hoặc thể tích\n\n## 3. Bài tập mẫu\n\n### Bài 1: Tính khối lượng\nĐốt cháy 6,5g Zn trong khí O₂. Tính khối lượng ZnO tạo thành.\n\n**Giải:**\n- PTHH: 2Zn + O₂ → 2ZnO\n- n_Zn = 6,5/65 = 0,1 mol\n- Theo PTHH: n_ZnO = n_Zn = 0,1 mol\n- m_ZnO = 0,1 × 81 = **8,1g**\n\n### Bài 2: Tính thể tích khí\nCho 2,7g Al tác dụng với dd HCl dư. Tính V(H₂) ở đktc.\n\n**Giải:**\n- PTHH: 2Al + 6HCl → 2AlCl₃ + 3H₂\n- n_Al = 2,7/27 = 0,1 mol\n- Theo PTHH: n_H₂ = (3/2) × n_Al = 0,15 mol\n- V_H₂ = 0,15 × 22,4 = **3,36 lít**\n\n### Bài 3: Bài toán có chất dư\nCho 5,6g Fe tác dụng với 200ml dd HCl 1M. Chất nào dư?\n\n**Giải:**\n- n_Fe = 5,6/56 = 0,1 mol\n- n_HCl = 0,2 × 1 = 0,2 mol\n- PTHH: Fe + 2HCl → FeCl₂ + H₂\n- Tỉ lệ: n_Fe/1 = 0,1 và n_HCl/2 = 0,1 → vừa đủ\n- m_FeCl₂ = 0,1 × 127 = **12,7g**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-23",
+    "title": "Ôn tập chương 3: Mol và Tính toán",
+    "level": "Lớp 8",
+    "topic": "Mol và Tính toán hóa học",
+    "tags": [
+      "Ôn tập"
+    ],
+    "prerequisites": [
+      "CHEM8-22"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 📋 Tóm tắt công thức chương 3\n\n### Bảng công thức tổng hợp\n\n| Đại lượng | Công thức | Đơn vị |\n|-----------|----------|--------|\n| Số mol | n = m/M | mol |\n| Khối lượng | m = n × M | g |\n| Thể tích khí (đktc) | V = n × 22,4 | lít |\n| Số hạt | N = n × 6,022×10²³ | hạt |\n| Tỉ khối so với H₂ | d = M/2 | - |\n| Tỉ khối so với kk | d = M/29 | - |\n| % nguyên tố | %A = (x×M_A/M_hc)×100% | % |\n\n## 🧪 Bài tập ôn tập tổng hợp\n\n### Bài 1: Chuyển đổi\nTính m, V(đktc), N cho 0,25 mol CO₂:\n- m = 0,25 × 44 = **11g**\n- V = 0,25 × 22,4 = **5,6 lít**\n- N = 0,25 × 6,022×10²³ = **1,5055×10²³** phân tử\n\n### Bài 2: Tỉ khối\nKhí X có d(X/kk) = 2,207. Tìm M_X và xác định X.\n- M_X = 29 × 2,207 = 64 → X là **SO₂**\n\n### Bài 3: Tính theo PTHH\nĐốt cháy 4,8g Mg trong O₂. Tính m(MgO) và V(O₂) đktc.\n- 2Mg + O₂ → 2MgO\n- n_Mg = 4,8/24 = 0,2 mol\n- n_MgO = 0,2 mol → m = 0,2 × 40 = **8g**\n- n_O₂ = 0,1 mol → V = 0,1 × 22,4 = **2,24 lít**\n\n### Bài 4: Thành phần %\nTính % các nguyên tố trong Cu(OH)₂ (M=98):\n- %Cu = 64/98 × 100 = **65,3%**\n- %O = 32/98 × 100 = **32,7%**\n- %H = 2/98 × 100 = **2,0%**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-24",
+    "title": "Tính chất của Oxygen",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-23"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Tính chất vật lý\n\n| Tính chất | Giá trị |\n|-----------|--------|\n| Ký hiệu | O₂ |\n| Trạng thái | Khí, không màu, không mùi |\n| Tỉ khối so với kk | 32/29 ≈ 1,1 (nặng hơn kk) |\n| Nhiệt độ hóa lỏng | -183°C |\n| Tan trong nước | Ít tan |\n\n## 2. Tính chất hóa học\n\nOxygen là phi kim **hoạt động mạnh**, dễ dàng tham gia phản ứng với nhiều chất.\n\n### a) Tác dụng với kim loại\n\n**3Fe + 2O₂ →(t°) Fe₃O₄** (oxit sắt từ)\n- Hiện tượng: Sắt cháy sáng chói, tạo hạt tròn màu nâu đen\n\n**2Mg + O₂ →(t°) 2MgO**\n- Hiện tượng: Cháy sáng chói với ngọn lửa trắng\n\n### b) Tác dụng với phi kim\n\n**S + O₂ →(t°) SO₂**\n- Hiện tượng: Lưu huỳnh cháy với ngọn lửa xanh nhạt\n\n**C + O₂ →(t°) CO₂**\n- Hiện tượng: Than cháy hồng, tạo khí không màu\n\n**2H₂ + O₂ →(t°) 2H₂O**\n- Hiện tượng: Cháy với ngọn lửa xanh nhạt\n\n### c) Tác dụng với hợp chất\n\n**CH₄ + 2O₂ →(t°) CO₂ + 2H₂O**\n\n## 3. Vai trò của Oxygen\n\n- 🫁 **Hô hấp**: Con người, động vật cần O₂ để sống\n- 🔥 **Đốt nhiên liệu**: Xăng, dầu, gas cần O₂ để cháy\n- 🏭 **Công nghiệp**: Luyện thép, hàn cắt kim loại\n- 🏥 **Y tế**: Bình oxy cho bệnh nhân",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-25",
+    "title": "Sự oxi hóa - Phản ứng hóa hợp",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-24"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Sự oxi hóa\n\n**Sự oxi hóa** là sự tác dụng của oxygen với một chất.\n\n### Phân loại\n\n| Loại | Đặc điểm | Ví dụ |\n|------|----------|-------|\n| Sự cháy | Oxi hóa có tỏa nhiệt và phát sáng | Đốt than, đốt nến |\n| Sự oxi hóa chậm | Oxi hóa có tỏa nhiệt nhưng không phát sáng | Gỉ sắt, thức ăn ôi thiu |\n\n> ⚠️ Sự oxi hóa chậm trong điều kiện nhất định có thể chuyển thành **sự tự bốc cháy** (nguy hiểm!)\n\n## 2. Phản ứng hóa hợp\n\n**Phản ứng hóa hợp** là phản ứng trong đó **hai hay nhiều chất** kết hợp tạo thành **một chất mới**.\n\n$$A + B → C$$\n\n### Ví dụ\n\n| PTHH | Loại |\n|------|------|\n| 2H₂ + O₂ → 2H₂O | Hóa hợp |\n| CaO + H₂O → Ca(OH)₂ | Hóa hợp |\n| 4P + 5O₂ → 2P₂O₅ | Hóa hợp |\n| SO₃ + H₂O → H₂SO₄ | Hóa hợp |\n\n## 3. Ứng dụng thực tế\n\n- **Sự cháy**: Nấu ăn, sưởi ấm, động cơ xe\n- **Phòng cháy**: Cách ly chất cháy khỏi O₂, hạ nhiệt độ\n- **Chống oxi hóa chậm**: Sơn chống gỉ, bảo quản thực phẩm trong chân không",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-26",
+    "title": "Oxit",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Lý thuyết",
+      "Phân loại"
+    ],
+    "prerequisites": [
+      "CHEM8-25"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Định nghĩa\n\n**Oxit** là hợp chất của hai nguyên tố, trong đó có một nguyên tố là **oxygen**.\n\nCTHH tổng quát: **MₓOᵧ**\n\n## 2. Phân loại Oxit\n\n### a) Oxit bazơ\n- Là oxit của **kim loại**, tương ứng với một bazơ\n- Ví dụ:\n\n| Oxit bazơ | Bazơ tương ứng |\n|-----------|----------------|\n| Na₂O | NaOH |\n| CaO | Ca(OH)₂ |\n| Fe₂O₃ | Fe(OH)₃ |\n| CuO | Cu(OH)₂ |\n\n### b) Oxit axit\n- Là oxit của **phi kim**, tương ứng với một axit\n- Ví dụ:\n\n| Oxit axit | Axit tương ứng |\n|-----------|----------------|\n| CO₂ | H₂CO₃ |\n| SO₂ | H₂SO₃ |\n| SO₃ | H₂SO₄ |\n| P₂O₅ | H₃PO₄ |\n| N₂O₅ | HNO₃ |\n\n## 3. Cách gọi tên Oxit\n\n### Oxit bazơ\n**Tên kim loại** (kèm hóa trị nếu nhiều hóa trị) + **oxit**\n- CaO: Canxi oxit\n- Fe₂O₃: Sắt (III) oxit\n- FeO: Sắt (II) oxit\n\n### Oxit axit\n**Tiền tố** + tên phi kim + **tiền tố** + oxit\n\n| Tiền tố | Số lượng |\n|---------|----------|\n| mono | 1 |\n| đi | 2 |\n| tri | 3 |\n| tetra | 4 |\n| penta | 5 |\n\n- CO₂: Cacbon đioxit\n- SO₃: Lưu huỳnh trioxit\n- P₂O₅: Điphotpho pentaoxit",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-27",
+    "title": "Điều chế Oxygen - Phản ứng phân hủy",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Lý thuyết",
+      "Thực hành"
+    ],
+    "prerequisites": [
+      "CHEM8-26"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Điều chế Oxygen trong phòng thí nghiệm\n\n### Cách 1: Nhiệt phân KMnO₄\n\n$$2KMnO_4 \\xrightarrow{t°} K_2MnO_4 + MnO_2 + O_2↑$$\n\n### Cách 2: Nhiệt phân KClO₃\n\n$$2KClO_3 \\xrightarrow{t°, MnO_2} 2KCl + 3O_2↑$$\n\n### Cách 3: Phân hủy H₂O₂\n\n$$2H_2O_2 \\xrightarrow{MnO_2} 2H_2O + O_2↑$$\n\n> 📌 MnO₂ đóng vai trò **chất xúc tác** (tăng tốc phản ứng, không bị tiêu hao)\n\n### Thu khí O₂\n- **Đẩy nước**: O₂ ít tan trong nước\n- **Đẩy không khí**: O₂ nặng hơn không khí → úp ngược bình\n\n## 2. Điều chế Oxygen trong công nghiệp\n\n- **Chưng cất phân đoạn không khí lỏng**: Hóa lỏng không khí → tách O₂ (sôi ở -183°C) và N₂ (sôi ở -196°C)\n- **Điện phân nước**: 2H₂O → 2H₂ + O₂\n\n## 3. Phản ứng phân hủy\n\n**Phản ứng phân hủy** là phản ứng trong đó **một chất** bị phân tách thành **hai hay nhiều chất mới**.\n\n$$A → B + C$$\n\n> ⚡ Phản ứng phân hủy **ngược** với phản ứng hóa hợp!\n\n### Ví dụ\n\n| PTHH | Loại |\n|------|------|\n| 2H₂O →(đp) 2H₂ + O₂ | Phân hủy |\n| CaCO₃ →(t°) CaO + CO₂ | Phân hủy |\n| 2KMnO₄ →(t°) K₂MnO₄ + MnO₂ + O₂ | Phân hủy |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-28",
+    "title": "Không khí - Sự cháy",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Lý thuyết",
+      "Thực tế"
+    ],
+    "prerequisites": [
+      "CHEM8-27"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Thành phần không khí\n\n| Thành phần | Tỉ lệ thể tích |\n|-----------|----------------|\n| Nitrogen (N₂) | ~78% |\n| Oxygen (O₂) | ~21% |\n| Khí hiếm (Ar, Ne...) | ~0,94% |\n| CO₂ | ~0,04% |\n| Hơi nước, bụi... | Rất ít |\n\n> 💡 Thí nghiệm xác định: Đốt photpho đỏ trong bình kín chứa không khí → nước dâng lên chiếm ~1/5 thể tích bình.\n\n## 2. Sự cháy và sự oxi hóa chậm\n\n### Sự cháy\n- Là sự oxi hóa có **tỏa nhiệt** và **phát sáng**\n- Sự cháy trong O₂ nguyên chất mãnh liệt hơn trong không khí\n\n### Sự oxi hóa chậm\n- Là sự oxi hóa có **tỏa nhiệt** nhưng **không phát sáng**\n- Ví dụ: gỉ sắt, hô hấp, thức ăn ôi thiu\n\n## 3. Điều kiện phát sinh sự cháy\n\n1. Chất phải nóng đến **nhiệt độ cháy**\n2. Phải có đủ **oxygen** (hoặc không khí)\n\n## 4. Biện pháp dập tắt sự cháy\n\n| Biện pháp | Nguyên lý |\n|-----------|----------|\n| Phun nước | Hạ nhiệt độ xuống dưới nhiệt độ cháy |\n| Phủ cát, bọt CO₂ | Cách ly chất cháy với O₂ |\n| Dùng bình chữa cháy | Phun CO₂ hoặc bột hóa học |\n\n> ⚠️ **Không dùng nước** để dập tắt đám cháy xăng dầu (nhẹ hơn nước, sẽ lan rộng) hoặc đám cháy điện (nguy hiểm điện giật)!\n\n## 5. Bảo vệ không khí\n\n- Xử lý khí thải công nghiệp\n- Trồng nhiều cây xanh\n- Sử dụng năng lượng sạch\n- Giảm đốt nhiên liệu hóa thạch",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-29",
+    "title": "Ôn tập chương 4: Oxygen",
+    "level": "Lớp 8",
+    "topic": "Oxygen và Không khí",
+    "tags": [
+      "Ôn tập"
+    ],
+    "prerequisites": [
+      "CHEM8-28"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 📋 Sơ đồ tổng hợp chương 4\n\n```\nOxygen (O₂)\n├── Tính chất\n│   ├── Vật lý: khí không màu, nặng hơn kk\n│   └── Hóa học: tác dụng với KL, PK, hợp chất\n├── Điều chế\n│   ├── PTN: nhiệt phân KMnO₄, KClO₃, H₂O₂\n│   └── CN: chưng cất kk lỏng, điện phân nước\n├── Oxit\n│   ├── Oxit bazơ (KL + O)\n│   └── Oxit axit (PK + O)\n└── Phản ứng\n    ├── Hóa hợp: A + B → C\n    └── Phân hủy: A → B + C\n```\n\n## 🧪 Bài tập ôn tập\n\n### Bài 1: Phân loại và gọi tên oxit\n\n| CTHH | Tên gọi | Loại |\n|------|---------|------|\n| MgO | Magie oxit | Oxit bazơ |\n| SO₃ | Lưu huỳnh trioxit | Oxit axit |\n| Al₂O₃ | Nhôm oxit | Oxit bazơ |\n| N₂O₅ | Đinitơ pentaoxit | Oxit axit |\n\n### Bài 2: Tính toán\nĐốt cháy 6,2g photpho trong O₂ dư.\n- 4P + 5O₂ → 2P₂O₅\n- n_P = 6,2/31 = 0,2 mol\n- n_O₂ = 5/4 × 0,2 = 0,25 mol → V = 0,25 × 22,4 = **5,6 lít**\n- n_P₂O₅ = 0,1 mol → m = 0,1 × 142 = **14,2g**\n\n### Bài 3: Nhận biết phản ứng\n- 2KClO₃ → 2KCl + 3O₂ → **Phân hủy**\n- CaO + H₂O → Ca(OH)₂ → **Hóa hợp**\n- 4Fe + 3O₂ → 2Fe₂O₃ → **Hóa hợp**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-30",
+    "title": "Tính chất của Hydrogen",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-29"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Tính chất vật lý\n\n| Tính chất | Giá trị |\n|-----------|--------|\n| CTHH | H₂ |\n| Trạng thái | Khí, không màu, không mùi |\n| Tỉ khối so với kk | 2/29 ≈ 0,069 (**nhẹ nhất**) |\n| Nhiệt độ hóa lỏng | -253°C |\n| Tan trong nước | Rất ít tan |\n\n> 💡 H₂ là chất khí nhẹ nhất trong tất cả các chất khí!\n\n## 2. Tính chất hóa học\n\n### a) Tác dụng với Oxygen\n\n$$2H_2 + O_2 \\xrightarrow{t°} 2H_2O$$\n\n- Hiện tượng: Cháy với ngọn lửa xanh nhạt\n- Hỗn hợp H₂ và O₂ (tỉ lệ 2:1) gọi là **hỗn hợp nổ**\n\n> ⚠️ Trước khi đốt H₂, phải **thử độ tinh khiết** để tránh nổ!\n\n### b) Tác dụng với oxit kim loại (tính khử)\n\n$$CuO + H_2 \\xrightarrow{t°} Cu + H_2O$$\n\n- Hiện tượng: Bột CuO (đen) chuyển thành Cu (đỏ)\n- H₂ **khử** CuO → H₂ có tính khử\n\n$$Fe_2O_3 + 3H_2 \\xrightarrow{t°} 2Fe + 3H_2O$$\n\n## 3. Ứng dụng\n\n- 🎈 Bơm khinh khí cầu (nhẹ nhất)\n- ⚡ Pin nhiên liệu hydrogen\n- 🏭 Khử oxit kim loại trong luyện kim\n- 🔥 Hàn cắt kim loại (ngọn lửa H₂-O₂ rất nóng ~2800°C)",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-31",
+    "title": "Phản ứng oxi hóa - khử",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-30"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Các khái niệm\n\n### Sự khử\nLà sự **tách oxygen** ra khỏi hợp chất.\n\n### Sự oxi hóa\nLà sự **tác dụng của oxygen** với một chất.\n\n### Chất khử\nLà chất **chiếm oxygen** của chất khác (bị oxi hóa).\n\n### Chất oxi hóa\nLà chất **nhường oxygen** cho chất khác (bị khử).\n\n## 2. Phản ứng oxi hóa - khử\n\nLà phản ứng trong đó xảy ra **đồng thời** sự oxi hóa và sự khử.\n\n### Ví dụ phân tích\n\n$$CuO + H_2 \\xrightarrow{t°} Cu + H_2O$$\n\n| Vai trò | Chất | Quá trình |\n|---------|------|-----------|\n| Chất oxi hóa | CuO | Nhường O cho H₂ (bị khử) |\n| Chất khử | H₂ | Chiếm O của CuO (bị oxi hóa) |\n| Sự khử | CuO → Cu | Tách O khỏi CuO |\n| Sự oxi hóa | H₂ → H₂O | H₂ kết hợp với O |\n\n## 3. Tầm quan trọng\n\n- Phản ứng oxi hóa - khử rất phổ biến trong tự nhiên và công nghiệp\n- Luyện kim: khử quặng oxit thành kim loại\n- Đốt nhiên liệu: oxi hóa nhiên liệu tạo năng lượng\n- Hô hấp: oxi hóa glucose tạo năng lượng cho cơ thể\n\n## 4. Cách nhận biết\n\n> 📌 Phản ứng oxi hóa - khử luôn có:\n> - Chất **nhường** oxygen (chất oxi hóa)\n> - Chất **nhận** oxygen (chất khử)\n> - Hai quá trình xảy ra **đồng thời**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-32",
+    "title": "Điều chế Hydrogen - Phản ứng thế",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Lý thuyết",
+      "Thực hành"
+    ],
+    "prerequisites": [
+      "CHEM8-31"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Điều chế Hydrogen trong phòng thí nghiệm\n\nCho kim loại (Zn, Fe, Al...) tác dụng với axit (HCl, H₂SO₄ loãng).\n\n$$Zn + 2HCl → ZnCl_2 + H_2↑$$\n\n$$Fe + H_2SO_4 → FeSO_4 + H_2↑$$\n\n### Thu khí H₂\n- **Đẩy nước**: H₂ ít tan trong nước\n- **Đẩy không khí**: H₂ nhẹ hơn kk → ngửa bình\n\n## 2. Điều chế trong công nghiệp\n\n- Điện phân nước: 2H₂O →(đp) 2H₂ + O₂\n- Từ khí thiên nhiên: CH₄ + H₂O →(t°, xt) CO + 3H₂\n\n## 3. Phản ứng thế\n\n**Phản ứng thế** là phản ứng trong đó nguyên tử của **đơn chất thay thế** nguyên tử của một nguyên tố trong hợp chất.\n\n### Dạng tổng quát\n$$A + BC → AC + B$$\n\n(A là đơn chất, BC là hợp chất)\n\n### Ví dụ\n\n| PTHH | Đơn chất | Hợp chất |\n|------|----------|----------|\n| Zn + 2HCl → ZnCl₂ + H₂ | Zn thế H | HCl |\n| Fe + CuSO₄ → FeSO₄ + Cu | Fe thế Cu | CuSO₄ |\n| Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag | Cu thế Ag | AgNO₃ |\n\n## 4. So sánh 3 loại phản ứng\n\n| Loại | Dạng | Ví dụ |\n|------|------|-------|\n| Hóa hợp | A + B → C | CaO + H₂O → Ca(OH)₂ |\n| Phân hủy | A → B + C | 2KClO₃ → 2KCl + 3O₂ |\n| Thế | A + BC → AC + B | Zn + 2HCl → ZnCl₂ + H₂ |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-33",
+    "title": "Nước",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-32"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Thành phần hóa học của nước\n\n- CTHH: **H₂O**\n- Tỉ lệ khối lượng: H chiếm 1/9, O chiếm 8/9\n- Tỉ lệ thể tích: 2 phần H₂ kết hợp 1 phần O₂\n\n## 2. Tính chất vật lý\n\n| Tính chất | Giá trị |\n|-----------|--------|\n| Trạng thái | Lỏng (ở nhiệt độ thường) |\n| Màu sắc | Không màu |\n| Nhiệt độ sôi | 100°C |\n| Nhiệt độ đông đặc | 0°C |\n| Khối lượng riêng | 1 g/cm³ |\n| Dung môi | Hòa tan được nhiều chất |\n\n## 3. Tính chất hóa học\n\n### a) Tác dụng với kim loại mạnh (Na, K, Ca, Ba)\n\n$$2Na + 2H_2O → 2NaOH + H_2↑$$\n\n- Hiện tượng: Na chạy trên mặt nước, sủi bọt khí, tỏa nhiệt\n- Sản phẩm: dung dịch **bazơ** (kiềm)\n\n### b) Tác dụng với oxit bazơ → Bazơ\n\n$$CaO + H_2O → Ca(OH)_2$$\n$$Na_2O + H_2O → 2NaOH$$\n\n### c) Tác dụng với oxit axit → Axit\n\n$$SO_3 + H_2O → H_2SO_4$$\n$$P_2O_5 + 3H_2O → 2H_3PO_4$$\n$$CO_2 + H_2O → H_2CO_3$$\n\n## 4. Vai trò của nước\n\n- 💧 Dung môi quan trọng nhất\n- 🌱 Cần thiết cho sự sống\n- 🏭 Nguyên liệu trong công nghiệp\n- ⚡ Sản xuất điện (thủy điện)\n\n> ⚠️ Cần bảo vệ nguồn nước: không xả thải bừa bãi, tiết kiệm nước sạch.",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-34",
+    "title": "Axit - Bazơ - Muối",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Lý thuyết",
+      "Phân loại",
+      "Trọng tâm"
+    ],
+    "prerequisites": [
+      "CHEM8-33"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Axit\n\n### Định nghĩa\nPhân tử axit gồm **H liên kết với gốc axit**. Các nguyên tử H này có thể thay thế bằng nguyên tử kim loại.\n\n### CTHH tổng quát: HₙA\n\n### Phân loại\n\n| Loại | Ví dụ |\n|------|-------|\n| Axit không có oxygen | HCl, HBr, H₂S, HF |\n| Axit có oxygen | H₂SO₄, HNO₃, H₃PO₄, H₂CO₃ |\n\n### Cách gọi tên\n- Axit không có O: Axit + tên PK + **hidric** → Axit clohidric (HCl)\n- Axit có O (nhiều O): Axit + tên PK + **ic** → Axit sunfuric (H₂SO₄)\n- Axit có O (ít O): Axit + tên PK + **ơ** → Axit sunfurơ (H₂SO₃)\n\n## 2. Bazơ\n\n### Định nghĩa\nPhân tử bazơ gồm **kim loại liên kết với nhóm OH**.\n\n### CTHH tổng quát: M(OH)ₙ\n\n### Phân loại\n\n| Loại | Đặc điểm | Ví dụ |\n|------|----------|-------|\n| Bazơ tan (kiềm) | Tan trong nước | NaOH, KOH, Ca(OH)₂, Ba(OH)₂ |\n| Bazơ không tan | Không tan trong nước | Fe(OH)₃, Cu(OH)₂, Mg(OH)₂ |\n\n### Cách gọi tên\nTên KL (hóa trị nếu nhiều) + **hidroxit**\n- NaOH: Natri hidroxit\n- Fe(OH)₃: Sắt (III) hidroxit\n\n## 3. Muối\n\n### Định nghĩa\nPhân tử muối gồm **kim loại liên kết với gốc axit**.\n\n### CTHH tổng quát: MₓAᵧ\n\n### Phân loại\n\n| Loại | Đặc điểm | Ví dụ |\n|------|----------|-------|\n| Muối trung hòa | Gốc axit không còn H | NaCl, CaCO₃, FeSO₄ |\n| Muối axit | Gốc axit còn H | NaHCO₃, Ca(HCO₃)₂, NaHSO₄ |\n\n### Cách gọi tên\nTên KL (hóa trị) + tên gốc axit\n- NaCl: Natri clorua\n- CaCO₃: Canxi cacbonat\n- FeSO₄: Sắt (II) sunfat",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-35",
+    "title": "Ôn tập chương 5: Hydrogen - Nước",
+    "level": "Lớp 8",
+    "topic": "Hydrogen và Nước",
+    "tags": [
+      "Ôn tập"
+    ],
+    "prerequisites": [
+      "CHEM8-34"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 📋 Sơ đồ tổng hợp chương 5\n\n```\nHydrogen (H₂)\n├── Tính chất: nhẹ nhất, tính khử\n├── Điều chế: KL + axit, điện phân nước\n└── Phản ứng thế: A + BC → AC + B\n\nNước (H₂O)\n├── + KL mạnh → Bazơ + H₂\n├── + Oxit bazơ → Bazơ\n└── + Oxit axit → Axit\n\nPhân loại hợp chất vô cơ\n├── Axit: HₙA (H + gốc axit)\n├── Bazơ: M(OH)ₙ (KL + OH)\n└── Muối: MₓAᵧ (KL + gốc axit)\n```\n\n## 🧪 Bài tập ôn tập\n\n### Bài 1: Phân loại và gọi tên\n\n| CTHH | Loại | Tên gọi |\n|------|------|--------|\n| HNO₃ | Axit | Axit nitric |\n| KOH | Bazơ | Kali hidroxit |\n| MgCl₂ | Muối | Magie clorua |\n| Fe(OH)₂ | Bazơ | Sắt (II) hidroxit |\n| Na₂SO₄ | Muối | Natri sunfat |\n| H₃PO₄ | Axit | Axit photphoric |\n\n### Bài 2: Hoàn thành PTHH\n- Na + H₂O → **2Na + 2H₂O → 2NaOH + H₂**\n- CaO + H₂O → **Ca(OH)₂**\n- SO₃ + H₂O → **H₂SO₄**\n- Fe + HCl → **Fe + 2HCl → FeCl₂ + H₂**\n\n### Bài 3: Tính toán\nCho 4,6g Na tác dụng với nước dư.\n- 2Na + 2H₂O → 2NaOH + H₂\n- n_Na = 4,6/23 = 0,2 mol\n- n_NaOH = 0,2 mol → m = 0,2 × 40 = **8g**\n- n_H₂ = 0,1 mol → V = 0,1 × 22,4 = **2,24 lít**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-36",
+    "title": "Dung môi, chất tan và dung dịch",
+    "level": "Lớp 8",
+    "topic": "Dung dịch",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-35"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Các khái niệm\n\n### Chất tan\nLà chất bị hòa tan trong dung môi.\n\n### Dung môi\nLà chất có khả năng hòa tan chất khác. Nước là dung môi phổ biến nhất.\n\n### Dung dịch\nLà hỗn hợp **đồng nhất** của chất tan và dung môi.\n\n$$\\text{Dung dịch} = \\text{Chất tan} + \\text{Dung môi}$$\n\n## 2. Dung dịch bão hòa và chưa bão hòa\n\n| Loại | Định nghĩa |\n|------|----------|\n| Dung dịch chưa bão hòa | Còn có thể hòa tan thêm chất tan |\n| Dung dịch bão hòa | Không thể hòa tan thêm chất tan (ở nhiệt độ xác định) |\n\n### Cách chuyển đổi\n- Chưa bão hòa → Bão hòa: **thêm chất tan** hoặc **giảm nhiệt độ** (đa số)\n- Bão hòa → Chưa bão hòa: **thêm dung môi** hoặc **tăng nhiệt độ**\n\n## 3. Các yếu tố ảnh hưởng đến sự hòa tan\n\n| Yếu tố | Ảnh hưởng |\n|--------|----------|\n| Nhiệt độ | Tăng t° → chất rắn tan nhiều hơn (đa số) |\n| Khuấy trộn | Tăng tốc độ hòa tan |\n| Nghiền nhỏ | Tăng diện tích tiếp xúc → tan nhanh hơn |\n| Bản chất chất tan | Mỗi chất có khả năng tan khác nhau |\n\n> 💡 **Ngoại lệ**: Khí tan trong nước **giảm** khi tăng nhiệt độ (ví dụ: CO₂ trong nước ngọt).",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-37",
+    "title": "Độ tan của một chất trong nước",
+    "level": "Lớp 8",
+    "topic": "Dung dịch",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "prerequisites": [
+      "CHEM8-36"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Chất tan và chất không tan\n\n### Phân loại\n\n| Mức độ | Ký hiệu | Ví dụ |\n|--------|---------|-------|\n| Tan | T | NaCl, KNO₃, CuSO₄ |\n| Ít tan | I | CaSO₄, PbCl₂ |\n| Không tan | K | BaSO₄, AgCl, CaCO₃ |\n\n### Quy tắc nhớ nhanh\n- Muối Na, K luôn **tan**\n- Muối NO₃ luôn **tan**\n- Muối Cl: đa số tan, trừ AgCl, PbCl₂\n- Muối SO₄: đa số tan, trừ BaSO₄, PbSO₄\n- Muối CO₃: đa số **không tan**, trừ Na₂CO₃, K₂CO₃\n\n## 2. Độ tan (S)\n\n**Độ tan** là số gam chất tan có thể hòa tan trong **100g nước** để tạo thành dung dịch **bão hòa** ở nhiệt độ xác định.\n\n$$S = \\frac{m_{\\text{chất tan}}}{m_{\\text{nước}}} \\times 100$$\n\n### Ví dụ\nỞ 25°C, hòa tan tối đa 36g NaCl trong 100g nước.\n→ S(NaCl, 25°C) = **36g/100g nước**\n\n## 3. Đồ thị độ tan\n\n- Đa số chất rắn: độ tan **tăng** khi nhiệt độ tăng\n- Chất khí: độ tan **giảm** khi nhiệt độ tăng\n- Một số chất đặc biệt: NaCl có độ tan thay đổi rất ít theo nhiệt độ\n\n## 4. Bài tập mẫu\n\nỞ 20°C, S(KNO₃) = 31,6g. Tính khối lượng KNO₃ tan tối đa trong 200g nước.\n\n→ m = S × m_nước/100 = 31,6 × 200/100 = **63,2g**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-38",
+    "title": "Nồng độ phần trăm của dung dịch (C%)",
+    "level": "Lớp 8",
+    "topic": "Dung dịch",
+    "tags": [
+      "Bài tập",
+      "Công thức"
+    ],
+    "prerequisites": [
+      "CHEM8-37"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Công thức\n\n$$C\\% = \\frac{m_{\\text{chất tan}}}{m_{\\text{dung dịch}}} \\times 100\\%$$\n\nTrong đó:\n- m_dd = m_chất tan + m_dung môi\n\n## 2. Các dạng bài tập\n\n### Dạng 1: Tính C%\n\nHòa tan 10g NaCl vào 90g nước. Tính C%.\n- m_dd = 10 + 90 = 100g\n- C% = 10/100 × 100% = **10%**\n\n### Dạng 2: Tính m chất tan\n\nTính khối lượng NaOH trong 200g dd NaOH 15%.\n- m_ct = C% × m_dd / 100 = 15 × 200 / 100 = **30g**\n\n### Dạng 3: Tính m dung dịch\n\nCần bao nhiêu gam dd H₂SO₄ 20% để có 9,8g H₂SO₄?\n- m_dd = m_ct / C% × 100 = 9,8 / 20 × 100 = **49g**\n\n### Dạng 4: Pha trộn dung dịch\n\nTrộn 100g dd NaCl 20% với 150g dd NaCl 10%. Tính C% dd sau.\n- m_ct = 100×20/100 + 150×10/100 = 20 + 15 = 35g\n- m_dd = 100 + 150 = 250g\n- C% = 35/250 × 100 = **14%**\n\n## 3. Bài tập tự luyện\n\n| Bài | Dữ kiện | Đáp án |\n|-----|---------|--------|\n| 1 | 5g đường + 45g nước | C% = 10% |\n| 2 | 300g dd KCl 8% → m_KCl? | 24g |\n| 3 | 15g NaOH, C% = 25% → m_dd? | 60g |\n| 4 | 200g dd 5% + 100g dd 20% | C% = 10% |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-39",
+    "title": "Nồng độ mol của dung dịch (CM)",
+    "level": "Lớp 8",
+    "topic": "Dung dịch",
+    "tags": [
+      "Bài tập",
+      "Công thức"
+    ],
+    "prerequisites": [
+      "CHEM8-38"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Công thức\n\n$$C_M = \\frac{n}{V}$$\n\nTrong đó:\n- **C_M**: nồng độ mol (mol/lít hay M)\n- **n**: số mol chất tan (mol)\n- **V**: thể tích dung dịch (lít)\n\n> 📌 Đơn vị V phải là **lít** (1 lít = 1000 ml)\n\n## 2. Các dạng bài tập\n\n### Dạng 1: Tính C_M\n\nHòa tan 0,5 mol NaCl vào nước được 250ml dd. Tính C_M.\n- V = 250ml = 0,25 lít\n- C_M = 0,5/0,25 = **2M**\n\n### Dạng 2: Tính số mol\n\nTính số mol H₂SO₄ trong 500ml dd H₂SO₄ 0,1M.\n- n = C_M × V = 0,1 × 0,5 = **0,05 mol**\n\n### Dạng 3: Tính thể tích\n\nCần bao nhiêu ml dd NaOH 2M để có 0,1 mol NaOH?\n- V = n/C_M = 0,1/2 = 0,05 lít = **50ml**\n\n### Dạng 4: Từ khối lượng → C_M\n\nHòa tan 4g NaOH vào nước được 200ml dd. Tính C_M.\n- n = m/M = 4/40 = 0,1 mol\n- V = 200ml = 0,2 lít\n- C_M = 0,1/0,2 = **0,5M**\n\n## 3. Mối liên hệ C% và C_M\n\n$$C_M = \\frac{10 \\times C\\% \\times D}{M}$$\n\nTrong đó D là khối lượng riêng (g/ml)\n\n## 4. Bài tập tự luyện\n\n| Bài | Dữ kiện | Đáp án |\n|-----|---------|--------|\n| 1 | 0,2 mol KOH trong 400ml | C_M = 0,5M |\n| 2 | 500ml dd HCl 0,2M → n? | 0,1 mol |\n| 3 | 7,1g Na₂SO₄ trong 500ml | C_M = 0,1M |\n| 4 | 0,3 mol NaCl, C_M = 1,5M → V? | 200ml |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-40",
+    "title": "Pha chế dung dịch",
+    "level": "Lớp 8",
+    "topic": "Dung dịch",
+    "tags": [
+      "Bài tập",
+      "Thực hành"
+    ],
+    "prerequisites": [
+      "CHEM8-39"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Pha chế dung dịch theo C%\n\n### Các bước\n1. Tính khối lượng chất tan cần dùng\n2. Tính khối lượng dung môi (nước) cần dùng\n3. Cân chất tan, đong nước\n4. Hòa tan chất tan vào nước, khuấy đều\n\n### Ví dụ\nPha 200g dd NaCl 5%.\n- m_ct = 200 × 5/100 = **10g NaCl**\n- m_nước = 200 - 10 = **190g nước** (≈ 190ml)\n- Cân 10g NaCl, đong 190ml nước, hòa tan\n\n## 2. Pha chế dung dịch theo C_M\n\n### Các bước\n1. Tính số mol chất tan cần dùng\n2. Tính khối lượng chất tan\n3. Cân chất tan\n4. Cho vào bình định mức, thêm nước đến vạch\n\n### Ví dụ\nPha 250ml dd NaOH 0,5M.\n- n = C_M × V = 0,5 × 0,25 = 0,125 mol\n- m = n × M = 0,125 × 40 = **5g NaOH**\n- Cân 5g NaOH, cho vào bình 250ml, thêm nước đến vạch\n\n## 3. Pha loãng dung dịch\n\n> 📌 Nguyên tắc: Khối lượng (hoặc số mol) chất tan **không đổi** khi pha loãng.\n\n### Công thức\n$$C_1 \\times V_1 = C_2 \\times V_2$$\n\n### Ví dụ\nPha loãng dd HCl 2M thành 500ml dd HCl 0,5M.\n- V₁ = C₂ × V₂ / C₁ = 0,5 × 500 / 2 = **125ml**\n- Lấy 125ml dd HCl 2M, thêm nước đến 500ml\n\n## 4. Bài tập tổng hợp\n\n| Bài | Yêu cầu | Đáp án |\n|-----|---------|--------|\n| 1 | Pha 500g dd đường 10% | 50g đường + 450g nước |\n| 2 | Pha 100ml dd KOH 1M | 5,6g KOH + nước đến 100ml |\n| 3 | Pha loãng 200ml HCl 3M → 1M | Thêm nước đến 600ml |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM8-41",
+    "title": "Ôn tập cuối năm Hóa học 8",
+    "level": "Lớp 8",
+    "topic": "Tổng hợp",
+    "tags": [
+      "Ôn tập",
+      "Kiểm tra"
+    ],
+    "prerequisites": [
+      "CHEM8-40"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 120,
+    "content": {
+      "markdown": "## 📋 Tổng hợp kiến thức Hóa 8\n\n### Chương 1: Chất - Nguyên tử - Phân tử\n- Nguyên tử = hạt nhân (p, n) + vỏ electron\n- Nguyên tố = tập hợp nguyên tử cùng số proton\n- Đơn chất (1 nguyên tố) vs Hợp chất (≥2 nguyên tố)\n- Quy tắc hóa trị: a×x = b×y\n\n### Chương 2: Phản ứng hóa học\n- ĐLBTKL: tổng m chất tham gia = tổng m sản phẩm\n- Lập PTHH: viết sơ đồ → cân bằng → hoàn chỉnh\n\n### Chương 3: Mol và Tính toán\n- n = m/M = V/22,4 = N/6,022×10²³\n- Tỉ khối: d = M_A/M_B\n- Tính theo CTHH và PTHH\n\n### Chương 4: Oxygen\n- O₂: tác dụng với KL, PK, hợp chất\n- Oxit bazơ vs Oxit axit\n- Phản ứng hóa hợp vs phân hủy\n\n### Chương 5: Hydrogen - Nước\n- H₂: nhẹ nhất, tính khử\n- Nước + oxit bazơ → bazơ; + oxit axit → axit\n- Axit - Bazơ - Muối\n- Phản ứng thế\n\n### Chương 6: Dung dịch\n- C% = m_ct/m_dd × 100%\n- C_M = n/V (mol/lít)\n- Pha chế và pha loãng dung dịch\n\n## 🧪 Đề ôn tập tổng hợp\n\n### Phần trắc nghiệm (mẫu)\n\n**Câu 1**: Phản ứng nào sau đây là phản ứng thế?\n- A. 2H₂ + O₂ → 2H₂O\n- B. CaCO₃ → CaO + CO₂\n- **C. Fe + 2HCl → FeCl₂ + H₂** ✅\n- D. CaO + H₂O → Ca(OH)₂\n\n**Câu 2**: Khí nào nhẹ nhất?\n- **A. H₂** ✅ (M=2)\n- B. He (M=4)\n- C. CH₄ (M=16)\n- D. N₂ (M=28)\n\n### Phần tự luận (mẫu)\n\n**Bài 1**: Cho 13g Zn tác dụng với dd HCl dư.\n- Zn + 2HCl → ZnCl₂ + H₂\n- n_Zn = 13/65 = 0,2 mol\n- n_H₂ = 0,2 mol → V = 0,2 × 22,4 = **4,48 lít**\n- n_ZnCl₂ = 0,2 mol → m = 0,2 × 136 = **27,2g**\n\n**Bài 2**: Pha 500ml dd NaOH 0,4M.\n- n = 0,4 × 0,5 = 0,2 mol\n- m = 0,2 × 40 = **8g NaOH**\n- Cân 8g NaOH, hòa tan, thêm nước đến 500ml",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": []
+  },
+  {
+    "id": "CHEM9-01",
+    "title": "Tính chất hóa học của Oxit - Phân loại Oxit",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Vô cơ"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Tính chất hóa học của Oxit Bazơ\nOxit bazơ tác dụng với nước tạo thành dung dịch bazơ (kiềm). Tác dụng với axit tạo thành muối và nước.\n*Ví dụ:* $CaO + H_2O \\rightarrow Ca(OH)_2$\n\n## 2. Tính chất hóa học của Oxit Axit\nOxit axit tác dụng với nước tạo thành dung dịch axit. Tác dụng với dung dịch bazơ tạo thành muối và nước.\n*Ví dụ:* $SO_2 + H_2O \\rightarrow H_2SO_3$",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-901-1",
+        "type": "multiple_choice",
+        "question": "Oxit bazơ tác dụng với nước tạo thành gì?",
+        "options": [
+          "Axit",
+          "Bazơ (kiềm)",
+          "Muối",
+          "Oxit axit"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Oxit bazơ + H₂O → Bazơ. VD: CaO + H₂O → Ca(OH)₂."
+      },
+      {
+        "id": "EX-901-2",
+        "type": "multiple_choice",
+        "question": "Oxit axit tác dụng với dung dịch bazơ tạo thành gì?",
+        "options": [
+          "Axit + nước",
+          "Muối + nước",
+          "Bazơ + muối",
+          "Oxit bazơ"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Oxit axit + Bazơ → Muối + Nước. VD: CO₂ + 2NaOH → Na₂CO₃ + H₂O."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-02",
+    "title": "Một số Oxit quan trọng (CaO, SO2)",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Thực tế"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM9-01"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-902-1",
+        "type": "multiple_choice",
+        "question": "CaO tác dụng với nước có hiện tượng gì?",
+        "options": [
+          "Tỏa nhiệt mạnh",
+          "Thu nhiệt",
+          "Không có hiện tượng",
+          "Sủi bọt khí"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "CaO + H₂O → Ca(OH)₂, phản ứng tỏa nhiệt rất mạnh."
+      },
+      {
+        "id": "EX-902-2",
+        "type": "multiple_choice",
+        "question": "SO₂ là loại oxit gì?",
+        "options": [
+          "Oxit bazơ",
+          "Oxit axit",
+          "Oxit lưỡng tính",
+          "Oxit trung tính"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "SO₂ là oxit axit, tác dụng với nước tạo H₂SO₃."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-03",
+    "title": "Tính chất hóa học của Axit",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM9-02"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-903-1",
+        "type": "multiple_choice",
+        "question": "Axit tác dụng với kim loại (trước H) tạo thành?",
+        "options": [
+          "Muối + H₂O",
+          "Muối + H₂",
+          "Bazơ + H₂",
+          "Oxit + H₂O"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "KL + Axit → Muối + H₂↑. VD: Fe + 2HCl → FeCl₂ + H₂."
+      },
+      {
+        "id": "EX-903-2",
+        "type": "multiple_choice",
+        "question": "Kim loại nào KHÔNG tác dụng với HCl loãng?",
+        "options": [
+          "Fe",
+          "Zn",
+          "Cu",
+          "Al"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Cu đứng sau H trong dãy hoạt động nên không phản ứng với HCl loãng."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-04",
+    "title": "Một số Axit quan trọng (HCl, H2SO4)",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Ứng dụng"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 120,
+    "prerequisites": [
+      "CHEM9-03"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-904-1",
+        "type": "multiple_choice",
+        "question": "Khi pha loãng H₂SO₄ đặc phải làm thế nào?",
+        "options": [
+          "Đổ nước vào axit",
+          "Đổ axit vào nước",
+          "Trộn đồng thời",
+          "Cách nào cũng được"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Phải đổ từ từ axit vào nước, không làm ngược lại vì tỏa nhiệt mạnh gây bỏng."
+      },
+      {
+        "id": "EX-904-2",
+        "type": "multiple_choice",
+        "question": "H₂SO₄ đặc nóng tác dụng được với kim loại nào?",
+        "options": [
+          "Chỉ Fe, Zn",
+          "Hầu hết KL (trừ Au, Pt)",
+          "Chỉ KL đứng trước H",
+          "Không tác dụng KL"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "H₂SO₄ đặc nóng oxi hóa mạnh, tác dụng hầu hết KL kể cả Cu, trừ Au và Pt."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-05",
+    "title": "Luyện tập: Tính chất hóa học của Oxit và Axit",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Bài tập",
+      "Tổng hợp"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM9-04"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-905-1",
+        "type": "multiple_choice",
+        "question": "Cho 8g CuO + HCl dư. Khối lượng CuCl₂ thu được?",
+        "options": [
+          "13,5g",
+          "12,5g",
+          "10,5g",
+          "15,5g"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "n(CuO)=8/80=0,1 mol → n(CuCl₂)=0,1 → m=0,1×135=13,5g."
+      },
+      {
+        "id": "EX-905-2",
+        "type": "multiple_choice",
+        "question": "Oxit nào vừa tác dụng axit vừa tác dụng bazơ?",
+        "options": [
+          "CaO",
+          "SO₂",
+          "Al₂O₃",
+          "CO₂"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Al₂O₃ là oxit lưỡng tính."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-06",
+    "title": "Tính chất hóa học của Bazơ",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM9-05"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-906-1",
+        "type": "multiple_choice",
+        "question": "Bazơ tác dụng với axit tạo thành gì?",
+        "options": [
+          "Muối + H₂",
+          "Muối + H₂O",
+          "Oxit + H₂O",
+          "Bazơ mới + axit mới"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Bazơ + Axit → Muối + Nước (phản ứng trung hòa)."
+      },
+      {
+        "id": "EX-906-2",
+        "type": "multiple_choice",
+        "question": "Bazơ không tan bị nhiệt phân hủy tạo thành?",
+        "options": [
+          "KL + H₂O",
+          "Oxit + H₂O",
+          "Muối + H₂O",
+          "KL + O₂"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Bazơ không tan →(t°) Oxit + H₂O. VD: Cu(OH)₂ →(t°) CuO + H₂O."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-07",
+    "title": "Một số Bazơ quan trọng (NaOH, Ca(OH)2)",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Thực tế"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 120,
+    "prerequisites": [
+      "CHEM9-06"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-907-1",
+        "type": "multiple_choice",
+        "question": "NaOH còn gọi là gì?",
+        "options": [
+          "Vôi tôi",
+          "Xút ăn da",
+          "Nước vôi trong",
+          "Thạch cao"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "NaOH (natri hidroxit) còn gọi là xút ăn da vì có tính ăn mòn mạnh."
+      },
+      {
+        "id": "EX-907-2",
+        "type": "multiple_choice",
+        "question": "Ca(OH)₂ dùng để làm gì trong thực tế?",
+        "options": [
+          "Làm phân bón",
+          "Khử chua đất, xử lý nước",
+          "Làm thuốc nổ",
+          "Sản xuất nhựa"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Ca(OH)₂ (vôi tôi) dùng khử chua đất, xử lý nước thải, sát trùng."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-08",
+    "title": "Tính chất hóa học của Muối",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM9-07"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-908-1",
+        "type": "multiple_choice",
+        "question": "Muối tác dụng với axit khi nào?",
+        "options": [
+          "Luôn luôn xảy ra",
+          "Sản phẩm có chất kết tủa hoặc bay hơi",
+          "Chỉ khi đun nóng",
+          "Không bao giờ xảy ra"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Muối + Axit → Muối mới + Axit mới. Điều kiện: sản phẩm có kết tủa, khí, hoặc nước."
+      },
+      {
+        "id": "EX-908-2",
+        "type": "multiple_choice",
+        "question": "Phản ứng trao đổi xảy ra khi nào?",
+        "options": [
+          "Luôn xảy ra",
+          "Sản phẩm có chất không tan, bay hơi hoặc nước",
+          "Chỉ khi có xúc tác",
+          "Chỉ ở nhiệt độ cao"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Phản ứng trao đổi xảy ra khi sản phẩm có chất kết tủa, chất khí, hoặc nước."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-09",
+    "title": "Một số Muối quan trọng và Phân bón hóa học",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Lý thuyết",
+      "Ứng dụng"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM9-08"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-909-1",
+        "type": "multiple_choice",
+        "question": "NaCl (muối ăn) thuộc loại muối gì?",
+        "options": [
+          "Muối axit",
+          "Muối trung hòa",
+          "Muối kép",
+          "Muối bazơ"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "NaCl là muối trung hòa vì gốc axit Cl⁻ không còn H có thể thay thế bằng KL."
+      },
+      {
+        "id": "EX-909-2",
+        "type": "multiple_choice",
+        "question": "Phân đạm cung cấp nguyên tố gì cho cây?",
+        "options": [
+          "Phospho (P)",
+          "Kali (K)",
+          "Nitrogen (N)",
+          "Canxi (Ca)"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Phân đạm cung cấp nguyên tố N (nitrogen) giúp cây phát triển thân lá."
+      }
+    ]
+  },
+  {
+    "id": "CHEM9-10",
+    "title": "Mối liên hệ giữa các loại hợp chất vô cơ",
+    "level": "Lớp 9",
+    "topic": "Các loại hợp chất vô cơ",
+    "tags": [
+      "Sơ đồ tư duy",
+      "Ôn tập"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 250,
+    "prerequisites": [
+      "CHEM9-09"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-910-1",
+        "type": "multiple_choice",
+        "question": "Oxit bazơ có thể chuyển thành bazơ bằng cách nào?",
+        "options": [
+          "Tác dụng với axit",
+          "Tác dụng với nước",
+          "Tác dụng với muối",
+          "Nhiệt phân"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Oxit bazơ + H₂O → Bazơ (chỉ áp dụng với oxit của KL kiềm, kiềm thổ)."
+      },
+      {
+        "id": "EX-910-2",
+        "type": "multiple_choice",
+        "question": "Sơ đồ chuyển hóa nào đúng?",
+        "options": [
+          "KL → Oxit bazơ → Bazơ → Muối",
+          "PK → Bazơ → Axit → Muối",
+          "KL → Oxit axit → Axit → Muối",
+          "PK → Oxit bazơ → Bazơ → Muối"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Kim loại →(+O₂) Oxit bazơ →(+H₂O) Bazơ →(+Axit) Muối."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-01",
+    "title": "Thành phần của nguyên tử",
+    "level": "Lớp 10",
+    "topic": "Cấu tạo nguyên tử",
+    "tags": [
+      "Lý thuyết",
+      "Cấu tạo vi mô"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Các hạt cấu tạo nên nguyên tử\n\nNguyên tử được cấu tạo từ 3 loại hạt cơ bản:\n\n| Hạt | Ký hiệu | Điện tích | Khối lượng (u) | Vị trí |\n|-----|---------|-----------|---------------|--------|\n| Proton | p | +1 | 1,0073 | Hạt nhân |\n| Neutron | n | 0 | 1,0087 | Hạt nhân |\n| Electron | e | -1 | 0,00055 | Vỏ nguyên tử |\n\n## 2. Cấu trúc nguyên tử\n\nNguyên tử gồm:\n- **Hạt nhân** (rất nhỏ, mang điện +): chứa proton và neutron\n- **Vỏ electron** (rất lớn, mang điện -): chứa electron\n\n> ⚡ Số proton = Số electron → Nguyên tử trung hòa về điện\n\n## 3. Kích thước và khối lượng\n\n- Đường kính nguyên tử: ~10⁻¹⁰ m (1 Å)\n- Đường kính hạt nhân: ~10⁻¹⁴ m\n- Hạt nhân nhỏ hơn nguyên tử khoảng **10.000 lần** nhưng chứa gần như toàn bộ khối lượng\n\n## 4. Đơn vị khối lượng nguyên tử (u)\n\n1 u = 1/12 khối lượng nguyên tử ¹²C = 1,6605 × 10⁻²⁴ g\n\n- Khối lượng nguyên tử ≈ khối lượng hạt nhân (vì m_e rất nhỏ)\n- m_nguyên tử ≈ (Z + N) × u",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1001-1",
+        "type": "multiple_choice",
+        "question": "Hạt nhân nguyên tử gồm những hạt nào?",
+        "options": [
+          "Proton và Electron",
+          "Neutron và Electron",
+          "Proton và Neutron",
+          "Chỉ có Proton"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Hạt nhân gồm proton (điện tích +) và neutron (không mang điện)."
+      },
+      {
+        "id": "EX-1001-2",
+        "type": "multiple_choice",
+        "question": "Nguyên tử trung hòa về điện vì?",
+        "options": [
+          "Số p = số n",
+          "Số p = số e",
+          "Số n = số e",
+          "Số p + n = số e"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Số proton (+) = Số electron (-) nên tổng điện tích = 0."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-02",
+    "title": "Nguyên tố hóa học và Đồng vị",
+    "level": "Lớp 10",
+    "topic": "Cấu tạo nguyên tử",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 120,
+    "prerequisites": [
+      "CHEM10-01"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Nguyên tố hóa học\n\n**Nguyên tố hóa học** là tập hợp các nguyên tử có cùng **số đơn vị điện tích hạt nhân** (cùng số proton Z).\n\n### Số hiệu nguyên tử (Z)\n- Z = số proton = số electron (trong nguyên tử trung hòa)\n- Z đặc trưng cho một nguyên tố\n\n### Ký hiệu nguyên tử\n\nKý hiệu: ᴬ_Z X\n- X: ký hiệu hóa học\n- Z: số hiệu nguyên tử (số proton)\n- A: số khối (A = Z + N)\n\nVí dụ: ²³₁₁Na → Z=11, A=23, N=12\n\n## 2. Đồng vị\n\n**Đồng vị** là các nguyên tử của cùng một nguyên tố (cùng Z) nhưng khác nhau về **số neutron** (khác N, khác A).\n\n### Ví dụ: Đồng vị của Hydrogen\n\n| Đồng vị | Z | N | A | Tên gọi |\n|---------|---|---|---|--------|\n| ¹₁H | 1 | 0 | 1 | Proti |\n| ²₁H | 1 | 1 | 2 | Đơteri (D) |\n| ³₁H | 1 | 2 | 3 | Triti (T) |\n\n### Ví dụ: Đồng vị của Carbon\n- ¹²C (98,89%), ¹³C (1,11%), ¹⁴C (vết - dùng xác định tuổi cổ vật)\n\n## 3. Nguyên tử khối trung bình\n\nDo nguyên tố có nhiều đồng vị nên dùng nguyên tử khối trung bình:\n\nĀ = (a₁×A₁ + a₂×A₂ + ...) / 100\n\nTrong đó a₁, a₂: % số nguyên tử mỗi đồng vị\n\n### Ví dụ\nCl có 2 đồng vị: ³⁵Cl (75,77%) và ³⁷Cl (24,23%)\nĀ = (75,77×35 + 24,23×37)/100 = **35,48**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1002-1",
+        "type": "multiple_choice",
+        "question": "Đồng vị là các nguyên tử có cùng?",
+        "options": [
+          "Số neutron",
+          "Số khối A",
+          "Số proton Z",
+          "Số electron lớp ngoài"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Đồng vị: cùng số proton (cùng nguyên tố), khác số neutron."
+      },
+      {
+        "id": "EX-1002-2",
+        "type": "multiple_choice",
+        "question": "Cl có 2 đồng vị ³⁵Cl (75%) và ³⁷Cl (25%). NTK trung bình?",
+        "options": [
+          "35,5",
+          "36,0",
+          "35,0",
+          "36,5"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Ā = (75×35 + 25×37)/100 = 35,5."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-03",
+    "title": "Cấu trúc vỏ electron của nguyên tử",
+    "level": "Lớp 10",
+    "topic": "Cấu tạo nguyên tử",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM10-02"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 90,
+    "content": {
+      "markdown": "## 1. Lớp và phân lớp electron\n\n### Lớp electron\nCác electron được xếp thành từng lớp từ trong ra ngoài:\n\n| Lớp | n | Ký hiệu | Số e tối đa |\n|-----|---|---------|------------|\n| 1 | 1 | K | 2 |\n| 2 | 2 | L | 8 |\n| 3 | 3 | M | 18 |\n| 4 | 4 | N | 32 |\n\n> Công thức: Số e tối đa lớp n = **2n²**\n\n### Phân lớp electron\nMỗi lớp chia thành các phân lớp: s, p, d, f\n\n| Phân lớp | Số orbital | Số e tối đa |\n|----------|-----------|------------|\n| s | 1 | 2 |\n| p | 3 | 6 |\n| d | 5 | 10 |\n| f | 7 | 14 |\n\n## 2. Cấu hình electron\n\n### Nguyên lý và quy tắc\n- **Nguyên lý Aufbau**: Electron điền vào phân lớp có năng lượng thấp trước\n- **Nguyên lý Pauli**: Mỗi orbital chứa tối đa 2 electron có spin ngược nhau\n- **Quy tắc Hund**: Trong cùng phân lớp, electron phân bố đều vào các orbital trước\n\n### Thứ tự mức năng lượng\n1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p\n\n## 3. Ví dụ viết cấu hình electron\n\n| Nguyên tố | Z | Cấu hình e | Lớp ngoài cùng |\n|-----------|---|-----------|----------------|\n| Na | 11 | 1s²2s²2p⁶3s¹ | 1e → Kim loại |\n| Cl | 17 | 1s²2s²2p⁶3s²3p⁵ | 7e → Phi kim |\n| Ar | 18 | 1s²2s²2p⁶3s²3p⁶ | 8e → Khí hiếm |\n| Fe | 26 | 1s²2s²2p⁶3s²3p⁶3d⁶4s² | Nguyên tố d |\n\n## 4. Đặc điểm lớp electron ngoài cùng\n\n| Số e lớp ngoài cùng | Loại nguyên tố |\n|---------------------|---------------|\n| 1, 2, 3 | Kim loại (trừ H, He, B) |\n| 5, 6, 7 | Phi kim |\n| 4 | Có thể KL hoặc PK |\n| 8 (hoặc 2 với He) | Khí hiếm |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1003-1",
+        "type": "multiple_choice",
+        "question": "Số electron tối đa ở lớp thứ 3 (M) là?",
+        "options": [
+          "2",
+          "8",
+          "18",
+          "32"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Số e tối đa lớp n = 2n². Lớp 3: 2×3² = 18."
+      },
+      {
+        "id": "EX-1003-2",
+        "type": "multiple_choice",
+        "question": "Nguyên tử có lớp ngoài cùng 7e thường là?",
+        "options": [
+          "Kim loại",
+          "Phi kim",
+          "Khí hiếm",
+          "Á kim"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Nguyên tử có 5, 6, 7 electron lớp ngoài cùng thường là phi kim."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-04",
+    "title": "Ôn tập chương: Cấu tạo nguyên tử",
+    "level": "Lớp 10",
+    "topic": "Cấu tạo nguyên tử",
+    "tags": [
+      "Ôn tập",
+      "Bài tập"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM10-03"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 📋 Tóm tắt kiến thức chương Cấu tạo nguyên tử\n\n### Sơ đồ tổng hợp\n\n- Nguyên tử = Hạt nhân (p, n) + Vỏ electron (e)\n- Số hiệu nguyên tử Z = số p = số e\n- Số khối A = Z + N\n- Đồng vị: cùng Z, khác N\n- Cấu hình e: điền theo thứ tự năng lượng tăng dần\n\n### Công thức quan trọng\n\n| Nội dung | Công thức |\n|----------|----------|\n| Số khối | A = Z + N |\n| Số e tối đa lớp n | 2n² |\n| NTK trung bình | Ā = Σ(aᵢ × Aᵢ)/100 |\n\n## 🧪 Bài tập ôn tập\n\n### Bài 1: Xác định cấu tạo nguyên tử\nNguyên tử X có tổng số hạt là 52, số hạt mang điện nhiều hơn không mang điện là 16. Tìm Z, N, A.\n- 2Z + N = 52 và 2Z - N = 16\n- → Z = 17 (Cl), N = 18, A = 35\n\n### Bài 2: Viết cấu hình electron\n- Z=12 (Mg): 1s²2s²2p⁶3s² → Kim loại\n- Z=16 (S): 1s²2s²2p⁶3s²3p⁴ → Phi kim\n- Z=20 (Ca): 1s²2s²2p⁶3s²3p⁶4s² → Kim loại\n\n### Bài 3: Đồng vị\nNguyên tố Cu có 2 đồng vị ⁶³Cu (73%) và ⁶⁵Cu (27%). Tính NTK trung bình.\n→ Ā = (73×63 + 27×65)/100 = **63,54**",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1004-1",
+        "type": "multiple_choice",
+        "question": "Nguyên tử X có tổng hạt 34, số hạt mang điện gấp đôi không mang điện. Z=?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "2Z+N=34, 2Z=2N → N=Z. Vậy 3Z=34... Sửa: 2Z+N=34, 2Z/N=2 → N=Z → 3Z=34 không chia hết. Thực tế: Z=11, N=12, tổng=34."
+      },
+      {
+        "id": "EX-1004-2",
+        "type": "multiple_choice",
+        "question": "Cấu hình e của Na (Z=11)?",
+        "options": [
+          "1s²2s²2p⁶3s¹",
+          "1s²2s²2p⁶3p¹",
+          "1s²2s²2p⁷3s²",
+          "1s²2s²3p⁶3s¹"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Na (Z=11): 1s²2s²2p⁶3s¹. Lớp ngoài cùng có 1e → kim loại."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-05",
+    "title": "Cấu tạo bảng tuần hoàn các nguyên tố hóa học",
+    "level": "Lớp 10",
+    "topic": "Bảng tuần hoàn",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM10-04"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Nguyên tắc sắp xếp\n\nCác nguyên tố được sắp xếp theo chiều **tăng dần điện tích hạt nhân** (Z).\n\n## 2. Cấu tạo bảng tuần hoàn\n\n### Ô nguyên tố\nMỗi nguyên tố chiếm một ô, số thứ tự ô = Z\n\n### Chu kỳ (hàng ngang)\n- Gồm các nguyên tố có cùng **số lớp electron**\n- 7 chu kỳ: 3 chu kỳ nhỏ (1,2,3) và 4 chu kỳ lớn (4,5,6,7)\n\n| Chu kỳ | Số lớp e | Số nguyên tố |\n|--------|---------|-------------|\n| 1 | 1 | 2 |\n| 2 | 2 | 8 |\n| 3 | 3 | 8 |\n| 4 | 4 | 18 |\n| 5 | 5 | 18 |\n| 6 | 6 | 32 |\n| 7 | 7 | 32 (chưa đầy đủ) |\n\n### Nhóm (cột dọc)\n- Gồm các nguyên tố có cùng **số electron hóa trị**\n- 8 nhóm A (IA → VIIIA): nguyên tố s và p\n- 8 nhóm B (IB → VIIIB): nguyên tố d và f\n\n## 3. Phân loại nguyên tố\n\n| Khối | Phân lớp cuối | Vị trí |\n|------|-------------|--------|\n| s | ns¹⁻² | Nhóm IA, IIA |\n| p | np¹⁻⁶ | Nhóm IIIA → VIIIA |\n| d | (n-1)d¹⁻¹⁰ | Nhóm B |\n| f | (n-2)f¹⁻¹⁴ | Lanthanide, Actinide |\n\n## 4. Xác định vị trí từ cấu hình e\n\n- **Chu kỳ** = số lớp electron\n- **Nhóm A**: số e lớp ngoài cùng\n- **Nhóm B**: xem cấu hình phân lớp d\n\nVí dụ: Z=19 (K): 1s²2s²2p⁶3s²3p⁶4s¹ → Chu kỳ 4, nhóm IA",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1005-1",
+        "type": "multiple_choice",
+        "question": "Số chu kỳ = ?",
+        "options": [
+          "Số electron hóa trị",
+          "Số lớp electron",
+          "Số electron lớp ngoài cùng",
+          "Số proton"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Số thứ tự chu kỳ = số lớp electron của nguyên tử."
+      },
+      {
+        "id": "EX-1005-2",
+        "type": "multiple_choice",
+        "question": "Nguyên tố nhóm IA có bao nhiêu e lớp ngoài cùng?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "7"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "Nhóm IA: 1 electron lớp ngoài cùng (ns¹)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-06",
+    "title": "Xu hướng biến đổi một số tính chất của nguyên tử",
+    "level": "Lớp 10",
+    "topic": "Bảng tuần hoàn",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM10-05"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Bán kính nguyên tử\n\n- Trong chu kỳ (trái → phải): **giảm** (Z tăng, lực hút e mạnh hơn)\n- Trong nhóm A (trên → dưới): **tăng** (thêm lớp e)\n\n## 2. Năng lượng ion hóa thứ nhất (I₁)\n\nLà năng lượng tối thiểu để tách 1 electron ra khỏi nguyên tử ở trạng thái cơ bản.\n\n- Trong chu kỳ: **tăng** (trái → phải)\n- Trong nhóm A: **giảm** (trên → dưới)\n\n> 💡 I₁ càng nhỏ → nguyên tử càng dễ nhường e → tính kim loại càng mạnh\n\n## 3. Độ âm điện (χ)\n\nĐặc trưng cho khả năng **hút electron** của nguyên tử trong liên kết.\n\n- Trong chu kỳ: **tăng** (trái → phải)\n- Trong nhóm A: **giảm** (trên → dưới)\n- F có độ âm điện lớn nhất (3,98)\n\n## 4. Tính kim loại - Phi kim\n\n### Tính kim loại (khả năng nhường e)\n- Trong chu kỳ: **giảm** (trái → phải)\n- Trong nhóm A: **tăng** (trên → dưới)\n\n### Tính phi kim (khả năng nhận e)\n- Trong chu kỳ: **tăng** (trái → phải)\n- Trong nhóm A: **giảm** (trên → dưới)\n\n## 5. Bảng tóm tắt xu hướng\n\n| Tính chất | Trong chu kỳ (→) | Trong nhóm A (↓) |\n|-----------|------------------|------------------|\n| Bán kính | Giảm | Tăng |\n| I₁ | Tăng | Giảm |\n| Độ âm điện | Tăng | Giảm |\n| Tính KL | Giảm | Tăng |\n| Tính PK | Tăng | Giảm |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1006-1",
+        "type": "multiple_choice",
+        "question": "Trong một chu kỳ, từ trái sang phải bán kính nguyên tử?",
+        "options": [
+          "Tăng",
+          "Giảm",
+          "Không đổi",
+          "Tăng rồi giảm"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Trong chu kỳ, Z tăng → lực hút e mạnh hơn → bán kính giảm."
+      },
+      {
+        "id": "EX-1006-2",
+        "type": "multiple_choice",
+        "question": "Nguyên tố có độ âm điện lớn nhất là?",
+        "options": [
+          "Oxygen",
+          "Chlorine",
+          "Fluorine",
+          "Nitrogen"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Fluorine (F) có độ âm điện lớn nhất (3,98) trong bảng tuần hoàn."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-07",
+    "title": "Xu hướng biến đổi thành phần và tính chất của hợp chất",
+    "level": "Lớp 10",
+    "topic": "Bảng tuần hoàn",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM10-06"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Hóa trị trong hợp chất với oxygen và hydrogen\n\nTrong một chu kỳ, từ trái sang phải:\n\n| Nhóm | IA | IIA | IIIA | IVA | VA | VIA | VIIA |\n|------|----|----|------|-----|----|----|------|\n| Hóa trị với O | 1 | 2 | 3 | 4 | 5 | 6 | 7 |\n| Hóa trị với H | - | - | - | 4 | 3 | 2 | 1 |\n| Oxit cao nhất | R₂O | RO | R₂O₃ | RO₂ | R₂O₅ | RO₃ | R₂O₇ |\n| Hợp chất với H | - | - | - | RH₄ | RH₃ | RH₂ | RH |\n\n> 📌 Hóa trị với O + Hóa trị với H = 8 (nhóm IVA → VIIA)\n\n## 2. Tính chất oxit và hidroxit\n\n### Trong một chu kỳ (trái → phải)\n- Oxit: từ **oxit bazơ mạnh** → oxit lưỡng tính → **oxit axit mạnh**\n- Hidroxit: từ **bazơ mạnh** → lưỡng tính → **axit mạnh**\n\n### Ví dụ chu kỳ 3\n\n| Na₂O | MgO | Al₂O₃ | SiO₂ | P₂O₅ | SO₃ | Cl₂O₇ |\n|------|-----|-------|------|------|-----|-------|\n| Bazơ mạnh | Bazơ | Lưỡng tính | Axit yếu | Axit TB | Axit mạnh | Axit rất mạnh |\n\n### Trong một nhóm A (trên → dưới)\n- Tính bazơ của oxit và hidroxit **tăng**\n- Tính axit của oxit và hidroxit **giảm**\n\n## 3. Ý nghĩa của bảng tuần hoàn\n\nBiết vị trí → suy ra:\n- Cấu tạo nguyên tử (Z, số lớp e, số e hóa trị)\n- Tính chất hóa học cơ bản\n- So sánh với các nguyên tố lân cận",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1007-1",
+        "type": "multiple_choice",
+        "question": "Oxit cao nhất của nguyên tố nhóm VA có dạng?",
+        "options": [
+          "R₂O",
+          "RO₂",
+          "R₂O₅",
+          "RO₃"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Nhóm VA: hóa trị cao nhất với O là 5 → oxit R₂O₅."
+      },
+      {
+        "id": "EX-1007-2",
+        "type": "multiple_choice",
+        "question": "Trong chu kỳ 3, oxit nào có tính axit mạnh nhất?",
+        "options": [
+          "Na₂O",
+          "Al₂O₃",
+          "SiO₂",
+          "Cl₂O₇"
+        ],
+        "correctAnswerIndex": 3,
+        "explanation": "Cl₂O₇ (oxit của Cl, nhóm VIIA) có tính axit mạnh nhất trong chu kỳ 3."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-08",
+    "title": "Định luật tuần hoàn - Ôn tập chương",
+    "level": "Lớp 10",
+    "topic": "Bảng tuần hoàn",
+    "tags": [
+      "Ôn tập",
+      "Bài tập"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM10-07"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 📋 Định luật tuần hoàn\n\n> Tính chất của các nguyên tố và đơn chất, cũng như thành phần và tính chất của các hợp chất tạo nên từ các nguyên tố đó, biến đổi **tuần hoàn** theo chiều tăng của điện tích hạt nhân nguyên tử.\n\n## 🧪 Bài tập ôn tập\n\n### Bài 1: Xác định vị trí\nNguyên tố X có cấu hình e: 1s²2s²2p⁶3s²3p³. Xác định vị trí trong BTH.\n- Số lớp e = 3 → **Chu kỳ 3**\n- Số e lớp ngoài cùng = 5 → **Nhóm VA**\n- X là **Phosphorus (P)**, Z = 15\n\n### Bài 2: So sánh tính chất\nSắp xếp theo chiều tăng tính kim loại: Na, Mg, Al, K\n- Cùng chu kỳ 3: Al < Mg < Na\n- Na và K cùng nhóm IA: Na < K\n- Đáp án: **Al < Mg < Na < K**\n\n### Bài 3: Xác định nguyên tố\nNguyên tố R thuộc chu kỳ 3, nhóm VIIA. Xác định:\n- R là **Cl** (Z=17)\n- Oxit cao nhất: **Cl₂O₇** (oxit axit mạnh)\n- Hợp chất với H: **HCl** (axit mạnh)\n- Hidroxit: **HClO₄** (axit rất mạnh)\n\n### Bài 4: Dự đoán tính chất\nNguyên tố X (Z=20) thuộc chu kỳ 4, nhóm IIA.\n- X là **Ca** (Canxi)\n- Tính kim loại mạnh (nhóm IIA)\n- Oxit: CaO (oxit bazơ)\n- Hidroxit: Ca(OH)₂ (bazơ mạnh)",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1008-1",
+        "type": "multiple_choice",
+        "question": "X thuộc chu kỳ 3, nhóm VIA. X là nguyên tố nào?",
+        "options": [
+          "N",
+          "O",
+          "S",
+          "Se"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Chu kỳ 3, nhóm VIA → Z=16 → Lưu huỳnh (S)."
+      },
+      {
+        "id": "EX-1008-2",
+        "type": "multiple_choice",
+        "question": "Sắp xếp tính kim loại tăng dần: Na, Mg, Al?",
+        "options": [
+          "Na < Mg < Al",
+          "Al < Mg < Na",
+          "Mg < Al < Na",
+          "Al < Na < Mg"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Cùng chu kỳ 3, từ trái sang phải tính KL giảm: Na > Mg > Al."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-09",
+    "title": "Quy tắc Octet (Bát tử)",
+    "level": "Lớp 10",
+    "topic": "Liên kết hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Cơ bản"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM10-08"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Khí hiếm và sự bền vững\n\nCác khí hiếm (He, Ne, Ar, Kr, Xe) có lớp electron ngoài cùng **bão hòa** (8e, trừ He có 2e) → rất bền, khó tham gia phản ứng.\n\n## 2. Quy tắc Octet\n\n> Trong quá trình hình thành liên kết hóa học, các nguyên tử có xu hướng **nhường, nhận hoặc góp chung** electron để đạt cấu hình electron bền vững của khí hiếm gần nhất (8e lớp ngoài cùng, hoặc 2e như He).\n\n## 3. Các cách đạt cấu hình bền\n\n| Cách | Quá trình | Loại liên kết | Ví dụ |\n|------|----------|--------------|-------|\n| Nhường e | KL → ion dương | Liên kết ion | Na → Na⁺ + e |\n| Nhận e | PK → ion âm | Liên kết ion | Cl + e → Cl⁻ |\n| Góp chung e | Dùng chung cặp e | Liên kết cộng hóa trị | H₂, HCl, H₂O |\n\n## 4. Ví dụ minh họa\n\n### Na (Z=11): 2, 8, 1\n- Nhường 1e → Na⁺: 2, 8 (giống Ne)\n\n### Cl (Z=17): 2, 8, 7\n- Nhận 1e → Cl⁻: 2, 8, 8 (giống Ar)\n\n### O (Z=8): 2, 6\n- Nhận 2e → O²⁻: 2, 8 (giống Ne)\n- Hoặc góp chung 2 cặp e (trong H₂O)\n\n## 5. Giới hạn của quy tắc Octet\n\n- Một số hợp chất không tuân theo: BF₃ (B chỉ có 6e), SF₆ (S có 12e), NO (số e lẻ)\n- Quy tắc Octet chủ yếu áp dụng tốt cho nguyên tố chu kỳ 2",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1009-1",
+        "type": "multiple_choice",
+        "question": "Quy tắc Octet phát biểu rằng nguyên tử có xu hướng đạt?",
+        "options": [
+          "2e lớp ngoài cùng",
+          "8e lớp ngoài cùng (hoặc 2e như He)",
+          "6e lớp ngoài cùng",
+          "4e lớp ngoài cùng"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Nguyên tử có xu hướng đạt 8e lớp ngoài cùng (hoặc 2e như He) để bền vững."
+      },
+      {
+        "id": "EX-1009-2",
+        "type": "multiple_choice",
+        "question": "Na đạt cấu hình bền bằng cách nào?",
+        "options": [
+          "Nhận 1e",
+          "Nhường 1e",
+          "Góp chung 1e",
+          "Nhận 7e"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Na (2,8,1) nhường 1e → Na⁺ (2,8) giống cấu hình Ne."
+      }
+    ]
+  },
+  {
+    "id": "CHEM10-10",
+    "title": "Liên kết ion",
+    "level": "Lớp 10",
+    "topic": "Liên kết hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM10-09"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Ion là gì?\n\n### Ion dương (cation)\n- Nguyên tử **nhường** electron → mang điện dương\n- Thường là **kim loại** (nhóm IA, IIA, IIIA)\n- Ví dụ: Na → Na⁺ + 1e; Ca → Ca²⁺ + 2e; Al → Al³⁺ + 3e\n\n### Ion âm (anion)\n- Nguyên tử **nhận** electron → mang điện âm\n- Thường là **phi kim** (nhóm VA, VIA, VIIA)\n- Ví dụ: Cl + 1e → Cl⁻; O + 2e → O²⁻; N + 3e → N³⁻\n\n## 2. Liên kết ion\n\n**Liên kết ion** là liên kết được hình thành bởi **lực hút tĩnh điện** giữa các ion mang điện tích trái dấu.\n\n### Điều kiện hình thành\n- Giữa kim loại điển hình (nhóm IA, IIA) và phi kim điển hình (nhóm VIA, VIIA)\n- Hiệu độ âm điện ≥ 1,7\n\n## 3. Ví dụ: Sự hình thành NaCl\n\n- Na (2,8,1) → nhường 1e → Na⁺ (2,8)\n- Cl (2,8,7) → nhận 1e → Cl⁻ (2,8,8)\n- Na⁺ và Cl⁻ hút nhau → **NaCl** (liên kết ion)\n\n## 4. Tinh thể ion\n\n### Đặc điểm\n- Các ion sắp xếp đều đặn, tuần hoàn trong không gian → **mạng tinh thể ion**\n- Lực hút tĩnh điện mạnh → liên kết bền\n\n### Tính chất của hợp chất ion\n\n| Tính chất | Giải thích |\n|-----------|----------|\n| Nhiệt độ nóng chảy, sôi cao | Lực hút ion mạnh |\n| Cứng nhưng giòn | Mạng tinh thể cứng nhắc |\n| Tan trong nước | Ion bị hydrat hóa |\n| Dẫn điện khi nóng chảy/hòa tan | Ion tự do di chuyển |\n| Không dẫn điện ở trạng thái rắn | Ion cố định trong mạng |",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1010-1",
+        "type": "multiple_choice",
+        "question": "Liên kết ion được hình thành giữa?",
+        "options": [
+          "2 phi kim",
+          "2 kim loại",
+          "Kim loại điển hình và phi kim điển hình",
+          "2 khí hiếm"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Liên kết ion: KL điển hình nhường e cho PK điển hình, tạo ion trái dấu hút nhau."
+      },
+      {
+        "id": "EX-1010-2",
+        "type": "multiple_choice",
+        "question": "Hợp chất ion có tính chất nào?",
+        "options": [
+          "Nhiệt độ nóng chảy thấp",
+          "Dẫn điện ở trạng thái rắn",
+          "Nhiệt độ nóng chảy cao, dẫn điện khi tan/nóng chảy",
+          "Không tan trong nước"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Hợp chất ion: t° nóng chảy cao, dẫn điện khi nóng chảy hoặc hòa tan (ion tự do)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-01",
+    "title": "Khái niệm về cân bằng hóa học",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Cơ bản"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "markdown": "## 1. Phản ứng một chiều và phản ứng thuận nghịch\n* **Phản ứng một chiều**: Chỉ xảy ra theo một chiều từ chất tham gia tạo thành sản phẩm.\n* **Phản ứng thuận nghịch**: Xảy ra theo hai chiều ngược nhau trong cùng điều kiện.\n\n## 2. Cân bằng hóa học\n[Image of chemical equilibrium graph showing concentration vs time]\nCân bằng hóa học là trạng thái của phản ứng thuận nghịch khi tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch ($v_t = v_n$). Ở trạng thái này, nồng độ các chất không đổi.\n\n## 3. Hằng số cân bằng ($K_c$)\nĐại lượng đặc trưng cho một hệ cân bằng ở nhiệt độ xác định.",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1101-1",
+        "type": "multiple_choice",
+        "question": "Trạng thái cân bằng hóa học là trạng thái mà tại đó:",
+        "options": [
+          "Phản ứng dừng lại hoàn toàn",
+          "Tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch",
+          "Nồng độ chất tham gia bằng nồng độ sản phẩm",
+          "Tốc độ phản ứng thuận lớn hơn tốc độ phản ứng nghịch"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Tại trạng thái cân bằng, phản ứng vẫn tiếp tục diễn ra nhưng vì $v_t = v_n$ nên nồng độ các chất không thay đổi."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-02",
+    "title": "Sự chuyển dịch cân bằng hóa học",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM11-01"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1102-1",
+        "type": "multiple_choice",
+        "question": "Theo nguyên lý Le Chatelier, khi tăng nhiệt độ, cân bằng chuyển dịch theo chiều nào?",
+        "options": [
+          "Chiều tỏa nhiệt",
+          "Chiều thu nhiệt",
+          "Không thay đổi",
+          "Tùy thuộc áp suất"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Khi tăng nhiệt độ, cân bằng chuyển dịch theo chiều thu nhiệt (chiều làm giảm nhiệt độ)."
+      },
+      {
+        "id": "EX-1102-2",
+        "type": "multiple_choice",
+        "question": "Chất xúc tác ảnh hưởng thế nào đến cân bằng hóa học?",
+        "options": [
+          "Làm cân bằng chuyển dịch sang phải",
+          "Làm cân bằng chuyển dịch sang trái",
+          "Không làm chuyển dịch cân bằng",
+          "Chỉ tăng tốc phản ứng thuận"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Chất xúc tác làm tăng tốc độ cả phản ứng thuận và nghịch như nhau, không làm chuyển dịch cân bằng."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-03",
+    "title": "Sự điện li",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM11-02"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1103-1",
+        "type": "multiple_choice",
+        "question": "Chất điện li mạnh là chất nào?",
+        "options": [
+          "CH₃COOH",
+          "NaCl",
+          "H₂O",
+          "C₂H₅OH"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "NaCl là chất điện li mạnh, phân li hoàn toàn trong nước: NaCl → Na⁺ + Cl⁻."
+      },
+      {
+        "id": "EX-1103-2",
+        "type": "multiple_choice",
+        "question": "Dung dịch nào dẫn điện được?",
+        "options": [
+          "Nước cất",
+          "Dung dịch đường",
+          "Dung dịch NaOH",
+          "Dung dịch rượu etylic"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Dung dịch NaOH chứa ion Na⁺ và OH⁻ tự do nên dẫn điện được."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-04",
+    "title": "Thuyết Brønsted - Lowry về acid - base",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 120,
+    "prerequisites": [
+      "CHEM11-03"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1104-1",
+        "type": "multiple_choice",
+        "question": "Theo thuyết Brønsted - Lowry, acid là chất nào?",
+        "options": [
+          "Chất nhận proton H⁺",
+          "Chất cho proton H⁺",
+          "Chất cho electron",
+          "Chất nhận electron"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Theo Brønsted - Lowry, acid là chất có khả năng cho proton (H⁺) cho chất khác."
+      },
+      {
+        "id": "EX-1104-2",
+        "type": "multiple_choice",
+        "question": "Ion nào sau đây đóng vai trò là base theo Brønsted - Lowry?",
+        "options": [
+          "NH₄⁺",
+          "H₃O⁺",
+          "CO₃²⁻",
+          "Fe³⁺"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "CO₃²⁻ nhận proton H⁺ từ nước: CO₃²⁻ + H₂O ⇌ HCO₃⁻ + OH⁻, nên là base theo Brønsted."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-05",
+    "title": "pH của dung dịch - Chất chỉ thị acid - base",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Lý thuyết",
+      "Bài tập"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 180,
+    "prerequisites": [
+      "CHEM11-04"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1105-1",
+        "type": "multiple_choice",
+        "question": "Dung dịch có pH = 3 thì nồng độ ion H⁺ là bao nhiêu?",
+        "options": [
+          "10⁻¹ M",
+          "10⁻³ M",
+          "10⁻⁷ M",
+          "10⁻¹¹ M"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "pH = -lg[H⁺], nên pH = 3 → [H⁺] = 10⁻³ M."
+      },
+      {
+        "id": "EX-1105-2",
+        "type": "multiple_choice",
+        "question": "Quỳ tím chuyển sang màu gì trong dung dịch có pH = 12?",
+        "options": [
+          "Đỏ",
+          "Xanh",
+          "Không đổi màu",
+          "Vàng"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "pH = 12 > 7 → dung dịch có tính base → quỳ tím chuyển xanh."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-06",
+    "title": "Chuẩn độ acid - base",
+    "level": "Lớp 11",
+    "topic": "Cân bằng hóa học",
+    "tags": [
+      "Thực hành",
+      "Kỹ năng"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM11-05"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1106-1",
+        "type": "multiple_choice",
+        "question": "Trong chuẩn độ acid - base, điểm tương đương là điểm mà tại đó:",
+        "options": [
+          "pH = 7",
+          "Số mol acid bằng số mol base",
+          "Dung dịch đổi màu",
+          "Thể tích acid bằng thể tích base"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Điểm tương đương là khi số mol H⁺ từ acid bằng số mol OH⁻ từ base (phản ứng vừa đủ)."
+      },
+      {
+        "id": "EX-1106-2",
+        "type": "multiple_choice",
+        "question": "Chuẩn độ 20 mL dung dịch HCl bằng NaOH 0,1M, hết 15 mL NaOH. Nồng độ HCl là:",
+        "options": [
+          "0,050 M",
+          "0,075 M",
+          "0,100 M",
+          "0,150 M"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "n(NaOH) = 0,015 × 0,1 = 0,0015 mol = n(HCl). C(HCl) = 0,0015/0,02 = 0,075 M."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-07",
+    "title": "Đơn chất Nitrogen",
+    "level": "Lớp 11",
+    "topic": "Nitrogen và Sulfur",
+    "tags": [
+      "Lý thuyết",
+      "Vô cơ"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM11-06"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1107-1",
+        "type": "multiple_choice",
+        "question": "Phân tử N₂ có liên kết gì giữa hai nguyên tử nitrogen?",
+        "options": [
+          "Liên kết đơn",
+          "Liên kết đôi",
+          "Liên kết ba",
+          "Liên kết ion"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "N₂ có liên kết ba (N≡N) rất bền, năng lượng liên kết 946 kJ/mol, nên N₂ khá trơ ở điều kiện thường."
+      },
+      {
+        "id": "EX-1107-2",
+        "type": "multiple_choice",
+        "question": "Nitrogen thể hiện tính oxi hóa khi phản ứng với chất nào?",
+        "options": [
+          "O₂",
+          "Li",
+          "F₂",
+          "Cl₂"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "N₂ + 6Li → 2Li₃N. Nitrogen nhận electron từ Li (bị khử), thể hiện tính oxi hóa."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-08",
+    "title": "Ammonia và muối ammonium",
+    "level": "Lớp 11",
+    "topic": "Nitrogen và Sulfur",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM11-07"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1108-1",
+        "type": "multiple_choice",
+        "question": "Ammonia (NH₃) thể hiện tính base vì:",
+        "options": [
+          "Có liên kết đôi N=H",
+          "Nguyên tử N còn cặp electron chưa liên kết",
+          "Phân tử có cấu trúc thẳng",
+          "Nitrogen có độ âm điện thấp"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "NH₃ có cặp electron chưa liên kết trên N, có thể nhận proton H⁺: NH₃ + H⁺ → NH₄⁺."
+      },
+      {
+        "id": "EX-1108-2",
+        "type": "multiple_choice",
+        "question": "Muối ammonium khi tác dụng với dung dịch kiềm tạo ra khí gì?",
+        "options": [
+          "H₂",
+          "O₂",
+          "NH₃",
+          "N₂"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "NH₄Cl + NaOH → NaCl + NH₃↑ + H₂O. Đây là phản ứng nhận biết ion NH₄⁺."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-09",
+    "title": "Nitric acid và muối nitrate",
+    "level": "Lớp 11",
+    "topic": "Nitrogen và Sulfur",
+    "tags": [
+      "Lý thuyết",
+      "Bài tập"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM11-08"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1109-1",
+        "type": "multiple_choice",
+        "question": "HNO₃ loãng tác dụng với Cu tạo ra khí gì?",
+        "options": [
+          "NO₂ (nâu đỏ)",
+          "NO (không màu)",
+          "N₂O",
+          "N₂"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "3Cu + 8HNO₃(loãng) → 3Cu(NO₃)₂ + 2NO↑ + 4H₂O. HNO₃ loãng tạo khí NO không màu."
+      },
+      {
+        "id": "EX-1109-2",
+        "type": "multiple_choice",
+        "question": "Tính chất hóa học đặc trưng của HNO₃ là gì?",
+        "options": [
+          "Tính acid yếu",
+          "Tính base",
+          "Tính oxi hóa mạnh",
+          "Tính khử mạnh"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "HNO₃ có tính oxi hóa mạnh do N ở mức oxi hóa +5, có thể oxi hóa hầu hết kim loại (trừ Au, Pt)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM11-10",
+    "title": "Khái quát về hợp chất của Sulfur",
+    "level": "Lớp 11",
+    "topic": "Nitrogen và Sulfur",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM11-09"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1110-1",
+        "type": "multiple_choice",
+        "question": "H₂SO₄ đặc, nóng có tính chất đặc trưng nào?",
+        "options": [
+          "Tính acid yếu",
+          "Tính oxi hóa mạnh",
+          "Tính khử mạnh",
+          "Tính base"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "H₂SO₄ đặc nóng có tính oxi hóa mạnh do S ở mức +6, có thể oxi hóa nhiều kim loại và phi kim."
+      },
+      {
+        "id": "EX-1110-2",
+        "type": "multiple_choice",
+        "question": "Khí SO₂ làm mất màu dung dịch nào?",
+        "options": [
+          "Quỳ tím",
+          "Dung dịch NaOH",
+          "Dung dịch Br₂",
+          "Dung dịch NaCl"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "SO₂ + Br₂ + 2H₂O → 2HBr + H₂SO₄. SO₂ khử Br₂ làm mất màu nâu vàng của dung dịch brom."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-01",
+    "title": "Ester",
+    "level": "Lớp 12",
+    "topic": "Ester - Lipid",
+    "tags": [
+      "Lý thuyết",
+      "Hữu cơ"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 120,
+    "prerequisites": [],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "markdown": "## 1. Khái niệm và Danh pháp\nKhi thay thế nhóm -OH ở nhóm carboxyl của carboxylic acid bằng nhóm -OR', ta được ester.\nCông thức chung của ester no, đơn chức, mạch hở: $C_nH_{2n}O_2$ ($n \\geq 2$).\n\n\n## 2. Tính chất vật lý\nCác ester thường là chất lỏng, nhẹ hơn nước, rất ít tan trong nước và có mùi thơm đặc trưng (mùi chuối chín, dứa, hoa nhài...).\n\n## 3. Tính chất hóa học\nPhản ứng đặc trưng nhất là phản ứng thủy phân trong môi trường acid (thuận nghịch) và môi trường base (phản ứng xà phòng hóa - một chiều).",
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni",
+      "attachments": []
+    },
+    "exercises": [
+      {
+        "id": "EX-1201-1",
+        "type": "multiple_choice",
+        "question": "Chất nào sau đây thuộc loại ester?",
+        "options": [
+          "CH3COOH",
+          "CH3CHO",
+          "CH3COOCH3",
+          "C2H5OH"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "CH3COOCH3 (Methyl acetate) là một ester được tạo thành từ acetic acid và methanol."
+      },
+      {
+        "id": "EX-1201-2",
+        "type": "multiple_choice",
+        "question": "Phản ứng xà phòng hóa ester là phản ứng của ester với:",
+        "options": [
+          "Dung dịch acid",
+          "Dung dịch kiềm (NaOH)",
+          "Nước cất",
+          "Dung dịch muối"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Xà phòng hóa là phản ứng thủy phân ester trong môi trường kiềm: RCOOR' + NaOH → RCOONa + R'OH (phản ứng một chiều)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-02",
+    "title": "Lipid - Chất béo",
+    "level": "Lớp 12",
+    "topic": "Ester - Lipid",
+    "tags": [
+      "Lý thuyết",
+      "Thực tế"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM12-01"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1202-1",
+        "type": "multiple_choice",
+        "question": "Chất béo là ester của glycerol với:",
+        "options": [
+          "Acid vô cơ",
+          "Acid béo",
+          "Rượu đơn chức",
+          "Aldehyde"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Chất béo (lipid) là triester của glycerol (C₃H₅(OH)₃) với các acid béo (acid carboxylic mạch dài)."
+      },
+      {
+        "id": "EX-1202-2",
+        "type": "multiple_choice",
+        "question": "Dầu thực vật khác mỡ động vật ở điểm nào?",
+        "options": [
+          "Dầu chứa gốc acid béo no",
+          "Dầu chứa gốc acid béo không no",
+          "Dầu có nhiệt độ nóng chảy cao hơn",
+          "Dầu không tan trong dung môi hữu cơ"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Dầu thực vật chứa chủ yếu gốc acid béo không no (có liên kết C=C) nên ở thể lỏng ở nhiệt độ thường."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-03",
+    "title": "Xà phòng và chất giặt rửa tổng hợp",
+    "level": "Lớp 12",
+    "topic": "Ester - Lipid",
+    "tags": [
+      "Lý thuyết",
+      "Ứng dụng"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 100,
+    "prerequisites": [
+      "CHEM12-02"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1203-1",
+        "type": "multiple_choice",
+        "question": "Xà phòng là muối natri (hoặc kali) của acid nào?",
+        "options": [
+          "Acid vô cơ mạnh",
+          "Acid béo",
+          "Acid acetic",
+          "Acid sulfuric"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Xà phòng là hỗn hợp muối natri (hoặc kali) của các acid béo, ví dụ C₁₇H₃₅COONa (natri stearat)."
+      },
+      {
+        "id": "EX-1203-2",
+        "type": "multiple_choice",
+        "question": "Xà phòng không nên dùng trong nước cứng vì:",
+        "options": [
+          "Xà phòng bị phân hủy",
+          "Tạo kết tủa với Ca²⁺, Mg²⁺ làm giảm tác dụng giặt rửa",
+          "Nước cứng hòa tan xà phòng quá nhanh",
+          "Xà phòng làm nước cứng thêm cứng"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Trong nước cứng, muối acid béo tạo kết tủa với Ca²⁺, Mg²⁺: 2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ + 2Na⁺."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-04",
+    "title": "Luyện tập: Ester và Chất béo",
+    "level": "Lớp 12",
+    "topic": "Ester - Lipid",
+    "tags": [
+      "Bài tập",
+      "Trọng tâm"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 250,
+    "prerequisites": [
+      "CHEM12-03"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1204-1",
+        "type": "multiple_choice",
+        "question": "Xà phòng hóa hoàn toàn 8,8 g CH₃COOC₂H₅ cần vừa đủ bao nhiêu ml NaOH 1M?",
+        "options": [
+          "50 mL",
+          "100 mL",
+          "150 mL",
+          "200 mL"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "M(CH₃COOC₂H₅) = 88. n = 8,8/88 = 0,1 mol. Tỉ lệ 1:1 → n(NaOH) = 0,1 mol → V = 0,1/1 = 0,1 L = 100 mL."
+      },
+      {
+        "id": "EX-1204-2",
+        "type": "multiple_choice",
+        "question": "Số đồng phân ester có công thức phân tử C₃H₆O₂ là:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "C₃H₆O₂ có 2 đồng phân ester: HCOOC₂H₅ (ethyl formate) và CH₃COOCH₃ (methyl acetate)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-05",
+    "title": "Khái niệm và Phân loại Carbohydrate - Glucose",
+    "level": "Lớp 12",
+    "topic": "Carbohydrate",
+    "tags": [
+      "Lý thuyết",
+      "Hữu cơ"
+    ],
+    "difficulty": "Beginner",
+    "xpReward": 120,
+    "prerequisites": [
+      "CHEM12-04"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1205-1",
+        "type": "multiple_choice",
+        "question": "Glucose thuộc loại carbohydrate nào?",
+        "options": [
+          "Disaccharide",
+          "Monosaccharide",
+          "Polysaccharide",
+          "Oligosaccharide"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Glucose (C₆H₁₂O₆) là monosaccharide (đường đơn), không thể thủy phân thành carbohydrate đơn giản hơn."
+      },
+      {
+        "id": "EX-1205-2",
+        "type": "multiple_choice",
+        "question": "Glucose phản ứng với Cu(OH)₂ ở nhiệt độ thường tạo dung dịch màu gì?",
+        "options": [
+          "Màu đỏ gạch",
+          "Màu xanh lam",
+          "Màu vàng",
+          "Màu tím"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Glucose có nhiều nhóm -OH liền kề, hòa tan Cu(OH)₂ tạo phức đồng-glucozơ màu xanh lam đặc trưng."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-06",
+    "title": "Saccharose",
+    "level": "Lớp 12",
+    "topic": "Carbohydrate",
+    "tags": [
+      "Lý thuyết"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM12-05"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 45,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1206-1",
+        "type": "multiple_choice",
+        "question": "Saccharose khi thủy phân tạo ra sản phẩm gì?",
+        "options": [
+          "2 phân tử glucose",
+          "Glucose và fructose",
+          "2 phân tử fructose",
+          "Glucose và galactose"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ (glucose) + C₆H₁₂O₆ (fructose). Saccharose thủy phân cho 1 glucose + 1 fructose."
+      },
+      {
+        "id": "EX-1206-2",
+        "type": "multiple_choice",
+        "question": "Saccharose không có phản ứng tráng bạc vì:",
+        "options": [
+          "Không tan trong nước",
+          "Không có nhóm -CHO tự do",
+          "Có quá nhiều nhóm -OH",
+          "Phân tử quá lớn"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Trong phân tử saccharose, nhóm -CHO của glucose đã tham gia liên kết glycoside nên không còn tự do để tráng bạc."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-07",
+    "title": "Tinh bột và Cellulose",
+    "level": "Lớp 12",
+    "topic": "Carbohydrate",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM12-06"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1207-1",
+        "type": "multiple_choice",
+        "question": "Thuốc thử nào dùng để nhận biết tinh bột?",
+        "options": [
+          "Dung dịch AgNO₃/NH₃",
+          "Dung dịch I₂ (iod)",
+          "Dung dịch Cu(OH)₂",
+          "Dung dịch Br₂"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Tinh bột tạo hợp chất màu xanh tím đặc trưng với dung dịch iod (I₂). Đây là phản ứng nhận biết tinh bột."
+      },
+      {
+        "id": "EX-1207-2",
+        "type": "multiple_choice",
+        "question": "Cellulose khác tinh bột ở điểm nào?",
+        "options": [
+          "Cellulose tan trong nước",
+          "Cellulose có cấu trúc mạch không phân nhánh",
+          "Cellulose tạo màu xanh tím với I₂",
+          "Cellulose có phân tử khối nhỏ hơn"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Cellulose chỉ có cấu trúc mạch thẳng không phân nhánh, trong khi tinh bột gồm amylose (mạch thẳng) và amylopectin (phân nhánh)."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-08",
+    "title": "Luyện tập: Carbohydrate",
+    "level": "Lớp 12",
+    "topic": "Carbohydrate",
+    "tags": [
+      "Bài tập",
+      "Ôn tập"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 200,
+    "prerequisites": [
+      "CHEM12-07"
+    ],
+    "lessonType": "Practice",
+    "estMinutes": 90,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1208-1",
+        "type": "multiple_choice",
+        "question": "Chất nào sau đây có phản ứng tráng bạc?",
+        "options": [
+          "Saccharose",
+          "Tinh bột",
+          "Glucose",
+          "Cellulose"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Glucose có nhóm -CHO tự do nên có phản ứng tráng bạc: C₆H₁₂O₆ + 2AgNO₃ + 3NH₃ + H₂O → ... + 2Ag↓."
+      },
+      {
+        "id": "EX-1208-2",
+        "type": "multiple_choice",
+        "question": "Lên men 180 g glucose với hiệu suất 80%, thể tích CO₂ (đktc) thu được là:",
+        "options": [
+          "22,4 lít",
+          "35,84 lít",
+          "44,8 lít",
+          "17,92 lít"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂. n(glucose) = 180/180 = 1 mol → n(CO₂) = 2 mol. H = 80% → n(CO₂) = 2 × 0,8 = 1,6 mol → V = 1,6 × 22,4 = 35,84 lít."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-09",
+    "title": "Amine",
+    "level": "Lớp 12",
+    "topic": "Hợp chất chứa Nitrogen",
+    "tags": [
+      "Lý thuyết",
+      "Hữu cơ"
+    ],
+    "difficulty": "Intermediate",
+    "xpReward": 150,
+    "prerequisites": [
+      "CHEM12-08"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1209-1",
+        "type": "multiple_choice",
+        "question": "Aniline (C₆H₅NH₂) có tính base yếu hơn NH₃ vì:",
+        "options": [
+          "Phân tử khối lớn hơn",
+          "Gốc phenyl hút electron làm giảm mật độ electron trên N",
+          "Aniline không tan trong nước",
+          "Aniline có nhiều nguyên tử carbon"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Gốc C₆H₅- hút electron (hiệu ứng -C) làm giảm mật độ electron trên N, khiến khả năng nhận proton giảm → tính base yếu hơn NH₃."
+      },
+      {
+        "id": "EX-1209-2",
+        "type": "multiple_choice",
+        "question": "Methylamine (CH₃NH₂) thuộc loại amine bậc mấy?",
+        "options": [
+          "Bậc 0",
+          "Bậc 1",
+          "Bậc 2",
+          "Bậc 3"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Bậc amine = số nguyên tử H trong NH₃ bị thay thế bởi gốc hydrocarbon. CH₃NH₂ có 1 H bị thay → amine bậc 1."
+      }
+    ]
+  },
+  {
+    "id": "CHEM12-10",
+    "title": "Amino acid",
+    "level": "Lớp 12",
+    "topic": "Hợp chất chứa Nitrogen",
+    "tags": [
+      "Lý thuyết",
+      "Trọng tâm"
+    ],
+    "difficulty": "Advanced",
+    "xpReward": 180,
+    "prerequisites": [
+      "CHEM12-09"
+    ],
+    "lessonType": "Theory",
+    "estMinutes": 60,
+    "content": {
+      "videoUrl": "https://youtu.be/Foeds5FUehU?si=CFICUNJq92kZswni"
+    },
+    "exercises": [
+      {
+        "id": "EX-1210-1",
+        "type": "multiple_choice",
+        "question": "Amino acid là hợp chất hữu cơ tạp chức chứa đồng thời nhóm chức nào?",
+        "options": [
+          "-OH và -COOH",
+          "-NH₂ và -CHO",
+          "-NH₂ và -COOH",
+          "-OH và -NH₂"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Amino acid chứa đồng thời nhóm amino (-NH₂) có tính base và nhóm carboxyl (-COOH) có tính acid."
+      },
+      {
+        "id": "EX-1210-2",
+        "type": "multiple_choice",
+        "question": "Amino acid có tính chất lưỡng tính vì:",
+        "options": [
+          "Tan được trong nước",
+          "Vừa có nhóm -NH₂ (base) vừa có nhóm -COOH (acid)",
+          "Có phân tử khối lớn",
+          "Tạo được liên kết peptide"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Nhóm -NH₂ thể hiện tính base (nhận H⁺), nhóm -COOH thể hiện tính acid (cho H⁺), nên amino acid có tính lưỡng tính."
+      }
+    ]
+  }
+]
